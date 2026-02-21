@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /config/
+
+# Emplacement de votre futur sitemap (optionnel)
+Sitemap: https://diominedigitalsystems.com/sitemap.xml

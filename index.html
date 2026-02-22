@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Diomine Digital Systems - Mining Software Training, Exploration Services, and Specialized Pit Mapping Excellence.">
+    <meta name="description" content="Diomine Digital Systems - Mining Software, Training, and Exploration Services.">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/png" href="logo.png">
-    <title>Diomine Digital Systems | Global Mining Solutions & Training</title>
+    <title>Diomine Digital Systems | Global Mining Solutions</title>
     
     <style>
         :root {
@@ -31,11 +31,12 @@
             position: relative;
             height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') no-repeat center center/cover;
+            background-color: #1a1a1a; 
             display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
         .header-content { z-index: 2; padding: 20px; }
-        .main-logo { width: 140px; margin-bottom: 20px; }
+        .main-logo { width: 140px; height: auto; margin-bottom: 20px; display: inline-block; }
 
         h1 { 
             font-size: clamp(2.2rem, 7vw, 4.5rem); 
@@ -50,35 +51,37 @@
         nav a { margin: 0 18px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
         nav a:hover { color: var(--ci-orange); }
 
-        /* WELCOME MESSAGE BOX */
         .welcome-section {
             padding: 80px 15%;
             text-align: center;
             background: linear-gradient(180deg, #1a1a1a 0%, var(--dark-bg) 100%);
         }
-        .welcome-section h2 { 
-            color: var(--ci-orange); 
-            font-size: 2.2rem; 
-            text-transform: uppercase; 
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-        }
-        .welcome-section p { 
-            font-size: 1.15rem; 
-            max-width: 950px; 
-            margin: 0 auto 20px; 
-            color: #d1d1d1; 
-            line-height: 1.8;
-            font-weight: 300;
-        }
+        .welcome-section p { font-size: 1.15rem; max-width: 950px; margin: 0 auto 20px; color: #d1d1d1; }
         .welcome-highlight { color: var(--gold-buffer); font-weight: bold; }
+
+        /* TRAINING ANNOUNCEMENT BOX */
+        .announcement-bar {
+            background: rgba(255, 130, 0, 0.1);
+            border: 2px solid var(--ci-orange);
+            padding: 25px;
+            margin: 40px 8%;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .announcement-text h3 { margin: 0; color: var(--ci-orange); text-transform: uppercase; font-size: 1.2rem; }
+        .btn-facebook { background: #1877F2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; display: inline-block; }
 
         .section-title { text-align: center; font-size: 2.2rem; margin: 60px 0 40px; color: var(--gold-buffer); text-transform: uppercase; letter-spacing: 3px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 8% 80px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 8% 40px; }
         .card { background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #333; transition: 0.3s; }
         .card:hover { transform: translateY(-10px); border-color: var(--ci-orange); }
         .card img { width: 90px; height: 90px; object-fit: contain; margin-bottom: 20px; }
+
+        .badge-soon { background: var(--ci-orange); color: black; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
 
         .btn-download { background: var(--ci-green); color: white; padding: 14px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; text-transform: uppercase; }
         .btn-paypal-donate { background: #0070ba; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: 900; display: inline-block; margin-bottom: 20px; text-transform: uppercase; font-size: 0.9rem; }
@@ -90,7 +93,7 @@
 
 <header>
     <div class="header-content">
-        <img src="logo.png" alt="logo" class="mine-background">
+        <img src="logo.png" alt="Diomine Logo" class="main-logo">
         <h1>DIOMINE DIGITAL SYSTEMS</h1>
         <p style="font-size: 1.3rem; color: #fff;">Global Excellence in Mining Software Engineering</p>
     </div>
@@ -102,13 +105,21 @@
     <a href="privacy.html">Privacy Policy</a>
 </nav>
 
+<div class="announcement-bar">
+    <div class="announcement-text">
+        <h3>🚀 Live Online Training</h3>
+        <p style="margin: 5px 0 0;">QGIS Masterclass: How to display <strong>Assay Data</strong> on Drillhole Sections.</p>
+    </div>
+    <a href="https://www.facebook.com/profile.php?id=61556096531940" class="btn-facebook" target="_blank">Join us on Facebook</a>
+</div>
+
 <section class="welcome-section">
     <h2>Welcome to Diomine Digital Systems</h2>
     <p>
-        From our headquarters in <span class="welcome-highlight">Yamoussoukro, Ivory Coast</span>, we deliver world-class innovation to the extractive sector. Diomine Digital Systems specializes in providing <span class="welcome-highlight">high-integrity software</span> and <span class="welcome-highlight">mining exploration services</span> designed for the global stage.
+        From <span class="welcome-highlight">Yamoussoukro, Ivory Coast</span>, we specialize in <span class="welcome-highlight">high-integrity software</span> and <span class="welcome-highlight">mining exploration services</span>.
     </p>
     <p>
-        Beyond our technology, we are a hub for professional growth. We provide <span class="welcome-highlight">specialized training for beginners and professionals</span> in all industry-leading mining software. Furthermore, we are experts in field excellence, offering consultancy in <span class="welcome-highlight">mineral exploration services</span> and professional training in <span class="welcome-highlight">pit mapping best practices</span> to ensure geological accuracy at every step.
+        We offer <span class="welcome-highlight">professional training</span> for beginners and experts in all major mining software, alongside consultancy in <span class="welcome-highlight">pit mapping best practices</span>.
     </p>
 </section>
 
@@ -117,18 +128,14 @@
     <div class="card">
         <img src="kofi-icon.png" alt="Support">
         <h3>Support Our Research</h3>
-        <p>Your contributions help us maintain free professional tools and fund our research in mining automation.</p>
-        
-        <div class="support-box">
-            <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-paypal-donate" target="_blank">Donate via PayPal</a>
-            
-            <div style="margin-top:10px;">
-                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-                <script type='text/javascript'>
-                    kofiwidget2.init('Support on Ko-fi', '#72a4f2', 'H2H41UM4PB');
-                    kofiwidget2.draw();
-                </script>
-            </div>
+        <p>Your contributions help fund our research in mining automation and software development.</p>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-paypal-donate" target="_blank">Donate via PayPal</a>
+        <div style="margin-top:10px;">
+            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+            <script type='text/javascript'>
+                kofiwidget2.init('Support on Ko-fi', '#72a4f2', 'H2H41UM4PB');
+                kofiwidget2.draw();
+            </script>
         </div>
     </div>
 
@@ -136,6 +143,9 @@
         <img src="dh-auditor-icon.png" alt="DH Auditor">
         <h3>DH Auditor v2026</h3>
         <p>The industry standard for geological database auditing and QA/QC structural validation.</p>
+        <p>The industry standard for geological and structural map interpretations and high quality stereographic analysis.</p>
+        <p>The industry standard for rompad sampling and grab assay reporting.</p>
+         <p>The industry standard statistical analysis and resource model quality topcut.</p>
         <a href="dh%20auditor%20setup.exe" class="btn-download" download>Download Setup</a>
     </div>
 
@@ -144,6 +154,20 @@
         <h3>MRN Network</h3>
         <p>Collaborative Mineral Resource Network for high-precision data management and reporting.</p>
         <a href="mrn%20network%20setup.exe" class="btn-download" download>Download Setup</a>
+    </div>
+</div>
+
+<h2 class="section-title">Coming Soon</h2>
+<div class="grid">
+    <div class="card">
+        <div class="badge-soon">In Development</div>
+        <h3>Geo-Predict AI</h3>
+        <p>Our upcoming AI-powered tool for predictive geological modeling and deposit targeting.</p>
+    </div>
+    <div class="card">
+        <div class="badge-soon">Testing Phase</div>
+        <h3>Pit-Mapper Pro</h3>
+        <p>A mobile solution for real-time digital pit mapping and structural orientation.</p>
     </div>
 </div>
 

@@ -3,89 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diomine Digital Systems | Mining Software</title>
+    <title>Diomine Digital Systems | Mining Software Excellence</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
     <style>
         :root {
             --gold: #d4af37;
-            --dark: #121212;
+            --light-gold: #f2d06b;
+            --dark: #0a0a0a;
+            --card-bg: #161616;
         }
         body {
             background-color: var(--dark);
-            color: white;
+            color: #e0e0e0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            text-align: center;
         }
-        /* EFFET TITRE GOLD */
+        .header {
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #1a1a1a, var(--dark));
+        }
+        .main-logo {
+            width: 150px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+        }
         .gold-title {
             color: var(--gold);
-            font-size: 2.5em;
+            font-size: clamp(2em, 8vw, 3.5em);
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 50px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
+        }
+        .subtitle {
+            color: var(--light-gold);
+            font-size: 1.2em;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            font-weight: 300;
         }
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: auto;
+            padding: 40px 20px;
+        }
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         .software-card {
-            border: 1px solid #333;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-            background: #1e1e1e;
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+        .software-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+        .soft-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+        h2 { color: white; margin-bottom: 15px; font-size: 1.5em; }
+        p { color: #888; line-height: 1.6; font-size: 0.95em; height: 60px; }
+        
         .btn-download {
-            background-color: var(--gold);
+            background: linear-gradient(135deg, #d4af37 0%, #f2d06b 100%);
             color: black;
-            padding: 10px 25px;
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 50px;
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 25px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            transition: 0.3s;
         }
-        /* BOUTON KO-FI CLIGNOTANT */
+        .btn-download:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            transform: scale(1.05);
+        }
         .kofi-button {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
         }
     </style>
 </head>
 <body>
 
+    <div class="header">
+        <img src="DIOMINE logo.png" alt="Diomine Logo" class="main-logo">
+        <h1 class="gold-title">DIOMINE</h1>
+        <div class="subtitle">DIGITAL SYSTEMS</div>
+    </div>
+
     <div class="container">
-        <h1 class="gold-title">DIOMINE DIGITAL SYSTEMS</h1>
-        <p>Expertise en logiciels miniers et audit de données de forage.</p>
+        <div class="software-grid">
+            <div class="software-card">
+                <img src="DH Auditor.png" alt="DH Auditor" class="soft-icon">
+                <h2>DH Auditor</h2>
+                <p>Logiciel avancé d'audit de données de forage et plotting structural QA/QC.</p>
+                <a href="DH_Auditor_Setup.exe" class="btn-download">Télécharger v2026.1.2</a>
+            </div>
 
-        <div class="software-card">
-            <h2>DH Auditor v2026.1.2</h2>
-            <p>La référence pour le contrôle qualité (QA/QC) et le plotting structural.</p>
-            <a href="#" class="btn-download">Télécharger .EXE</a>
-        </div>
-
-        <div class="software-card">
-            <h2>MRN Network v2026.1</h2>
-            <p>Système avancé de gestion des ressources minérales.</p>
-            <a href="#" class="btn-download">Télécharger .EXE</a>
+            <div class="software-card">
+                <img src="MRN Network.png" alt="MRN Network" class="soft-icon">
+                <h2>MRN Network</h2>
+                <p>Gestion et optimisation des réseaux de ressources minérales.</p>
+                <a href="MRN_Network_Setup.exe" class="btn-download">Télécharger v2026.1</a>
+            </div>
         </div>
     </div>
 
     <div class="kofi-button">
         <a href="https://ko-fi.com/diomine" target="_blank">
-            <img src="https://storage.ko-fi.com/cdn/kofifeed/other/widget_kofi_button_blue.png" alt="Soutenez-nous" style="height: 45px;">
+            <img src="https://storage.ko-fi.com/cdn/kofifeed/other/widget_kofi_button_blue.png" alt="Support Us" style="height: 45px;">
         </a>
     </div>
 

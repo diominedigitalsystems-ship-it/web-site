@@ -7,7 +7,7 @@
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="diomine logo.png">
+    <link rel="icon" type="image/png" href="diomine%20logo.png">
     <title>Diomine Digital Systems | Mining Innovation Hub</title>
     
     <style>
@@ -29,11 +29,10 @@
             overflow-x: hidden;
         }
 
-        /* HERO SECTION */
         header {
             position: relative;
             height: 85vh;
-            background: url('mine-background.jpg') no-repeat center center/cover;
+            background: #1a1a1a url('mine-background.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -49,6 +48,7 @@
 
         .header-content { position: relative; z-index: 2; padding: 20px; }
         
+        /* Utilisation de %20 pour l'espace */
         .main-logo { width: 160px; height: auto; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); }
 
         h1 { 
@@ -68,22 +68,18 @@
         }
         .btn-contact:hover { background: var(--ci-orange); transform: translateY(-3px); }
 
-        /* NAVIGATION */
         nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; }
         nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
         nav a:hover { color: var(--ci-orange); }
 
         .section-title { text-align: center; font-size: 2.2rem; font-weight: 900; margin: 60px 0 30px; text-transform: uppercase; color: var(--gold-buffer); }
 
-        /* SOLUTIONS GRID */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 8%; }
         .card { background: var(--card-bg); padding: 40px 30px; border-radius: 15px; text-align: center; border: 1px solid #333; transition: 0.4s ease; }
         .card:hover { transform: translateY(-10px); border-color: var(--ci-orange); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .card img { width: 90px; height: 90px; margin-bottom: 20px; object-fit: contain; border-radius: 10px; }
         .card h3 { font-size: 1.4rem; margin-bottom: 15px; font-weight: 900; color: var(--ci-orange); }
-        .card p { font-size: 0.9rem; margin-bottom: 10px; color: #ccc; text-align: left; }
 
-        /* KO-FI FLASHING ANIMATION */
         .btn-kofi {
             display: inline-block; padding: 14px 28px; color: white; text-decoration: none; border-radius: 8px;
             font-weight: 900; text-transform: uppercase; animation: ivory-flash 3.5s infinite;
@@ -96,17 +92,15 @@
             100% { background-color: var(--ci-orange); color: white; }
         }
 
-        /* DOWNLOAD AREA */
         .download-area { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 40px 5% 80px; }
         .download-box {
             position: relative; width: 450px; height: 300px; border-radius: 20px; overflow: hidden;
-            background: #1a1a1a; /* Backup color if image fails */
+            background: #1a1a1a;
             display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; border: 2px solid #333;
         }
         .box-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); }
         .download-box h3, .btn-big { position: relative; z-index: 2; }
         .btn-big { background: var(--ci-green); color: white; padding: 16px; text-align: center; text-decoration: none; border-radius: 8px; font-weight: 900; margin-top: 15px; text-transform: uppercase; transition: 0.3s; }
-        .btn-big:hover { background: #007d4c; letter-spacing: 1px; }
 
         footer { background: #000; padding: 50px 20px; text-align: center; border-top: 2px solid #222; color: #888; font-size: 0.9rem; }
         footer a { color: var(--ci-orange); text-decoration: none; }
@@ -117,7 +111,7 @@
 <header>
     <div class="overlay"></div>
     <div class="header-content">
-        <img src="diomine logo.png" alt="Diomine Logo" class="main-logo">
+        <img src="diomine%20logo.png" alt="Diomine Logo" class="main-logo">
         <h1>DIOMINE DIGITAL SYSTEMS</h1>
         <p class="slogan">Empowering Geologists and Engineers with Data Precision and Mining Innovation</p>
         <a href="mailto:diominedigitalsystems@gmail.com" class="btn-contact">CONTACT US</a>
@@ -134,26 +128,23 @@
 <h2 class="section-title">Our Solutions</h2>
 <div class="grid">
     <div class="card">
-        <img src="diomine logo.png" alt="Support">
+        <img src="diomine%20logo.png" alt="Support">
         <h3 style="color:var(--ci-orange)">Support the Project</h3>
         <p style="text-align: center;">Your contributions directly support the development of robust free tools for the mining community.</p>
         <a href="https://ko-fi.com/diominedigitalsystems" class="btn-kofi" target="_blank">Donate on Ko-fi</a>
     </div>
 
     <div class="card">
-        <img src="dh auditor.png" alt="DH Auditor">
+        <img src="dh%20auditor.png" alt="DH Auditor">
         <h3>DH Auditor 2026.1.2</h3>
         <p>• Premium auditing and validation tool for geological database integrity.</p>
         <p>• Advanced digitization and geological map generation.</p>
-        <p>• Statistical analysis and resource model capping.</p>
-        <p>• Structural plotting and stereographic analysis.</p>
-        <p>• Pit mapping and structural data interpretation.</p>
     </div>
 
     <div class="card">
-        <img src="mrn network.png" alt="MRN">
+        <img src="mrn%20network.png" alt="MRN">
         <h3>Diomine MRN 2026.1</h3>
-        <p style="text-align: center;">Mineral Resource Network for high-precision resource reporting and collaborative data management.</p>
+        <p style="text-align: center;">Mineral Resource Network for high-precision reporting.</p>
     </div>
 </div>
 
@@ -162,13 +153,13 @@
     <div class="download-box">
         <div class="box-overlay"></div>
         <h3>DH Auditor v2026.1.2</h3>
-        <a href="dh auditor setup.exe" class="btn-big">Download Setup</a>
+        <a href="dh%20auditor%20setup.exe" class="btn-big">Download Setup</a>
     </div>
 
     <div class="download-box">
         <div class="box-overlay"></div>
         <h3>MRN Network v2026.1</h3>
-        <a href="mrn network setup.exe" class="btn-big">Download Setup</a>
+        <a href="mrn%20network%20setup.exe" class="btn-big">Download Setup</a>
     </div>
 </div>
 

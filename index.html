@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Diomine Digital Systems - Global Mining Software Solutions from Ivory Coast to the World.">
+    <meta name="description" content="Diomine Digital Systems - Global Mining Software Solutions. Precision data auditing for Geologists and Engineers.">
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
@@ -25,19 +25,17 @@
             background-color: var(--dark-bg); 
             color: white;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* HERO SECTION */
         header {
             position: relative;
-            height: 75vh;
+            height: 70vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') no-repeat center center/cover;
             display: flex; align-items: center; justify-content: center; text-align: center;
         }
 
         .header-content { z-index: 2; padding: 20px; }
-        .main-logo { width: 140px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); }
+        .main-logo { width: 140px; margin-bottom: 20px; }
 
         h1 { 
             font-size: clamp(2.2rem, 7vw, 4.5rem); 
@@ -49,39 +47,30 @@
             text-transform: uppercase;
         }
 
-        /* NAVIGATION */
         nav { background: #000; padding: 1.1rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; }
-        nav a { margin: 0 18px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        nav a { margin: 0 18px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
         nav a:hover { color: var(--ci-orange); }
 
-        /* WELCOME */
         .welcome-section {
-            padding: 70px 10%;
+            padding: 60px 10%;
             text-align: center;
             background: linear-gradient(180deg, #1a1a1a 0%, var(--dark-bg) 100%);
         }
-        .welcome-section h2 { color: var(--ci-orange); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 25px; }
-        .welcome-section p { font-size: 1.15rem; max-width: 850px; margin: 0 auto; color: #ccc; }
+        .welcome-section p { font-size: 1.15rem; max-width: 800px; margin: 0 auto; color: #ccc; }
 
-        .section-title { text-align: center; font-size: 2.2rem; margin: 60px 0 40px; color: var(--gold-buffer); text-transform: uppercase; letter-spacing: 3px; }
+        .section-title { text-align: center; font-size: 2.2rem; margin: 50px 0; color: var(--gold-buffer); text-transform: uppercase; letter-spacing: 3px; }
 
-        /* GRID */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; padding: 0 8% 80px; }
-        .card { background: var(--card-bg); padding: 45px 35px; border-radius: 20px; text-align: center; border: 1px solid #333; transition: 0.4s ease; }
-        .card:hover { transform: translateY(-12px); border-color: var(--ci-orange); box-shadow: 0 15px 40px rgba(0,0,0,0.6); }
-        .card img { width: 95px; height: 95px; object-fit: contain; margin-bottom: 25px; }
-        .card h3 { color: var(--ci-orange); font-size: 1.5rem; margin-bottom: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 8% 80px; }
+        .card { background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--ci-orange); }
+        .card img { width: 90px; height: 90px; object-fit: contain; margin-bottom: 20px; }
 
-        /* BUTTONS */
-        .btn-download { background: var(--ci-green); color: white; padding: 15px 35px; text-decoration: none; border-radius: 6px; font-weight: bold; display: inline-block; margin-top: 20px; text-transform: uppercase; transition: 0.3s; }
-        .btn-download:hover { background: #007d4c; letter-spacing: 1px; }
-        
-        .btn-paypal { background: #ffc439; color: #111; padding: 15px 35px; text-decoration: none; border-radius: 6px; font-weight: 900; display: inline-block; margin-top: 15px; text-transform: uppercase; transition: 0.3s; }
-        .btn-paypal:hover { background: #e2af31; transform: scale(1.05); }
+        .btn-download { background: var(--ci-green); color: white; padding: 14px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; text-transform: uppercase; }
+        .btn-paypal-donate { background: #0070ba; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: 900; display: inline-block; margin-bottom: 20px; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .btn-paypal-donate:hover { background: #005ea6; transform: scale(1.05); }
 
         footer { background: #000; padding: 60px 20px; text-align: center; border-top: 2px solid #222; }
-        .social-links a { color: #fff; margin: 0 20px; text-decoration: none; font-size: 1.1rem; font-weight: bold; transition: 0.3s; }
-        .social-links a:hover { color: var(--ci-orange); }
+        .support-box { margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -90,7 +79,7 @@
     <div class="header-content">
         <img src="logo.png" alt="Diomine Logo" class="main-logo">
         <h1>DIOMINE DIGITAL SYSTEMS</h1>
-        <p style="font-size: 1.4rem; letter-spacing: 1px; color: #fff; font-weight: 300;">Global Precision in Mining Engineering Software</p>
+        <p style="font-size: 1.3rem; color: #fff;">Global Excellence in Mining Software Engineering</p>
     </div>
 </header>
 
@@ -101,43 +90,51 @@
 </nav>
 
 <section class="welcome-section">
-    <h2>Welcome to Diomine</h2>
+    <h2 style="color:var(--ci-orange); text-transform: uppercase;">Innovation from Ivory Coast</h2>
     <p>
-        Headquartered in <strong>Yamoussoukro, Ivory Coast</strong>, Diomine Digital Systems is dedicated to engineering high-precision software solutions for the global mining industry. From exploration geologists to resource engineers, we empower professionals with robust tools to ensure data integrity and operational excellence.
+        Based in <strong>Yamoussoukro</strong>, we bridge the gap between field geology and digital precision. 
+        Our mission is to provide the global mining community with high-integrity auditing and reporting tools.
     </p>
 </section>
 
-<h2 class="section-title">Professional Solutions</h2>
+<h2 class="section-title">Professional Tools</h2>
 <div class="grid">
     <div class="card">
         <img src="kofi-icon.png" alt="Support">
-        <h3>Support Research</h3>
-        <p>Your contributions help us fund the development and maintenance of free professional tools for the mining community.</p>
-        <a href="https://paypal.me/diominedigital" class="btn-paypal" target="_blank">Donate via PayPal</a>
+        <h3>Support Our Research</h3>
+        <p>Your donations help us keep our mining tools free and robust for geologists worldwide.</p>
+        
+        <div class="support-box">
+            <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-paypal-donate" target="_blank">Donate via PayPal</a>
+            
+            <div style="margin-top:10px;">
+                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+                <script type='text/javascript'>
+                    kofiwidget2.init('Support on Ko-fi', '#72a4f2', 'H2H41UM4PB');
+                    kofiwidget2.draw();
+                </script>
+            </div>
+        </div>
     </div>
 
     <div class="card">
         <img src="dh-auditor-icon.png" alt="DH Auditor">
         <h3>DH Auditor v2026</h3>
-        <p>Premium auditing suite for geological databases, QA/QC compliance, and advanced structural data validation.</p>
+        <p>Advanced structural auditing and database validation for geological excellence.</p>
         <a href="dh%20auditor%20setup.exe" class="btn-download" download>Download Setup</a>
     </div>
 
     <div class="card">
         <img src="mrn-icon.png" alt="MRN Network">
         <h3>MRN Network</h3>
-        <p>A collaborative Mineral Resource Network designed for reporting and high-precision data management.</p>
+        <p>Mineral Resource Network for high-precision reporting and collaborative management.</p>
         <a href="mrn%20network%20setup.exe" class="btn-download" download>Download Setup</a>
     </div>
 </div>
 
 <footer>
-    <div class="social-links" style="margin-bottom: 30px;">
-        <a href="https://www.youtube.com/channel/UCq6gVS4_d4aOHCH2uHdgOCg" target="_blank">▶ YouTube</a>
-        <a href="https://ko-fi.com/diominedigitalsystems" target="_blank">☕ Ko-fi</a>
-    </div>
-    <p style="color: #888;">📧 diominedigitalsystems@gmail.com | Yamoussoukro, Ivory Coast</p>
-    <p style="font-size: 0.85rem; color: #555; margin-top: 10px;">&copy; 2026 Diomine Digital Systems | <a href="privacy.html" style="color:var(--ci-orange)">Privacy Policy</a></p>
+    <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
+    <p>&copy; 2026 Diomine Digital Systems | <a href="privacy.html" style="color:var(--ci-orange); text-decoration: none;">Privacy Policy</a></p>
 </footer>
 
 </body>

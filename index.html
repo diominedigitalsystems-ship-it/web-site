@@ -20,6 +20,22 @@
             --ivory-white: #FFFFFF;
         }
 
+        /* Animation scintillante pour les nouveaux ajouts */
+        @keyframes shine {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px var(--ci-orange); color: white; }
+            50% { text-shadow: 0 0 20px var(--ci-orange), 0 0 30px var(--gold-buffer); color: var(--gold-buffer); }
+            100% { text-shadow: 0 0 5px #fff, 0 0 10px var(--ci-orange); color: white; }
+        }
+
+        .new-content-badge {
+            animation: shine 1.5s infinite;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
         @keyframes civ-blink {
             0% { background-color: var(--ci-orange); color: #000; }
             33% { background-color: var(--ivory-white); color: #000; }
@@ -59,19 +75,13 @@
         nav a { margin: 0 18px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
         nav a:hover { color: var(--ci-orange); }
 
-        .welcome-section {
-            padding: 80px 15% 40px;
-            text-align: center;
-            background: linear-gradient(180deg, #1a1a1a 0%, var(--dark-bg) 100%);
-        }
-        .welcome-section p { font-size: 1.15rem; max-width: 950px; margin: 0 auto 20px; color: #d1d1d1; }
-        .welcome-highlight { color: var(--gold-buffer); font-weight: bold; }
-
         /* VIDEO STYLING */
         .video-container {
             max-width: 850px;
             margin: 0 auto 50px;
-            padding: 0 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
         }
         .video-wrapper {
             position: relative;
@@ -90,28 +100,25 @@
             height: 100%;
         }
 
-        .marketing-callout {
-            text-align: center;
-            font-size: 1.4rem;
-            color: var(--gold-buffer);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
+        .archive-section {
+            background: #0a0a0a;
+            padding: 40px 8%;
+            border-top: 1px solid #333;
         }
 
-        .announcement-bar {
-            background: rgba(255, 130, 0, 0.1);
-            border: 2px solid var(--ci-orange);
-            padding: 25px;
-            margin: 40px 8%;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
-        .announcement-text h3 { margin: 0; color: var(--ci-orange); text-transform: uppercase; font-size: 1.2rem; }
+
+        .archive-card {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--ci-green);
+        }
+
         .btn-facebook { background: #1877F2; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; display: inline-block; }
 
         .section-title { text-align: center; font-size: 2.2rem; margin: 60px 0 40px; color: var(--gold-buffer); text-transform: uppercase; letter-spacing: 3px; }
@@ -119,9 +126,7 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 8% 40px; }
         .card { background: var(--card-bg); padding: 40px; border-radius: 20px; text-align: center; border: 1px solid #333; transition: 0.3s; }
         .card:hover { transform: translateY(-10px); border-color: var(--ci-orange); }
-        .card img { width: 90px; height: 90px; object-fit: contain; margin-bottom: 20px; }
 
-        .badge-soon { background: var(--ci-orange); color: black; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 10px; display: inline-block; }
         .btn-download { background: var(--ci-green); color: white; padding: 14px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; text-transform: uppercase; }
         
         .btn-paypal-donate { 
@@ -135,7 +140,6 @@
             text-transform: uppercase; 
             font-size: 0.9rem; 
             border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         footer { background: #000; padding: 60px 20px; text-align: center; border-top: 2px solid #222; }
@@ -153,91 +157,65 @@
 
 <nav>
     <a href="index.html">Home</a>
+    <a href="#new-training">New Training</a>
+    <a href="#archives">Archives</a>
     <a href="expertise.html">Expertise</a>
-    <a href="privacy.html">Privacy Policy</a>
 </nav>
 
-<div class="announcement-bar">
-    <div class="announcement-text">
-        <h3>🚀 Live Online Training</h3>
-        <p style="margin: 5px 0 0;">QGIS Masterclass: How to display <strong>Assay Data</strong> on Drillhole Sections.</p>
+<section id="new-training" class="welcome-section" style="padding-top: 60px;">
+    <div class="video-container" style="border: 3px solid var(--gold-buffer); background: rgba(255, 215, 0, 0.05);">
+        <span class="new-content-badge">✨ NEW RELEASE / NOUVEAU ✨</span>
+        <h2 style="color: var(--gold-buffer); margin-top: 0;">Latest Mining Masterclass</h2>
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KqYCZZY-AkY?si=O1OT1rFa7m-HmnRs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 15px; font-weight: bold; color: var(--ci-orange);">QGIS Masterclass: Professional Drillhole Data Visualization</p>
     </div>
-    <a href="https://www.facebook.com/profile.php?id=61556096531940" class="btn-facebook" target="_blank">Join us on Facebook</a>
-</div>
-
-<section class="welcome-section">
-    <h2>Welcome to Diomine Digital Systems</h2>
-    <p>
-        From <span class="welcome-highlight">Yamoussoukro, Ivory Coast</span>, we specialize in <span class="welcome-highlight">high-integrity software</span> and <span class="welcome-highlight">mining exploration services</span>.
-    </p>
 </section>
 
-<div class="video-container">
-    <p class="marketing-callout">Vision & Excellence</p>
-    <div class="video-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/H4IP_lcJyNo?si=P0DkAmeTAQO6DHgM" title="Diomine Digital Systems Presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<section id="archives" class="archive-section">
+    <h2 class="section-title" style="font-size: 1.5rem;">Video Training Archives</h2>
+    <div class="archive-grid">
+        <div class="archive-card">
+            <h4>Vision & Excellence Presentation</h4>
+            <div class="video-wrapper" style="padding-bottom: 50%;">
+                <iframe src="https://www.youtube.com/embed/H4IP_lcJyNo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="archive-card">
+            <h4>Mining Workflow Insights</h4>
+            <div class="video-wrapper" style="padding-bottom: 50%;">
+                <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
-</div>
-
-<div class="video-container">
-    <p class="marketing-callout">Master Your Workflow: Professional Mining Insights</p>
-    <div class="video-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/7JqM3gzyHeA?si=jG-rl_cgwDIhivdd" title="Mining Training Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <p style="text-align: center; margin-top: 15px; color: #d1d1d1; font-style: italic;">Advance your technical skills with our expert-led software tutorials.</p>
-</div>
+</section>
 
 <h2 class="section-title">Professional Solutions</h2>
 <div class="grid">
     <div class="card">
-        <img src="kofi-icon.png" alt="Support">
+        <img src="kofi-icon.png" alt="Support" style="width: 80px;">
         <h3>Support Our Research</h3>
-        <p>Your contributions help fund our research in mining automation and software development.</p>
+        <p>Your contributions help fund our research in mining automation.</p>
         <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-paypal-donate" target="_blank">Donate via PayPal</a>
-        <div style="margin-top:10px;">
-            <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-            <script type='text/javascript'>
-                kofiwidget2.init('Support on Ko-fi', '#72a4f2', 'H2H41UM4PB');
-                kofiwidget2.draw();
-            </script>
-        </div>
     </div>
 
     <div class="card">
-        <img src="dh-auditor-icon.png" alt="DH Auditor">
         <h3>DH Auditor v2026</h3>
-        <p>The industry standard for geological database auditing and QA/QC structural validation.</p>
-        <p>The industry standard for geological and structural map interpretations and high quality stereographic analysis.</p>
-        <p>The industry standard for rompad sampling and grab assay reporting.</p>
-        <p>The industry standard statistical analysis and resource model quality topcut.</p>
+        <p>Industry standard for database auditing and QA/QC validation.</p>
         <a href="dh%20auditor%20setup.exe" class="btn-download" download>Download Setup</a>
     </div>
 
     <div class="card">
-        <img src="mrn-icon.png" alt="MRN Network">
         <h3>MRN Network</h3>
-        <p>Collaborative Mineral Resource Network for high-precision data management and reporting.</p>
+        <p>Collaborative Mineral Resource Network for data management.</p>
         <a href="mrn%20network%20setup.exe" class="btn-download" download>Download Setup</a>
-    </div>
-</div>
-
-<h2 class="section-title">Coming Soon</h2>
-<div class="grid">
-    <div class="card">
-        <div class="badge-soon">Testing Phase</div>
-        <h3>Diomine DH Auditor 2026.1.2</h3>
-        <p>Our upcoming GIS tool for geological map interpretation, Strong statistical analysis and high quality structural and stereographic analysis.</p>
-    </div>
-    <div class="card">
-        <div class="badge-soon">In Development</div>
-        <h3>Diomine MRN 2026.1</h3>
-        <p>Strong quality 3D modelling and structural modelling.</p>
     </div>
 </div>
 
 <footer>
     <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
-    <p>&copy; 2026 Diomine Digital Systems | <a href="privacy.html" style="color:var(--ci-orange); text-decoration: none;">Privacy Policy</a></p>
+    <p>&copy; 2026 Diomine Digital Systems</p>
 </footer>
 
 </body>

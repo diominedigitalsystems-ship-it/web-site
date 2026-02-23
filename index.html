@@ -1,77 +1,225 @@
-<style>
-    .mining-marquee {
-        background: #000;
-        border-top: 3px solid var(--ci-orange);
-        border-bottom: 3px solid var(--ci-orange);
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 15px 0;
-        display: flex;
-        align-items: center;
-        box-shadow: inset 0 0 20px rgba(255, 130, 0, 0.2);
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, and Exploration Services.">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
-    .marquee-content {
-        display: inline-block;
-        animation: scroll-left 25s linear infinite;
-        font-size: 1.2rem;
-    }
+    <link rel="icon" type="image/png" href="diomine logo.png">
+    <title>Diomine Digital Systems | Global Mining Solutions</title>
+    
+    <style>
+        :root {
+            --ci-orange: #FF8200;
+            --ci-green: #009E60;
+            --gold-buffer: #FFD700;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --ivory-white: #FFFFFF;
+        }
 
-    /* Animation du convoi */
-    @keyframes scroll-left {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; padding: 0; 
+            background-color: var(--dark-bg); 
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* Style des engins qui défilent */
-    .truck {
-        font-size: 2rem;
-        display: inline-block;
-        margin: 0 10px;
-        filter: drop-shadow(0 0 5px var(--ci-orange));
-    }
+        /* --- MINING CONVOY ANIMATION (LIVE FB ANNOUNCEMENT) --- */
+        .mining-convoi-container {
+            background: #000;
+            border-top: 3px solid var(--ci-orange);
+            border-bottom: 3px solid var(--ci-orange);
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-    /* L'annonce qui clignote au milieu du convoi */
-    .live-announcement {
-        display: inline-block;
-        background: rgba(255, 0, 0, 0.1);
-        padding: 5px 20px;
-        border: 1px dashed red;
-        border-radius: 10px;
-        animation: alert-flash 0.8s steps(2, start) infinite;
-        color: var(--gold-buffer);
-        font-weight: 900;
-        text-transform: uppercase;
-        vertical-align: middle;
-    }
+        .convoi-wrapper {
+            display: inline-block;
+            white-space: nowrap;
+            animation: move-convoi 30s linear infinite;
+        }
 
-    @keyframes alert-flash {
-        to { border-color: transparent; background: transparent; color: #fff; }
-    }
+        @keyframes move-convoi {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
-    .btn-live-link {
-        background: #1877F2;
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: bold;
-        border: 2px solid white;
-        margin-left: 15px;
-    }
-</style>
+        .real-engine {
+            height: 65px; 
+            width: auto;
+            vertical-align: middle;
+            margin: 0 20px;
+            filter: drop-shadow(0 0 8px var(--ci-orange));
+        }
 
-<div class="mining-marquee">
-    <div class="marquee-content">
-        <span class="truck">🚜</span><span class="truck">🚛</span><span class="truck">🏗️</span>
-        <span class="live-announcement">🔴 LIVE FACEBOOK : QGIS MASTERCLASS - ASSAY DATA ON DRILLHOLES</span>
-        <a href="https://www.facebook.com/profile.php?id=61556096531940" target="_blank" class="btn-live-link">REJOINDRE LE LIVE</a>
-        <span class="truck">⛏️</span><span class="truck">🚛</span><span class="truck">🚜</span>
+        .live-label {
+            display: inline-block;
+            background: rgba(255, 0, 0, 0.2);
+            padding: 12px 30px;
+            border: 2px dashed #ff0000;
+            border-radius: 8px;
+            color: var(--gold-buffer);
+            font-weight: 900;
+            font-size: 1.2rem;
+            animation: blink-text 0.6s infinite alternate;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="truck">🚜</span><span class="truck">🚛</span><span class="truck">🏗️</span>
-        <span class="live-announcement">🔴 PROCHAINE FORMATION : AFFICHAGE DES DONNÉES D'ASSAY SUR FORAGES</span>
-        <a href="https://www.facebook.com/profile.php?id=61556096531940" target="_blank" class="btn-live-link">REJOINDRE LE LIVE</a>
-        <span class="truck">⛏️</span><span class="truck">🚛</span><span class="truck">🚜</span>
+        @keyframes blink-text {
+            from { opacity: 1; transform: scale(1); filter: brightness(1.2); }
+            to { opacity: 0.7; transform: scale(0.98); color: #fff; }
+        }
+
+        .fb-live-btn {
+            background: #1877F2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #fff;
+            margin: 0 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
+        header {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') no-repeat center center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center;
+        }
+
+        .main-logo { width: 130px; margin-bottom: 20px; }
+        h1 { font-size: clamp(2rem, 8vw, 4rem); color: #000; font-weight: 900; text-shadow: 0 0 2px var(--gold-buffer), 1.5px 1.5px 0 var(--gold-buffer); text-transform: uppercase; margin: 0; }
+
+        nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; }
+        nav a { margin: 0 20px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        nav a:hover { color: var(--ci-orange); }
+
+        /* --- VIDEO SECTIONS --- */
+        .video-section { padding: 60px 10%; text-align: center; }
+        .section-tag { color: var(--ci-orange); font-weight: bold; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 10px; }
+        
+        .video-wrapper { 
+            position: relative; padding-bottom: 56.25%; height: 0; 
+            border: 3px solid var(--ci-orange); border-radius: 15px; 
+            overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.6); 
+            background: #000;
+        }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* --- ARCHIVES & GRIDS --- */
+        .archive-section { background: #0a0a0a; padding: 60px 8%; border-top: 1px solid #222; }
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
+        .archive-card { background: #1a1a1a; padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--ci-green); transition: 0.3s; }
+        .archive-card h4 { margin-top: 0; color: var(--ivory-white); text-transform: uppercase; }
+
+        .card { background: var(--card-bg); padding: 35px; border-radius: 20px; text-align: center; transition: 0.4s; border: 1px solid #333; }
+        .card:hover { border-color: var(--ci-orange); transform: translateY(-8px); box-shadow: 0 10px 25px rgba(255,130,0,0.1); }
+
+        .btn-download { background: var(--ci-green); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; text-transform: uppercase; }
+        
+        footer { background: #000; padding: 50px 20px; text-align: center; border-top: 2px solid #222; margin-top: 60px; color: #888; }
+        footer a { color: var(--ci-orange); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <img src="diomine logo.png" alt="Diomine Logo" class="main-logo">
+        <h1>DIOMINE DIGITAL SYSTEMS</h1>
+        <p style="font-size: 1.4rem; font-weight: 300;">Global Excellence in Mining Software Engineering</p>
+    </div>
+</header>
+
+<div class="mining-convoi-container">
+    <div class="convoi-wrapper">
+        <img src="excavatrice.png" alt="Excavator" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318331.png'">
+        
+        <span class="live-label">🔴 UPCOMING FB LIVE: QGIS MASTERCLASS - DISPLAY ASSAY DATA ON DRILLHOLES</span>
+        <a href="https://www.facebook.com/profile.php?id=61556096531940" class="fb-live-btn" target="_blank">FOLLOW FOR LIVE UPDATE</a>
+
+        <img src="camion-mine.png" alt="Mining Truck" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318282.png'">
+        
+        <span class="live-label">🔴 MASTERCLASS: PROFESSIONAL MINING WORKFLOWS</span>
+
+        <img src="bulldozer.png" alt="Bulldozer" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318311.png'">
     </div>
 </div>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#featured">Latest Training</a>
+    <a href="#archives">Video Archives</a>
+    <a href="#software">Software Solutions</a>
+</nav>
+
+<section id="featured" class="video-section">
+    <span class="section-tag">New Release</span>
+    <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">LATEST MASTERCLASS</h2>
+    <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/KqYCZZY-AkY?si=O1OT1rFa7m-HmnRs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <p style="margin-top:20px; font-size: 1.2rem; color: #ccc;">Technical Tutorial: Master Drillhole Data Visualization using QGIS for Mining Exploration.</p>
+</section>
+
+<section id="archives" class="archive-section">
+    <h2 style="text-align:center; color:var(--ci-orange); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 50px;">Training Archives</h2>
+    <div class="archive-grid">
+        <div class="archive-card">
+            <h4>Vision & Corporate Excellence</h4>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/H4IP_lcJyNo" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="archive-card">
+            <h4>Mining Workflow Insights</h4>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="software" style="padding: 80px 8%;">
+    <h2 style="text-align:center; margin-bottom:50px; text-transform: uppercase; letter-spacing: 3px;">2026 Professional Solutions</h2>
+    <div class="archive-grid">
+        <div class="card">
+            <h3 style="color: var(--ci-orange);">DH Auditor v2026</h3>
+            <p>Industry standard for geological database auditing, QA/QC structural validation, and high-quality assay reporting.</p>
+            <a href="dh%20auditor%20setup.exe" class="btn-download" download>Download Setup</a>
+        </div>
+        <div class="card">
+            <h3 style="color: var(--ci-orange);">MRN Network</h3>
+            <p>Collaborative Mineral Resource Network for high-precision 3D modelling and data management.</p>
+            <a href="mrn%20network%20setup.exe" class="btn-download" download>Download Setup</a>
+        </div>
+        <div class="card">
+            <h3 style="color: var(--ci-orange);">Support Our Research</h3>
+            <p>Help fund our R&D in mining automation and advanced software development.</p>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-download" style="background: var(--ci-orange);" target="_blank">Donate via PayPal</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
+    <p>&copy; 2026 Diomine Digital Systems | <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+</body>
+</html>

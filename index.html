@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
         name="description"
-        content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, and Exploration Services."
+        content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, Pit mapping, Modelling and Exploration Services."
     />
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/png" href="diomine logo.png" />
-    <title>Diomine Digital Systems | Global Mining Solutions</title>
+    <title>Diomine Digital Systems | Global Mining Solutions |"With Diomine Mining Become An Easy Game"</title>
 
     <style>
         :root {
@@ -372,6 +372,27 @@
             transform: translateY(-1px);
         }
 
+        /* Training data badge */
+        .badge {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid #444;
+            color: #ddd;
+            background: #232323;
+        }
+
+        .badge.training {
+            border-color: rgba(255, 215, 0, 0.45);
+            color: var(--gold-buffer);
+            background: rgba(255, 215, 0, 0.08);
+        }
+
         footer {
             background: #000;
             padding: 50px 20px;
@@ -469,7 +490,7 @@
             font-weight: 700;
         }
 
-        /* >>> SKIP DONATION BIEN VISIBLE <<< */
+        /* Skip Donation bien visible */
         .donate-modal-actions {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -506,9 +527,9 @@
         }
 
         .skip-btn {
-            background: #2a2a2a;              /* visible */
+            background: #2a2a2a;
             color: #fff;
-            border: 2px solid #bdbdbd;        /* contraste fort */
+            border: 2px solid #bdbdbd;
             box-shadow: 0 6px 18px rgba(255,255,255,0.06);
         }
 
@@ -578,14 +599,13 @@
 
         @media (max-width: 520px) {
             .donate-modal-actions {
-                grid-template-columns: 1fr; /* empilement mobile */
+                grid-template-columns: 1fr;
             }
 
             .donate-now-btn { order: 1; }
-            .skip-btn { order: 2; } /* skip reste visible juste dessous */
+            .skip-btn { order: 2; }
         }
 
-        /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
             .convoi-wrapper,
             .live-label {
@@ -626,7 +646,7 @@
             />
 
             <span class="live-label">
-                🔴 UPCOMING FACEBOOK LIVE MASTERCLASS: DRILLHOLE DATABASE • COLLAR / SURVEY / ASSAY • GRADE INTERVALS • MINERALIZED LENSES
+                🔴 UPCOMING FACEBOOK LIVE MASTERCLASS: QGIS Training: Do you work in mining geology, exploration, or grade control? This session is designed for you. Invite your fellow geologists, students, and mining professionals.
             </span>
 
             <a
@@ -638,7 +658,7 @@
                 Watch Live Videos
             </a>
 
-            <!-- DENOMINATION: EVENT GATE -->
+            <!-- EVENT GATE -->
             <a
                 href="https://web.facebook.com/events/937065112064901/"
                 class="event-btn"
@@ -706,7 +726,7 @@
                 Watch Live Videos
             </a>
 
-            <!-- DENOMINATION: EVENT GATE -->
+            <!-- EVENT GATE -->
             <a
                 class="btn-outline"
                 href="https://web.facebook.com/events/937065112064901/"
@@ -754,7 +774,7 @@
         </div>
     </section>
 
-    <!-- SOFTWARE SOLUTIONS -->
+    <!-- SOFTWARE + TRAINING DATA DOWNLOADS -->
     <section id="software" style="padding: 80px 8%;">
         <h2 style="text-align:center; margin-bottom:50px; text-transform: uppercase; letter-spacing: 3px;">
             2026 Professional Solutions
@@ -766,7 +786,7 @@
                 <p>
                     Industry standard for geological database auditing, QA/QC structural validation, and high-quality assay reporting.
                 </p>
-                <!-- DENOMINATION: DOWNLOAD GATE -->
+                <!-- DOWNLOAD GATE -->
                 <a href="dh%20auditor%20setup.exe" class="btn-download" download data-donation-gate="download">
                     Download Setup
                 </a>
@@ -777,9 +797,28 @@
                 <p>
                     Collaborative Mineral Resource Network for high-precision 3D modelling and data management.
                 </p>
-                <!-- DENOMINATION: DOWNLOAD GATE -->
+                <!-- DOWNLOAD GATE -->
                 <a href="mrn%20network%20setup.exe" class="btn-download" download data-donation-gate="download">
                     Download Setup
+                </a>
+            </div>
+
+            <!-- TRAINING DATA (GOOGLE DRIVE LINK) -->
+            <div class="card">
+                <h3 style="color: var(--ci-orange);">Training Data</h3>
+                <p>
+                    Download the masterclass practice dataset (Collar, Survey, Assay) from Google Drive for hands-on training.
+                </p>
+                <span class="badge training">Google Drive • Collar / Survey / Assay</span>
+                <!-- DOWNLOAD GATE (opens donation modal first, then opens Drive link in new tab) -->
+                <a
+                    href="https://drive.google.com/file/d/1bFvJ-1a-wd3i1AOBFaydimfroB0IL9Ex/view?usp=sharing"
+                    class="btn-download"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-donation-gate="download"
+                >
+                    Download Training Data
                 </a>
             </div>
 
@@ -833,7 +872,6 @@
                         💛 Donate Now
                     </a>
 
-                    <!-- SKIP DONATION VISIBLE -->
                     <button id="skipDonationBtn" class="donate-action-btn skip-btn" type="button">
                         Skip Donation
                     </button>
@@ -870,14 +908,11 @@
             }
 
             let pendingAction = null;
-            let pendingType = "generic";
 
             donateNowLink.href = DONATION_URL;
 
             function setModalContent(type) {
-                pendingType = type || "generic";
-
-                if (pendingType === "event") {
+                if (type === "event") {
                     txtPrimary.innerHTML =
                         'Before opening the event page, you can support our <span class="donate-highlight">training masterclasses and educational mining content</span>.';
                     txtSecondary.textContent =
@@ -887,7 +922,7 @@
                     return;
                 }
 
-                if (pendingType === "download") {
+                if (type === "download") {
                     txtPrimary.innerHTML =
                         'Before downloading, you can support our <span class="donate-highlight">software development, QA/QC tools, and R&D</span>.';
                     txtSecondary.textContent =
@@ -912,7 +947,6 @@
                 overlay.classList.add("active");
                 overlay.setAttribute("aria-hidden", "false");
 
-                // lock scroll
                 document.body.dataset.prevOverflow = document.body.style.overflow || "";
                 document.body.style.overflow = "hidden";
             }
@@ -946,7 +980,6 @@
                 if (!href) return;
 
                 const target = (link.getAttribute("target") || "").toLowerCase();
-
                 if (target === "_blank") {
                     window.open(href, "_blank", "noopener,noreferrer");
                 } else {
@@ -959,33 +992,37 @@
                 const href = link.getAttribute("href");
                 if (!href) return;
 
-                // temporary anchor (bypass delegated interception)
-                const temp = document.createElement("a");
-                temp.href = href;
-
+                // If it's a normal downloadable file on same site:
                 if (link.hasAttribute("download")) {
+                    const temp = document.createElement("a");
+                    temp.href = href;
+
                     const dlValue = link.getAttribute("download");
                     if (dlValue === "" || dlValue === null) {
                         temp.setAttribute("download", "");
                     } else {
                         temp.setAttribute("download", dlValue);
                     }
+
+                    if (link.target) temp.target = link.target;
+                    temp.rel = "noopener noreferrer";
+                    temp.dataset.donationBypass = "1";
+                    temp.style.display = "none";
+
+                    document.body.appendChild(temp);
+                    temp.click();
+
+                    setTimeout(function () {
+                        if (temp.parentNode) temp.parentNode.removeChild(temp);
+                    }, 0);
+
+                    return;
                 }
 
-                if (link.target) temp.target = link.target;
-                temp.rel = "noopener noreferrer";
-                temp.dataset.donationBypass = "1";
-                temp.style.display = "none";
-
-                document.body.appendChild(temp);
-                temp.click();
-
-                setTimeout(function () {
-                    if (temp.parentNode) temp.parentNode.removeChild(temp);
-                }, 0);
+                // Otherwise open as link (Google Drive, etc.)
+                openLink(link);
             }
 
-            // Delegated click interception for event/download links
             document.addEventListener("click", function (e) {
                 const link = e.target.closest("a[href]");
                 if (!link) return;
@@ -1019,18 +1056,15 @@
                 }
             });
 
-            // Controls
             skipBtn.addEventListener("click", proceedAfterSkip);
             closeBtn.addEventListener("click", proceedAfterSkip);
 
-            // click outside = skip
             overlay.addEventListener("click", function (e) {
                 if (e.target === overlay) {
                     proceedAfterSkip();
                 }
             });
 
-            // ESC = skip
             document.addEventListener("keydown", function (e) {
                 if (e.key === "Escape" && overlay.classList.contains("active")) {
                     proceedAfterSkip();

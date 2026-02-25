@@ -18,6 +18,8 @@
             --dark-bg: #121212;
             --card-bg: #1e1e1e;
             --ivory-white: #FFFFFF;
+            --fb-blue: #1877F2;
+            --danger-red: #ff2d2d;
         }
 
         body { 
@@ -44,7 +46,7 @@
         .convoi-wrapper {
             display: inline-block;
             white-space: nowrap;
-            animation: move-convoi 30s linear infinite;
+            animation: move-convoi 34s linear infinite;
         }
 
         @keyframes move-convoi {
@@ -62,36 +64,60 @@
 
         .live-label {
             display: inline-block;
-            background: rgba(255, 0, 0, 0.2);
-            padding: 12px 30px;
-            border: 2px dashed #ff0000;
+            background: rgba(255, 0, 0, 0.12);
+            padding: 12px 24px;
+            border: 2px dashed var(--danger-red);
             border-radius: 8px;
             color: var(--gold-buffer);
             font-weight: 900;
-            font-size: 1.2rem;
-            animation: blink-text 0.6s infinite alternate;
+            font-size: 1.05rem;
+            animation: blink-text 0.8s infinite alternate;
             vertical-align: middle;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-right: 6px;
         }
 
         @keyframes blink-text {
-            from { opacity: 1; transform: scale(1); filter: brightness(1.2); }
-            to { opacity: 0.7; transform: scale(0.98); color: #fff; }
+            from { opacity: 1; transform: scale(1); filter: brightness(1.15); }
+            to { opacity: 0.82; transform: scale(0.99); color: #fff; }
         }
 
         .fb-live-btn {
-            background: #1877F2;
+            background: var(--fb-blue);
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 10px 18px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
             border: 2px solid #fff;
-            margin: 0 20px;
-            font-size: 0.9rem;
+            margin: 0 10px;
+            font-size: 0.85rem;
             text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(24, 119, 242, 0.5);
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.45);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .event-btn {
+            background: transparent;
+            color: var(--gold-buffer);
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid var(--gold-buffer);
+            margin: 0 10px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .fb-live-btn:hover,
+        .event-btn:hover {
+            transform: translateY(-1px);
+            transition: 0.2s ease;
         }
 
         /* --- HEADER & NAVIGATION --- */
@@ -120,6 +146,35 @@
         }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+        .featured-cta {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .featured-cta a {
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 12px 18px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--fb-blue);
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gold-buffer);
+            border: 2px solid var(--gold-buffer);
+        }
+
         /* --- ARCHIVES & GRIDS --- */
         .archive-section { background: #0a0a0a; padding: 60px 8%; border-top: 1px solid #222; }
         .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
@@ -134,6 +189,12 @@
         
         footer { background: #000; padding: 50px 20px; text-align: center; border-top: 2px solid #222; margin-top: 60px; color: #888; }
         footer a { color: var(--ci-orange); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            nav a { margin: 0 10px; font-size: 0.8rem; }
+            .live-label { font-size: 0.9rem; padding: 10px 16px; }
+            .fb-live-btn, .event-btn { font-size: 0.75rem; padding: 8px 12px; }
+        }
     </style>
 </head>
 <body>
@@ -146,16 +207,17 @@
     </div>
 </header>
 
-<div class="mining-convoi-container">
+<div class="mining-convoi-container" aria-label="Upcoming training announcement">
     <div class="convoi-wrapper">
         <img src="excavatrice.png" alt="Excavator" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318331.png'">
         
-        <span class="live-label">🔴 UPCOMING FB LIVE: QGIS MASTERCLASS - DISPLAY ASSAY DATA ON DRILLHOLES</span>
-        <a href="https://www.facebook.com/profile.php?id=61556096531940" class="fb-live-btn" target="_blank">FOLLOW FOR LIVE UPDATE</a>
+        <span class="live-label">🔴 UPCOMING FACEBOOK LIVE MASTERCLASS: DRILLHOLE DATABASE • COLLAR / SURVEY / ASSAY • GRADE INTERVALS • MINERALIZED LENSES</span>
+        <a href="https://www.facebook.com/diominedigitalsystems/live_videos/" class="fb-live-btn" target="_blank" rel="noopener noreferrer">Watch Live Videos</a>
+        <a href="https://web.facebook.com/events/937065112064901/" class="event-btn" target="_blank" rel="noopener noreferrer">View Event & Register</a>
 
         <img src="camion-mine.png" alt="Mining Truck" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318282.png'">
         
-        <span class="live-label">🔴 MASTERCLASS: PROFESSIONAL MINING WORKFLOWS</span>
+        <span class="live-label">🎓 PROFESSIONAL TRAINING: BUILD DATABASES, VISUALIZE DRILLHOLES, DEFINE GRADE INTERVALS & INTERPRET MINERALIZED LENSES</span>
 
         <img src="bulldozer.png" alt="Bulldozer" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318311.png'">
     </div>
@@ -169,12 +231,19 @@
 </nav>
 
 <section id="featured" class="video-section">
-    <span class="section-tag">New Release</span>
-    <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">LATEST MASTERCLASS</h2>
+    <span class="section-tag">Featured Training</span>
+    <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">UPCOMING FACEBOOK LIVE MASTERCLASS</h2>
     <div class="video-wrapper">
         <iframe src="https://www.youtube.com/embed/KqYCZZY-AkY?si=O1OT1rFa7m-HmnRs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    <p style="margin-top:20px; font-size: 1.2rem; color: #ccc;">Technical Tutorial: Master Drillhole Data Visualization using QGIS for Mining Exploration.</p>
+    <p style="margin-top:20px; font-size: 1.1rem; color: #ccc; max-width: 980px; margin-left: auto; margin-right: auto;">
+        Join our professional Facebook Live masterclass and learn how to build a drillhole database, import Collar / Survey / Assay data, display and label drillholes, define grade intervals, and outline mineralized lenses using practical mining workflows.
+    </p>
+
+    <div class="featured-cta">
+        <a class="btn-primary" href="https://www.facebook.com/diominedigitalsystems/live_videos/" target="_blank" rel="noopener noreferrer">Watch Live Videos</a>
+        <a class="btn-outline" href="https://web.facebook.com/events/937065112064901/" target="_blank" rel="noopener noreferrer">Open Event Page</a>
+    </div>
 </section>
 
 <section id="archives" class="archive-section">
@@ -183,13 +252,13 @@
         <div class="archive-card">
             <h4>Vision & Corporate Excellence</h4>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/H4IP_lcJyNo" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/H4IP_lcJyNo" title="Vision and Corporate Excellence" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         <div class="archive-card">
             <h4>Mining Workflow Insights</h4>
             <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" title="Mining Workflow Insights" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -211,7 +280,7 @@
         <div class="card">
             <h3 style="color: var(--ci-orange);">Support Our Research</h3>
             <p>Help fund our R&D in mining automation and advanced software development.</p>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-download" style="background: var(--ci-orange);" target="_blank">Donate via PayPal</a>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-download" style="background: var(--ci-orange);" target="_blank" rel="noopener noreferrer">Donate via PayPal</a>
         </div>
     </div>
 </section>

@@ -782,9 +782,9 @@
 
         <div class="archive-grid">
             <div class="card">
-                <h3 style="color: var(--ci-orange);">DH Auditor v2026</h3>
+                <h3 style="color: var(--ci-orange);">Diomine DH Auditor 2026.1.2</h3>
                 <p>
-                    Industry standard for geological database auditing, QA/QC structural validation, and high-quality assay reporting.
+                    Industry standard for geological database auditing, QA/QC structural validation,resources statistical analysis, stereographic analysis and high-quality assay reporting.
                 </p>
                 <!-- DOWNLOAD GATE -->
                 <a href="dh%20auditor%20setup.exe" class="btn-download" download data-donation-gate="download">
@@ -793,7 +793,7 @@
             </div>
 
             <div class="card">
-                <h3 style="color: var(--ci-orange);">MRN Network</h3>
+                <h3 style="color: var(--ci-orange);">Diomine MRN 2026.1</h3>
                 <p>
                     Collaborative Mineral Resource Network for high-precision 3D modelling and data management.
                 </p>
@@ -803,20 +803,25 @@
                 </a>
             </div>
 
-            <!-- TRAINING DATA (GOOGLE DRIVE LINK) -->
+            <!-- TRAINING DATA (NO SOURCE MENTION) -->
             <div class="card">
                 <h3 style="color: var(--ci-orange);">Training Data</h3>
                 <p>
-                    Download the masterclass practice dataset (Collar, Survey, Assay) from Google Drive for hands-on training.
+                    Download the masterclass practice dataset (Collar, Survey, Assay) for hands-on training.
                 </p>
-                <span class="badge training">Google Drive • Collar / Survey / Assay</span>
-                <!-- DOWNLOAD GATE (opens donation modal first, then opens Drive link in new tab) -->
+                <span class="badge training">Training Package • Collar / Survey / Assay</span>
+
+                <!-- IMPORTANT:
+                     Visitors will NOT see the source name in UI.
+                     However, the actual URL still points to Drive and can be seen if they copy/inspect link.
+                     For full hiding, you need server-side proxy (explained below). -->
                 <a
                     href="https://drive.google.com/file/d/1bFvJ-1a-wd3i1AOBFaydimfroB0IL9Ex/view?usp=sharing"
                     class="btn-download"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-donation-gate="download"
+                    aria-label="Download Training Data"
                 >
                     Download Training Data
                 </a>
@@ -891,13 +896,11 @@
 
             const DONATION_URL = "https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4";
 
-            // Modal elements
             const overlay = document.getElementById("donateModalOverlay");
             const closeBtn = document.getElementById("donateModalClose");
             const skipBtn = document.getElementById("skipDonationBtn");
             const donateNowLink = document.getElementById("donateNowLink");
 
-            // Dynamic text elements
             const txtPrimary = document.getElementById("donateModalTextPrimary");
             const txtSecondary = document.getElementById("donateModalTextSecondary");
             const txtNote = document.getElementById("donateModalNote");
@@ -966,11 +969,7 @@
                 closeModal();
 
                 if (typeof action === "function") {
-                    try {
-                        action();
-                    } catch (err) {
-                        console.error("Post-skip action failed:", err);
-                    }
+                    try { action(); } catch (err) { console.error("Post-skip action failed:", err); }
                 }
             }
 
@@ -987,22 +986,19 @@
                 }
             }
 
-            function triggerDownload(link) {
+            function triggerDownloadOrOpen(link) {
                 if (!link) return;
                 const href = link.getAttribute("href");
                 if (!href) return;
 
-                // If it's a normal downloadable file on same site:
+                // Direct download file hosted on your site
                 if (link.hasAttribute("download")) {
                     const temp = document.createElement("a");
                     temp.href = href;
 
                     const dlValue = link.getAttribute("download");
-                    if (dlValue === "" || dlValue === null) {
-                        temp.setAttribute("download", "");
-                    } else {
-                        temp.setAttribute("download", dlValue);
-                    }
+                    if (dlValue === "" || dlValue === null) temp.setAttribute("download", "");
+                    else temp.setAttribute("download", dlValue);
 
                     if (link.target) temp.target = link.target;
                     temp.rel = "noopener noreferrer";
@@ -1019,7 +1015,7 @@
                     return;
                 }
 
-                // Otherwise open as link (Google Drive, etc.)
+                // External file (still a simple "download" for the visitor)
                 openLink(link);
             }
 
@@ -1030,8 +1026,6 @@
                 if (link.dataset && link.dataset.donationBypass === "1") return;
 
                 const href = link.getAttribute("href") || "";
-
-                // never intercept direct PayPal donation link
                 if (href.includes("paypal.com/donate")) return;
 
                 const gateType = (link.dataset && link.dataset.donationGate) ? link.dataset.donationGate : "";
@@ -1044,7 +1038,7 @@
 
                 if (isDownloadGate) {
                     openModal(function () {
-                        triggerDownload(link);
+                        triggerDownloadOrOpen(link);
                     }, "download");
                     return;
                 }
@@ -1060,17 +1054,20 @@
             closeBtn.addEventListener("click", proceedAfterSkip);
 
             overlay.addEventListener("click", function (e) {
-                if (e.target === overlay) {
-                    proceedAfterSkip();
-                }
+                if (e.target === overlay) proceedAfterSkip();
             });
 
             document.addEventListener("keydown", function (e) {
-                if (e.key === "Escape" && overlay.classList.contains("active")) {
-                    proceedAfterSkip();
-                }
+                if (e.key === "Escape" && overlay.classList.contains("active")) proceedAfterSkip();
             });
         })();
     </script>
+
+    <!-- NOTE (for you, not displayed):
+         With pure HTML/JS, you cannot fully hide that the file is on Google Drive from advanced users
+         (they can inspect the link or see the final URL after redirect).
+         If you want TRUE hidden source, you must host the file on your server
+         OR create a server-side proxy endpoint like: /download/training-data.zip
+         that streams the file and masks the origin. -->
 </body>
 </html>

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, and Exploration Services.">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+        name="description"
+        content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, and Exploration Services."
+    />
+
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="diomine logo.png">
+    <link rel="icon" type="image/png" href="diomine logo.png" />
     <title>Diomine Digital Systems | Global Mining Solutions</title>
-    
+
     <style>
         :root {
             --ci-orange: #FF8200;
@@ -22,16 +26,96 @@
             --danger-red: #ff2d2d;
         }
 
-        body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            margin: 0; padding: 0; 
-            background-color: var(--dark-bg); 
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--dark-bg);
             color: white;
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* --- MINING CONVOY ANIMATION (LIVE FB ANNOUNCEMENT) --- */
+        a, button {
+            transition: transform 0.18s ease, filter 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+        }
+
+        /* ==============================
+           TOP RIGHT DONATION BUTTON
+        ============================== */
+        .top-donate-fixed {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--ci-orange), #ffb347);
+            color: #000;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 2px solid var(--gold-buffer);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            font-size: 0.8rem;
+        }
+
+        .top-donate-fixed:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+        }
+
+        /* ==============================
+           HEADER
+        ============================== */
+        header {
+            height: 60vh;
+            min-height: 320px;
+            background:
+                linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.72)),
+                url('mine-background.png') no-repeat center center / cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .header-content {
+            max-width: 1000px;
+        }
+
+        .main-logo {
+            width: 130px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            color: #000;
+            font-weight: 900;
+            text-shadow: 0 0 2px var(--gold-buffer), 1.5px 1.5px 0 var(--gold-buffer);
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 10px;
+            color: #f3f3f3;
+        }
+
+        /* ==============================
+           MINING CONVOY ANIMATION (LIVE FB ANNOUNCEMENT)
+        ============================== */
         .mining-convoi-container {
             background: #000;
             border-top: 3px solid var(--ci-orange);
@@ -47,6 +131,7 @@
             display: inline-block;
             white-space: nowrap;
             animation: move-convoi 34s linear infinite;
+            will-change: transform;
         }
 
         @keyframes move-convoi {
@@ -55,7 +140,7 @@
         }
 
         .real-engine {
-            height: 65px; 
+            height: 65px;
             width: auto;
             vertical-align: middle;
             margin: 0 20px;
@@ -83,68 +168,107 @@
             to { opacity: 0.82; transform: scale(0.99); color: #fff; }
         }
 
-        .fb-live-btn {
-            background: var(--fb-blue);
-            color: white;
+        .fb-live-btn,
+        .event-btn {
             padding: 10px 18px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            border: 2px solid #fff;
             margin: 0 10px;
             font-size: 0.85rem;
             text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(24, 119, 242, 0.45);
             display: inline-block;
             vertical-align: middle;
+            letter-spacing: 0.4px;
+        }
+
+        .fb-live-btn {
+            background: var(--fb-blue);
+            color: white;
+            border: 2px solid #fff;
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.45);
         }
 
         .event-btn {
             background: transparent;
             color: var(--gold-buffer);
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
             border: 2px solid var(--gold-buffer);
-            margin: 0 10px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            display: inline-block;
-            vertical-align: middle;
         }
 
         .fb-live-btn:hover,
         .event-btn:hover {
             transform: translateY(-1px);
-            transition: 0.2s ease;
         }
 
-        /* --- HEADER & NAVIGATION --- */
-        header {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') no-repeat center center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center;
+        /* ==============================
+           NAVIGATION
+        ============================== */
+        nav {
+            background: #000;
+            padding: 1.2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--ci-orange);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .main-logo { width: 130px; margin-bottom: 20px; }
-        h1 { font-size: clamp(2rem, 8vw, 4rem); color: #000; font-weight: 900; text-shadow: 0 0 2px var(--gold-buffer), 1.5px 1.5px 0 var(--gold-buffer); text-transform: uppercase; margin: 0; }
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
 
-        nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; }
-        nav a { margin: 0 20px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        nav a:hover { color: var(--ci-orange); }
+        nav a:hover {
+            color: var(--ci-orange);
+        }
 
-        /* --- VIDEO SECTIONS --- */
-        .video-section { padding: 60px 10%; text-align: center; }
-        .section-tag { color: var(--ci-orange); font-weight: bold; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 10px; }
-        
-        .video-wrapper { 
-            position: relative; padding-bottom: 56.25%; height: 0; 
-            border: 3px solid var(--ci-orange); border-radius: 15px; 
-            overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.6); 
+        /* ==============================
+           SECTIONS
+        ============================== */
+        .video-section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .section-tag {
+            color: var(--ci-orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border: 3px solid var(--ci-orange);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.6);
             background: #000;
         }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+
+        .featured-description {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 980px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .featured-cta {
             margin-top: 20px;
@@ -175,120 +299,744 @@
             border: 2px solid var(--gold-buffer);
         }
 
-        /* --- ARCHIVES & GRIDS --- */
-        .archive-section { background: #0a0a0a; padding: 60px 8%; border-top: 1px solid #222; }
-        .archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        
-        .archive-card { background: #1a1a1a; padding: 20px; border-radius: 12px; border-bottom: 4px solid var(--ci-green); transition: 0.3s; }
-        .archive-card h4 { margin-top: 0; color: var(--ivory-white); text-transform: uppercase; }
+        .btn-primary:hover,
+        .btn-outline:hover {
+            transform: translateY(-1px);
+        }
 
-        .card { background: var(--card-bg); padding: 35px; border-radius: 20px; text-align: center; transition: 0.4s; border: 1px solid #333; }
-        .card:hover { border-color: var(--ci-orange); transform: translateY(-8px); box-shadow: 0 10px 25px rgba(255,130,0,0.1); }
+        /* ==============================
+           ARCHIVES & GRIDS
+        ============================== */
+        .archive-section {
+            background: #0a0a0a;
+            padding: 60px 8%;
+            border-top: 1px solid #222;
+        }
 
-        .btn-download { background: var(--ci-green); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 15px; text-transform: uppercase; }
-        
-        footer { background: #000; padding: 50px 20px; text-align: center; border-top: 2px solid #222; margin-top: 60px; color: #888; }
-        footer a { color: var(--ci-orange); text-decoration: none; }
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
 
+        .archive-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--ci-green);
+            transition: 0.3s;
+        }
+
+        .archive-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+        }
+
+        .archive-card h4 {
+            margin-top: 0;
+            color: var(--ivory-white);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            border-color: var(--ci-orange);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255,130,0,0.1);
+        }
+
+        .btn-download {
+            background: var(--ci-green);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            text-transform: uppercase;
+            border: 2px solid transparent;
+        }
+
+        .btn-download:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+
+        footer {
+            background: #000;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 2px solid #222;
+            margin-top: 60px;
+            color: #888;
+        }
+
+        footer a {
+            color: var(--ci-orange);
+            text-decoration: none;
+        }
+
+        footer a:hover { text-decoration: underline; }
+
+        /* ==============================
+           DONATION INTERSTITIAL MODAL
+        ============================== */
+        .donate-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.82);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .donate-modal-overlay.active {
+            display: flex;
+        }
+
+        .donate-modal {
+            width: min(560px, 95vw);
+            background: #111;
+            border: 2px solid var(--ci-orange);
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+            overflow: hidden;
+            animation: modal-pop 0.18s ease-out;
+        }
+
+        @keyframes modal-pop {
+            from { opacity: 0; transform: translateY(10px) scale(0.98); }
+            to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .donate-modal-header {
+            background: linear-gradient(90deg, #000, #1b1b1b);
+            border-bottom: 1px solid #2a2a2a;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .donate-modal-header h3 {
+            margin: 0;
+            color: var(--gold-buffer);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .donate-close {
+            background: transparent;
+            border: 1px solid #444;
+            color: #ddd;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        .donate-close:hover {
+            border-color: #777;
+            color: #fff;
+        }
+
+        .donate-modal-body {
+            padding: 18px;
+            color: #ddd;
+        }
+
+        .donate-modal-body p {
+            margin: 0 0 12px 0;
+        }
+
+        .donate-highlight {
+            color: var(--gold-buffer);
+            font-weight: 700;
+        }
+
+        /* >>> SKIP DONATION BIEN VISIBLE <<< */
+        .donate-modal-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .donate-action-btn {
+            text-decoration: none;
+            cursor: pointer;
+            padding: 13px 14px;
+            border-radius: 8px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-size: 0.82rem;
+            text-align: center;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .donate-now-btn {
+            background: var(--ci-orange);
+            color: #000;
+            border: 2px solid var(--gold-buffer);
+            box-shadow: 0 6px 18px rgba(255,130,0,0.18);
+        }
+
+        .donate-now-btn:hover {
+            filter: brightness(1.05);
+            transform: translateY(-1px);
+        }
+
+        .skip-btn {
+            background: #2a2a2a;              /* visible */
+            color: #fff;
+            border: 2px solid #bdbdbd;        /* contraste fort */
+            box-shadow: 0 6px 18px rgba(255,255,255,0.06);
+        }
+
+        .skip-btn:hover {
+            background: #3a3a3a;
+            border-color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .skip-btn:focus,
+        .donate-now-btn:focus,
+        .donate-close:focus {
+            outline: 3px solid rgba(255, 215, 0, 0.45);
+            outline-offset: 2px;
+        }
+
+        .donate-modal-note {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
         @media (max-width: 768px) {
-            nav a { margin: 0 10px; font-size: 0.8rem; }
-            .live-label { font-size: 0.9rem; padding: 10px 16px; }
-            .fb-live-btn, .event-btn { font-size: 0.75rem; padding: 8px 12px; }
+            .top-donate-fixed {
+                top: 10px;
+                right: 10px;
+                font-size: 0.72rem;
+                padding: 8px 10px;
+            }
+
+            nav {
+                padding: 1rem 0.6rem;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 0.75rem;
+                letter-spacing: 0.5px;
+            }
+
+            .live-label {
+                font-size: 0.9rem;
+                padding: 10px 16px;
+            }
+
+            .fb-live-btn, .event-btn {
+                font-size: 0.75rem;
+                padding: 8px 12px;
+            }
+
+            .real-engine {
+                height: 52px;
+                margin: 0 14px;
+            }
+
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .donate-modal-actions {
+                grid-template-columns: 1fr; /* empilement mobile */
+            }
+
+            .donate-now-btn { order: 1; }
+            .skip-btn { order: 2; } /* skip reste visible juste dessous */
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .convoi-wrapper,
+            .live-label {
+                animation: none !important;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-content">
-        <img src="diomine logo.png" alt="Diomine Logo" class="main-logo">
-        <h1>DIOMINE DIGITAL SYSTEMS</h1>
-        <p style="font-size: 1.4rem; font-weight: 300;">Global Excellence in Mining Software Engineering</p>
+    <!-- FIXED DONATION BUTTON (TOP RIGHT) -->
+    <a
+        href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4"
+        class="top-donate-fixed"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Support Diomine via PayPal donation"
+    >
+        💛 Donate
+    </a>
+
+    <header>
+        <div class="header-content">
+            <img src="diomine logo.png" alt="Diomine Logo" class="main-logo" />
+            <h1>DIOMINE DIGITAL SYSTEMS</h1>
+            <p class="hero-subtitle">Global Excellence in Mining Software Engineering</p>
+        </div>
+    </header>
+
+    <!-- ANNOUNCEMENT STRIP -->
+    <div class="mining-convoi-container" aria-label="Upcoming training announcement">
+        <div class="convoi-wrapper">
+            <img
+                src="excavatrice.png"
+                alt="Excavator"
+                class="real-engine"
+                onerror="this.onerror=null;this.src='https://cdn-icons-png.flaticon.com/512/2318/2318331.png';"
+            />
+
+            <span class="live-label">
+                🔴 UPCOMING FACEBOOK LIVE MASTERCLASS: DRILLHOLE DATABASE • COLLAR / SURVEY / ASSAY • GRADE INTERVALS • MINERALIZED LENSES
+            </span>
+
+            <a
+                href="https://www.facebook.com/diominedigitalsystems/live_videos/"
+                class="fb-live-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Watch Live Videos
+            </a>
+
+            <!-- DENOMINATION: EVENT GATE -->
+            <a
+                href="https://web.facebook.com/events/937065112064901/"
+                class="event-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-donation-gate="event"
+            >
+                View Event & Register
+            </a>
+
+            <img
+                src="camion-mine.png"
+                alt="Mining Truck"
+                class="real-engine"
+                onerror="this.onerror=null;this.src='https://cdn-icons-png.flaticon.com/512/2318/2318282.png';"
+            />
+
+            <span class="live-label">
+                🎓 PROFESSIONAL TRAINING: BUILD DATABASES, VISUALIZE DRILLHOLES, DEFINE GRADE INTERVALS & INTERPRET MINERALIZED LENSES
+            </span>
+
+            <img
+                src="bulldozer.png"
+                alt="Bulldozer"
+                class="real-engine"
+                onerror="this.onerror=null;this.src='https://cdn-icons-png.flaticon.com/512/2318/2318311.png';"
+            />
+        </div>
     </div>
-</header>
 
-<div class="mining-convoi-container" aria-label="Upcoming training announcement">
-    <div class="convoi-wrapper">
-        <img src="excavatrice.png" alt="Excavator" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318331.png'">
-        
-        <span class="live-label">🔴 UPCOMING FACEBOOK LIVE MASTERCLASS: DRILLHOLE DATABASE • COLLAR / SURVEY / ASSAY • GRADE INTERVALS • MINERALIZED LENSES</span>
-        <a href="https://www.facebook.com/diominedigitalsystems/live_videos/" class="fb-live-btn" target="_blank" rel="noopener noreferrer">Watch Live Videos</a>
-        <a href="https://web.facebook.com/events/937065112064901/" class="event-btn" target="_blank" rel="noopener noreferrer">View Event & Register</a>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#featured">Latest Training</a>
+        <a href="#archives">Video Archives</a>
+        <a href="#software">Software Solutions</a>
+    </nav>
 
-        <img src="camion-mine.png" alt="Mining Truck" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318282.png'">
-        
-        <span class="live-label">🎓 PROFESSIONAL TRAINING: BUILD DATABASES, VISUALIZE DRILLHOLES, DEFINE GRADE INTERVALS & INTERPRET MINERALIZED LENSES</span>
+    <!-- FEATURED MASTERCLASS -->
+    <section id="featured" class="video-section">
+        <span class="section-tag">Featured Training</span>
+        <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">UPCOMING FACEBOOK LIVE MASTERCLASS</h2>
 
-        <img src="bulldozer.png" alt="Bulldozer" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318311.png'">
-    </div>
-</div>
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/KqYCZZY-AkY?si=O1OT1rFa7m-HmnRs"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+            ></iframe>
+        </div>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#featured">Latest Training</a>
-    <a href="#archives">Video Archives</a>
-    <a href="#software">Software Solutions</a>
-</nav>
+        <p class="featured-description">
+            Join our professional Facebook Live masterclass and learn how to build a drillhole database, import Collar / Survey / Assay data, display and label drillholes, define grade intervals, and outline mineralized lenses using practical mining workflows.
+        </p>
 
-<section id="featured" class="video-section">
-    <span class="section-tag">Featured Training</span>
-    <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">UPCOMING FACEBOOK LIVE MASTERCLASS</h2>
-    <div class="video-wrapper">
-        <iframe src="https://www.youtube.com/embed/KqYCZZY-AkY?si=O1OT1rFa7m-HmnRs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </div>
-    <p style="margin-top:20px; font-size: 1.1rem; color: #ccc; max-width: 980px; margin-left: auto; margin-right: auto;">
-        Join our professional Facebook Live masterclass and learn how to build a drillhole database, import Collar / Survey / Assay data, display and label drillholes, define grade intervals, and outline mineralized lenses using practical mining workflows.
-    </p>
+        <div class="featured-cta">
+            <a
+                class="btn-primary"
+                href="https://www.facebook.com/diominedigitalsystems/live_videos/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Watch Live Videos
+            </a>
 
-    <div class="featured-cta">
-        <a class="btn-primary" href="https://www.facebook.com/diominedigitalsystems/live_videos/" target="_blank" rel="noopener noreferrer">Watch Live Videos</a>
-        <a class="btn-outline" href="https://web.facebook.com/events/937065112064901/" target="_blank" rel="noopener noreferrer">Open Event Page</a>
-    </div>
-</section>
+            <!-- DENOMINATION: EVENT GATE -->
+            <a
+                class="btn-outline"
+                href="https://web.facebook.com/events/937065112064901/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-donation-gate="event"
+            >
+                Open Event Page
+            </a>
+        </div>
+    </section>
 
-<section id="archives" class="archive-section">
-    <h2 style="text-align:center; color:var(--ci-orange); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 50px;">Training Archives</h2>
-    <div class="archive-grid">
-        <div class="archive-card">
-            <h4>Vision & Corporate Excellence</h4>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/H4IP_lcJyNo" title="Vision and Corporate Excellence" frameborder="0" allowfullscreen></iframe>
+    <!-- TRAINING ARCHIVES -->
+    <section id="archives" class="archive-section">
+        <h2 style="text-align:center; color:var(--ci-orange); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 50px;">
+            Training Archives
+        </h2>
+
+        <div class="archive-grid">
+            <div class="archive-card">
+                <h4>Vision & Corporate Excellence</h4>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/H4IP_lcJyNo"
+                        title="Vision and Corporate Excellence"
+                        frameborder="0"
+                        allowfullscreen
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </div>
+
+            <div class="archive-card">
+                <h4>Mining Workflow Insights</h4>
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/7JqM3gzyHeA"
+                        title="Mining Workflow Insights"
+                        frameborder="0"
+                        allowfullscreen
+                        loading="lazy"
+                    ></iframe>
+                </div>
             </div>
         </div>
-        <div class="archive-card">
-            <h4>Mining Workflow Insights</h4>
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" title="Mining Workflow Insights" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- SOFTWARE SOLUTIONS -->
+    <section id="software" style="padding: 80px 8%;">
+        <h2 style="text-align:center; margin-bottom:50px; text-transform: uppercase; letter-spacing: 3px;">
+            2026 Professional Solutions
+        </h2>
+
+        <div class="archive-grid">
+            <div class="card">
+                <h3 style="color: var(--ci-orange);">DH Auditor v2026</h3>
+                <p>
+                    Industry standard for geological database auditing, QA/QC structural validation, and high-quality assay reporting.
+                </p>
+                <!-- DENOMINATION: DOWNLOAD GATE -->
+                <a href="dh%20auditor%20setup.exe" class="btn-download" download data-donation-gate="download">
+                    Download Setup
+                </a>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--ci-orange);">MRN Network</h3>
+                <p>
+                    Collaborative Mineral Resource Network for high-precision 3D modelling and data management.
+                </p>
+                <!-- DENOMINATION: DOWNLOAD GATE -->
+                <a href="mrn%20network%20setup.exe" class="btn-download" download data-donation-gate="download">
+                    Download Setup
+                </a>
+            </div>
+
+            <div class="card">
+                <h3 style="color: var(--ci-orange);">Support Our Research</h3>
+                <p>
+                    Help fund our R&amp;D in mining automation and advanced software development.
+                </p>
+                <a
+                    href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4"
+                    class="btn-download"
+                    style="background: var(--ci-orange);"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Donate via PayPal
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
+        <p>&copy; 2026 Diomine Digital Systems | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <!-- DONATION INTERSTITIAL MODAL -->
+    <div id="donateModalOverlay" class="donate-modal-overlay" aria-hidden="true">
+        <div class="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donateModalTitle">
+            <div class="donate-modal-header">
+                <h3 id="donateModalTitle">Support Diomine Digital Systems</h3>
+                <button class="donate-close" id="donateModalClose" aria-label="Close donation prompt">✕</button>
+            </div>
+
+            <div class="donate-modal-body">
+                <p id="donateModalTextPrimary">
+                    Before continuing, you can support our <span class="donate-highlight">mining software R&amp;D, training content, and educational masterclasses</span>.
+                </p>
+                <p id="donateModalTextSecondary">
+                    Your donation helps us build better tools, tutorials, and professional solutions for the mining community.
+                </p>
+
+                <div class="donate-modal-actions">
+                    <a
+                        id="donateNowLink"
+                        class="donate-action-btn donate-now-btn"
+                        href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        💛 Donate Now
+                    </a>
+
+                    <!-- SKIP DONATION VISIBLE -->
+                    <button id="skipDonationBtn" class="donate-action-btn skip-btn" type="button">
+                        Skip Donation
+                    </button>
+                </div>
+
+                <div id="donateModalNote" class="donate-modal-note">
+                    You can skip and continue to the event page or download.
+                </div>
             </div>
         </div>
     </div>
-</section>
 
-<section id="software" style="padding: 80px 8%;">
-    <h2 style="text-align:center; margin-bottom:50px; text-transform: uppercase; letter-spacing: 3px;">2026 Professional Solutions</h2>
-    <div class="archive-grid">
-        <div class="card">
-            <h3 style="color: var(--ci-orange);">DH Auditor v2026</h3>
-            <p>Industry standard for geological database auditing, QA/QC structural validation, and high-quality assay reporting.</p>
-            <a href="dh%20auditor%20setup.exe" class="btn-download" download>Download Setup</a>
-        </div>
-        <div class="card">
-            <h3 style="color: var(--ci-orange);">MRN Network</h3>
-            <p>Collaborative Mineral Resource Network for high-precision 3D modelling and data management.</p>
-            <a href="mrn%20network%20setup.exe" class="btn-download" download>Download Setup</a>
-        </div>
-        <div class="card">
-            <h3 style="color: var(--ci-orange);">Support Our Research</h3>
-            <p>Help fund our R&D in mining automation and advanced software development.</p>
-            <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-download" style="background: var(--ci-orange);" target="_blank" rel="noopener noreferrer">Donate via PayPal</a>
-        </div>
-    </div>
-</section>
+    <!-- ROBUST DONATION GATE SCRIPT -->
+    <script>
+        (function () {
+            "use strict";
 
-<footer>
-    <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
-    <p>&copy; 2026 Diomine Digital Systems | <a href="privacy.html">Privacy Policy</a></p>
-</footer>
+            const DONATION_URL = "https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4";
 
+            // Modal elements
+            const overlay = document.getElementById("donateModalOverlay");
+            const closeBtn = document.getElementById("donateModalClose");
+            const skipBtn = document.getElementById("skipDonationBtn");
+            const donateNowLink = document.getElementById("donateNowLink");
+
+            // Dynamic text elements
+            const txtPrimary = document.getElementById("donateModalTextPrimary");
+            const txtSecondary = document.getElementById("donateModalTextSecondary");
+            const txtNote = document.getElementById("donateModalNote");
+
+            if (!overlay || !closeBtn || !skipBtn || !donateNowLink) {
+                console.warn("Donation modal elements not found. Donation gate disabled.");
+                return;
+            }
+
+            let pendingAction = null;
+            let pendingType = "generic";
+
+            donateNowLink.href = DONATION_URL;
+
+            function setModalContent(type) {
+                pendingType = type || "generic";
+
+                if (pendingType === "event") {
+                    txtPrimary.innerHTML =
+                        'Before opening the event page, you can support our <span class="donate-highlight">training masterclasses and educational mining content</span>.';
+                    txtSecondary.textContent =
+                        "Your donation helps us continue producing practical and professional learning sessions for the mining community.";
+                    txtNote.textContent =
+                        "You can donate now or skip and continue to the Facebook event page.";
+                    return;
+                }
+
+                if (pendingType === "download") {
+                    txtPrimary.innerHTML =
+                        'Before downloading, you can support our <span class="donate-highlight">software development, QA/QC tools, and R&D</span>.';
+                    txtSecondary.textContent =
+                        "Your support helps us maintain and improve Diomine software solutions and technical resources.";
+                    txtNote.textContent =
+                        "You can donate now or skip and continue to your download.";
+                    return;
+                }
+
+                txtPrimary.innerHTML =
+                    'Before continuing, you can support our <span class="donate-highlight">mining software R&amp;D, training content, and educational masterclasses</span>.';
+                txtSecondary.textContent =
+                    "Your donation helps us build better tools, tutorials, and professional solutions for the mining community.";
+                txtNote.textContent =
+                    "You can skip and continue to the event page or download.";
+            }
+
+            function openModal(actionFn, type) {
+                pendingAction = typeof actionFn === "function" ? actionFn : null;
+                setModalContent(type);
+
+                overlay.classList.add("active");
+                overlay.setAttribute("aria-hidden", "false");
+
+                // lock scroll
+                document.body.dataset.prevOverflow = document.body.style.overflow || "";
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeModal() {
+                overlay.classList.remove("active");
+                overlay.setAttribute("aria-hidden", "true");
+
+                document.body.style.overflow = document.body.dataset.prevOverflow || "";
+                delete document.body.dataset.prevOverflow;
+            }
+
+            function proceedAfterSkip() {
+                const action = pendingAction;
+                pendingAction = null;
+
+                closeModal();
+
+                if (typeof action === "function") {
+                    try {
+                        action();
+                    } catch (err) {
+                        console.error("Post-skip action failed:", err);
+                    }
+                }
+            }
+
+            function openLink(link) {
+                if (!link) return;
+                const href = link.getAttribute("href");
+                if (!href) return;
+
+                const target = (link.getAttribute("target") || "").toLowerCase();
+
+                if (target === "_blank") {
+                    window.open(href, "_blank", "noopener,noreferrer");
+                } else {
+                    window.location.assign(href);
+                }
+            }
+
+            function triggerDownload(link) {
+                if (!link) return;
+                const href = link.getAttribute("href");
+                if (!href) return;
+
+                // temporary anchor (bypass delegated interception)
+                const temp = document.createElement("a");
+                temp.href = href;
+
+                if (link.hasAttribute("download")) {
+                    const dlValue = link.getAttribute("download");
+                    if (dlValue === "" || dlValue === null) {
+                        temp.setAttribute("download", "");
+                    } else {
+                        temp.setAttribute("download", dlValue);
+                    }
+                }
+
+                if (link.target) temp.target = link.target;
+                temp.rel = "noopener noreferrer";
+                temp.dataset.donationBypass = "1";
+                temp.style.display = "none";
+
+                document.body.appendChild(temp);
+                temp.click();
+
+                setTimeout(function () {
+                    if (temp.parentNode) temp.parentNode.removeChild(temp);
+                }, 0);
+            }
+
+            // Delegated click interception for event/download links
+            document.addEventListener("click", function (e) {
+                const link = e.target.closest("a[href]");
+                if (!link) return;
+
+                if (link.dataset && link.dataset.donationBypass === "1") return;
+
+                const href = link.getAttribute("href") || "";
+
+                // never intercept direct PayPal donation link
+                if (href.includes("paypal.com/donate")) return;
+
+                const gateType = (link.dataset && link.dataset.donationGate) ? link.dataset.donationGate : "";
+                const isEventGate = gateType === "event";
+                const isDownloadGate = gateType === "download" || link.hasAttribute("download");
+
+                if (!isEventGate && !isDownloadGate) return;
+
+                e.preventDefault();
+
+                if (isDownloadGate) {
+                    openModal(function () {
+                        triggerDownload(link);
+                    }, "download");
+                    return;
+                }
+
+                if (isEventGate) {
+                    openModal(function () {
+                        openLink(link);
+                    }, "event");
+                }
+            });
+
+            // Controls
+            skipBtn.addEventListener("click", proceedAfterSkip);
+            closeBtn.addEventListener("click", proceedAfterSkip);
+
+            // click outside = skip
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) {
+                    proceedAfterSkip();
+                }
+            });
+
+            // ESC = skip
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && overlay.classList.contains("active")) {
+                    proceedAfterSkip();
+                }
+            });
+        })();
+    </script>
 </body>
 </html>

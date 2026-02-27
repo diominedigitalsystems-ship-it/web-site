@@ -47,7 +47,6 @@
 
         /* ======================================================
            DONATION BLINK (ORANGE -> WHITE -> GREEN)
-           Apply to ALL donation icons/buttons
         ====================================================== */
         @keyframes donationBlink {
             0%   { background: var(--ci-orange); color:#000; border-color: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
@@ -56,14 +55,12 @@
             100% { background: var(--ci-orange); color:#000; border-color: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
         }
 
-        /* A utility class to mark donation elements */
         .donation-blink {
             animation: donationBlink 0.9s infinite;
             border-width: 2px !important;
             border-style: solid !important;
         }
 
-        /* Make the heart icon blink too (text/icon) */
         .donation-blink .donation-icon,
         .donation-icon.donation-blink {
             animation: donationBlink 0.9s infinite;
@@ -72,7 +69,6 @@
             display: inline-block;
         }
 
-        /* Respect reduced motion */
         @media (prefers-reduced-motion: reduce) {
             .donation-blink,
             .donation-blink .donation-icon,
@@ -150,7 +146,7 @@
         }
 
         /* ==============================
-           MINING CONVOY ANIMATION (LIVE FB ANNOUNCEMENT)
+           MINING CONVOY ANNOUNCEMENT (NOW: THANK YOU)
         ============================== */
         .mining-convoi-container {
             background: #000;
@@ -185,14 +181,14 @@
 
         .live-label {
             display: inline-block;
-            background: rgba(255, 0, 0, 0.12);
+            background: rgba(255, 130, 0, 0.10);
             padding: 12px 24px;
-            border: 2px dashed var(--danger-red);
+            border: 2px dashed var(--gold-buffer);
             border-radius: 8px;
             color: var(--gold-buffer);
             font-weight: 900;
-            font-size: 1.05rem;
-            animation: blink-text 0.8s infinite alternate;
+            font-size: 1.02rem;
+            animation: blink-text 0.9s infinite alternate;
             vertical-align: middle;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -200,7 +196,7 @@
         }
 
         @keyframes blink-text {
-            from { opacity: 1; transform: scale(1); filter: brightness(1.15); }
+            from { opacity: 1; transform: scale(1); filter: brightness(1.12); }
             to { opacity: 0.82; transform: scale(0.99); color: #fff; }
         }
 
@@ -261,6 +257,47 @@
 
         nav a:hover {
             color: var(--ci-orange);
+        }
+
+        /* ==============================
+           THANK YOU BANNER SECTION
+        ============================== */
+        .thankyou-section {
+            padding: 28px 10%;
+            background: linear-gradient(135deg, rgba(255,130,0,0.12), rgba(0,158,96,0.10));
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            text-align: center;
+        }
+
+        .thankyou-title {
+            margin: 0 0 8px 0;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--gold-buffer);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .thankyou-text {
+            margin: 0 auto;
+            max-width: 980px;
+            color: #e6e6e6;
+            font-size: 1.05rem;
+        }
+
+        .thankyou-pill {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,215,0,0.45);
+            background: rgba(0,0,0,0.35);
+            color: #fff;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            font-size: 0.82rem;
         }
 
         /* ==============================
@@ -671,8 +708,8 @@
         </div>
     </header>
 
-    <!-- ANNOUNCEMENT STRIP -->
-    <div class="mining-convoi-container" aria-label="Upcoming training announcement">
+    <!-- THANK YOU STRIP (REPLACES LIVE ANNOUNCEMENT) -->
+    <div class="mining-convoi-container" aria-label="Masterclass completed announcement">
         <div class="convoi-wrapper">
             <img
                 src="excavatrice.png"
@@ -682,7 +719,7 @@
             />
 
             <span class="live-label">
-                🔴 UPCOMING FACEBOOK LIVE MASTERCLASS: QGIS Training: Do you work in mining geology, exploration, or grade control? This session is designed for you. Invite your fellow geologists, students, and mining professionals.
+                ✅ MASTERCLASS COMPLETED — THANK YOU TO ALL PARTICIPANTS! PLEASE STAY CONNECTED ON THIS WEBSITE FOR UPCOMING SESSIONS & NEW TRAINING RELEASES.
             </span>
 
             <a
@@ -691,18 +728,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Watch Live Videos
-            </a>
-
-            <!-- EVENT GATE -->
-            <a
-                href="https://web.facebook.com/events/937065112064901/"
-                class="event-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-donation-gate="event"
-            >
-                View Event & Register
+                Watch Replays
             </a>
 
             <img
@@ -713,7 +739,7 @@
             />
 
             <span class="live-label">
-                🎓 PROFESSIONAL TRAINING: BUILD DATABASES, VISUALIZE DRILLHOLES, DEFINE GRADE INTERVALS & INTERPRET MINERALIZED LENSES
+                🔔 STAY TUNED — NEXT MASTERCLASS ANNOUNCEMENTS WILL BE PUBLISHED HERE FIRST.
             </span>
 
             <img
@@ -732,10 +758,21 @@
         <a href="#software">Software Solutions</a>
     </nav>
 
+    <!-- THANK YOU SECTION (VISIBLE MESSAGE ON PAGE) -->
+    <section class="thankyou-section" aria-label="Thank you message">
+        <h2 class="thankyou-title">Masterclass Completed — Thank You!</h2>
+        <p class="thankyou-text">
+            Thank you to everyone who joined our latest masterclass. Your participation and support help us improve our training content and build better mining software solutions.
+            <br />
+            <strong>Please stay connected on this website</strong> for upcoming sessions, new tutorials, and future masterclasses.
+        </p>
+        <div class="thankyou-pill">🔔 Stay Tuned for Next Sessions</div>
+    </section>
+
     <!-- FEATURED MASTERCLASS -->
     <section id="featured" class="video-section">
-        <span class="section-tag">Featured Training</span>
-        <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">UPCOMING FACEBOOK LIVE MASTERCLASS</h2>
+        <span class="section-tag">Latest Training</span>
+        <h2 style="color:var(--gold-buffer); font-size: 2.5rem; margin-top: 0;">LATEST MASTERCLASS (REPLAY)</h2>
 
         <div class="video-wrapper">
             <iframe
@@ -749,7 +786,7 @@
         </div>
 
         <p class="featured-description">
-            Join our professional Facebook Live masterclass and learn how to build a drillhole database, import Collar / Survey / Assay data, display and label drillholes, define grade intervals, and outline mineralized lenses using practical mining workflows.
+            Replay available: learn professional mining workflows in QGIS — drillhole database preparation, Collar / Survey / Assay import, drillhole display, labeling, and practical interpretation methods.
         </p>
 
         <div class="featured-cta">
@@ -759,18 +796,14 @@
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                Watch Live Videos
+                Watch Replays
             </a>
 
-            <!-- EVENT GATE -->
             <a
                 class="btn-outline"
-                href="https://web.facebook.com/events/937065112064901/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-donation-gate="event"
+                href="#archives"
             >
-                Open Event Page
+                Browse Archives
             </a>
         </div>
     </section>
@@ -820,7 +853,7 @@
             <div class="card">
                 <h3 style="color: var(--ci-orange);">Diomine DH Auditor 2026.1.2</h3>
                 <p>
-                    Industry standard for geological database auditing, QA/QC structural validation,resources statistical analysis, stereographic analysis and high-quality assay reporting.
+                    Industry standard for geological database auditing, QA/QC structural validation, resources statistical analysis, stereographic analysis and high-quality assay reporting.
                 </p>
                 <a href="dh%20auditor%20setup.exe" class="btn-download" download data-donation-gate="download">
                     Download Setup

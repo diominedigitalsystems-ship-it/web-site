@@ -22,6 +22,7 @@
         html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; overflow-x: hidden; }
         
+        /* Animations & Fixed elements */
         @keyframes donationBlink {
             0%, 100% { background: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
             33% { background: #ffffff; color: #000; }
@@ -30,20 +31,24 @@
         .donation-blink { animation: donationBlink 0.9s infinite; border: 2px solid var(--gold-buffer); }
         .top-donate-fixed { position: fixed; top: 14px; right: 14px; z-index: 1000; color: #000; text-decoration: none; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
 
+        /* Navigation & Header */
         header { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
         nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; }
         nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
         nav a:hover { color: var(--ci-orange); }
 
+        /* Convoy */
         .mining-convoi-container { background: #000; border-top: 3px solid var(--ci-orange); border-bottom: 3px solid var(--ci-orange); padding: 12px 0; overflow: hidden; }
         .convoi-wrapper { display: inline-block; white-space: nowrap; animation: move-convoi 34s linear infinite; }
         @keyframes move-convoi { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .real-engine { height: 60px; margin: 0 20px; vertical-align: middle; }
 
+        /* Sections */
         .section-tag { color: var(--ci-orange); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border: 2px solid var(--ci-orange); border-radius: 12px; overflow: hidden; background: #000; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
+        /* Article & Cards */
         .article-container { max-width: 1100px; margin: 40px auto; padding: 40px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-orange); }
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: center; transition: 0.3s; }
@@ -53,6 +58,7 @@
         
         footer { background: #000; padding: 40px; text-align: center; border-top: 2px solid #222; color: #888; margin-top: 50px; }
 
+        /* Modal */
         .donate-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; }
         .donate-modal-overlay.active { display: flex; }
         .donate-modal { background: #111; border: 2px solid var(--ci-orange); padding: 30px; border-radius: 15px; max-width: 450px; text-align: center; }
@@ -83,64 +89,64 @@
     <nav>
         <a href="#">Home</a>
         <a href="#article">Field Mapping</a>
-        <a href="#planning">Drill Planning</a>
+        <a href="#planning">Technical Guide</a>
         <a href="#software">Software</a>
     </nav>
 
     <section id="article" style="padding: 20px 0;">
         <div class="article-container">
             <span class="section-tag">Digital Exploration</span>
-            <h2 style="color: var(--text-gold); font-size: 2.2rem; margin-bottom: 25px;">Optimizing Field Mapping: The Georeferencing Revolution</h2>
+            <h2 style="color: var(--text-gold); font-size: 2.2rem; margin-bottom: 25px;">Optimisation du Field Mapping : La Révolution du Géoréférencement</h2>
             
             <p style="font-size: 1.1rem; color: #ddd;">
-                In a mining project’s lifecycle, <strong>field mapping</strong> is the foundation. Diomine DH Auditor v2026.1.2 breaks operational silos by allowing you to integrate outcrop photographs as true geospatial objects.
+                Dans le cycle de vie d'un projet minier, la <strong>cartographie de terrain</strong> est cruciale. Diomine DH Auditor v2026.1.2 brise les silos en permettant d’intégrer vos photos d'affleurements comme de véritables objets géospatiaux.
             </p>
 
             <div style="display: flex; gap: 30px; flex-wrap: wrap; margin: 30px 0; align-items: center;">
                 <div style="flex: 1.5; min-width: 300px;">
-                    <h3 style="color: var(--ci-orange);">A Streamlined Workflow for Geologists</h3>
+                    <h3 style="color: var(--ci-orange);">Un Workflow Simplifié pour le Géologue</h3>
                     <ul style="line-height: 2;">
-                        <li><strong>Georeferencing (X, Y, Z):</strong> Convert static photos into precise spatial data points.</li>
-                        <li><strong>Rich Documentation:</strong> Attach technical notes (alteration, mineralization, structural data).</li>
-                        <li><strong>Google Maps Integration:</strong> Overlay your field findings on HD satellite imagery instantly.</li>
+                        <li><strong>Géoréférencement (X, Y, Z) :</strong> Transformez une photo statique en donnée spatiale.</li>
+                        <li><strong>Documentation :</strong> Associez des commentaires techniques (altérations, pyrite, quartz).</li>
+                        <li><strong>Google Maps :</strong> Superposez vos découvertes sur des images satellites HD.</li>
                     </ul>
                 </div>
                 <div style="flex: 1; min-width: 300px;">
                     <div class="video-wrapper">
                         <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA?si=zZlgkHHR2jToZdKp" frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <p style="font-size: 0.8rem; text-align: center; color: #888; margin-top: 10px;">Tutorial: Import & Georeferencing Guide</p>
+                    <p style="font-size: 0.8rem; text-align: center; color: #888; margin-top: 10px;">Tutoriel : Importation et Géoréférencement</p>
                 </div>
             </div>
 
             <div style="background: rgba(0,158,96,0.1); padding: 25px; border-radius: 12px; border: 1px dashed var(--ci-green);">
-                <h4 style="margin-top: 0; color: var(--ci-green);">Did you know?</h4>
-                <p style="margin-bottom: 0;">With the <strong>Dynamic Pop-up</strong> feature, simply hover over any point on your map to instantly display the outcrop photo. This significantly speeds up interpretation for block modeling and grade control reviews.</p>
+                <h4 style="margin-top: 0; color: var(--ci-green);">Le saviez-vous ?</h4>
+                <p style="margin-bottom: 0;">Grâce à la fonction <strong>Pop-up dynamique</strong>, survolez simplement un point sur votre carte pour afficher instantanément la photo de la roche correspondante. Gain de temps garanti pour l'interprétation de vos modèles de blocs.</p>
             </div>
         </div>
     </section>
 
     <section id="planning" style="padding: 60px 10%; background: #000;">
-        <span class="section-tag">Technical Workflow</span>
-        <h2 style="color: var(--gold-buffer);">Drill Hole Planning with DH Auditor</h2>
+        <span class="section-tag">Workflow Technique</span>
+        <h2 style="color: var(--gold-buffer);">Drill Hole Planning avec DH Auditor</h2>
         <div class="grid-3">
-            <div class="card"><h4>1. Targets</h4><p>Define your geological intersection points and depth goals.</p></div>
-            <div class="card"><h4>2. Trajectory</h4><p>Auto-calculate optimal azimuth and dip for drill collars.</p></div>
-            <div class="card"><h4>3. Export</h4><p>Generate DXF/CSV files ready for drilling contractors.</p></div>
+            <div class="card"><h4>1. Cibles</h4><p>Définissez vos points d'intersection géologiques.</p></div>
+            <div class="card"><h4>2. Trajectoire</h4><p>Calcul automatique de l'azimut et du dip optimal.</p></div>
+            <div class="card"><h4>3. Export</h4><p>Générez des fichiers DXF/CSV pour les sondeurs.</p></div>
         </div>
     </section>
 
     <section id="software" style="padding: 80px 8%;">
-        <h2 style="text-align:center; text-transform: uppercase;">Professional Solutions 2026</h2>
+        <h2 style="text-align:center; text-transform: uppercase;">Solutions Professionnelles 2026</h2>
         <div class="grid-3" style="margin-top: 40px;">
             <div class="card">
                 <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
-                <p>The industry standard for database auditing and field mapping integration.</p>
+                <p>La référence pour l'audit de bases de données et le mapping terrain.</p>
                 <a href="dh_auditor_setup.exe" class="btn-main" data-donation-gate="download">Download Setup</a>
             </div>
             <div class="card">
                 <h3 style="color: var(--ci-orange);">Training Dataset</h3>
-                <p>Masterclass exercise files including Collar, Survey, and Assay data.</p>
+                <p>Fichiers d'exercice (Collar, Survey, Assay) pour la Masterclass.</p>
                 <a href="https://drive.google.com/file/d/1ah0o9IfDW6xTDaxwQzGrQAXnSiEr51Yd/view?usp=sharing" class="btn-main" target="_blank" data-donation-gate="download">Get Data</a>
             </div>
         </div>
@@ -148,16 +154,16 @@
 
     <footer>
         <p>📧 diominedigitalsystems@gmail.com | Yamoussoukro, Ivory Coast</p>
-        <p>&copy; 2026 Diomine Digital Systems - With Diomine Mining, become an easy game.</p>
+        <p>&copy; 2026 Diomine Digital Systems</p>
     </footer>
 
     <div id="donateModalOverlay" class="donate-modal-overlay">
         <div class="donate-modal">
-            <h3 style="color: var(--gold-buffer);">Support Mining Innovation</h3>
-            <p>Your contribution helps us keep these tools high-performing and accessible to the community.</p>
+            <h3 style="color: var(--gold-buffer);">Soutenez l'innovation Minière</h3>
+            <p>Votre contribution nous aide à maintenir ces outils performants et accessibles.</p>
             <div style="display: flex; gap: 10px; margin-top: 25px;">
-                <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-main" style="flex:1;">Donate Now</a>
-                <button id="skipBtn" style="flex:1; background: #333; color: #fff; border: none; border-radius: 50px; cursor: pointer;">Continue</button>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-main" style="flex:1;">Faire un don</a>
+                <button id="skipBtn" style="flex:1; background: #333; color: #fff; border: none; border-radius: 50px; cursor: pointer;">Continuer</button>
             </div>
         </div>
     </div>

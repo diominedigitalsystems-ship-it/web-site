@@ -67,6 +67,14 @@
         .article-container { max-width: 1100px; margin: 40px auto; padding: 40px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-orange); }
         .btn-main { background: var(--ci-orange); color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; text-transform: uppercase; border: none; cursor: pointer; }
         
+        /* Software Icon Styling */
+        .software-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px var(--ci-orange));
+        }
+
         footer { background: #000; padding: 40px; text-align: center; border-top: 2px solid #222; color: #888; }
         .donate-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; }
         .donate-modal-overlay.active { display: flex; }
@@ -117,19 +125,19 @@
             <div style="display: flex; gap: 30px; flex-wrap: wrap; align-items: center; margin-top: 20px;">
                 <div style="flex: 1.5; min-width: 300px; font-size: 1.1rem; color: #ddd;">
                     <div class="lang-en">
-                        <p>In a mining project’s lifecycle, <strong>field mapping</strong> is the crucial first point of contact between the geologist and the physical reality of the deposit. Diomine DH Auditor v2026.1.2 breaks operational silos by allowing you to integrate outcrop photographs as true geospatial objects.</p>
+                        <p>In a mining project’s lifecycle, <strong>field mapping</strong> is the crucial first point of contact between the geologist and the physical reality of the deposit.</p>
                         <ul style="line-height: 2;">
                             <li><strong>Precise Georeferencing (X, Y, Z):</strong> Convert static photos into spatial data points.</li>
-                            <li><strong>Rich Documentation:</strong> Attach technical notes (mineralization, alteration).</li>
-                            <li><strong>Dynamic Visualization:</strong> Hover over points to see the outcrop image instantly.</li>
+                            <li><strong>Rich Documentation:</strong> Attach technical notes.</li>
+                            <li><strong>Dynamic Visualization:</strong> Instant outcrop image pop-up.</li>
                         </ul>
                     </div>
                     <div class="lang-fr">
-                        <p>Dans le cycle de vie d'un projet minier, la <strong>cartographie de terrain</strong> est cruciale. Diomine DH Auditor v2026.1.2 brise les silos en permettant d’intégrer vos photos d'affleurements comme de véritables objets géospatiaux.</p>
+                        <p>Dans le cycle de vie d'un projet minier, la <strong>cartographie de terrain</strong> est cruciale. DH Auditor 2026.1.2 brise les silos opérationnels.</p>
                         <ul style="line-height: 2;">
-                            <li><strong>Géoréférencement Précis (X, Y, Z) :</strong> Transformez une photo statique en donnée spatiale.</li>
-                            <li><strong>Documentation :</strong> Associez des commentaires techniques (altérations, pyrite).</li>
-                            <li><strong>Visualisation Dynamique :</strong> Survoler un point pour afficher l'image de l'affleurement.</li>
+                            <li><strong>Géoréférencement Précis (X, Y, Z) :</strong> Photos transformées en données spatiales.</li>
+                            <li><strong>Documentation :</strong> Notes techniques et géologiques intégrées.</li>
+                            <li><strong>Visualisation Dynamique :</strong> Affichage instantané sur carte.</li>
                         </ul>
                     </div>
                 </div>
@@ -139,26 +147,44 @@
                     </div>
                 </div>
             </div>
-            
-            <p style="text-align: center; font-style: italic; color: #888; margin-top: 30px;">
-                "We know what a geologist needs in the field because our solutions are born from the field."
-            </p>
         </div>
     </section>
 
     <section id="software" style="padding: 40px 8%; text-align: center;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div class="article-container" style="margin: 0; width: 100%;">
+        <h2 class="lang-en" style="margin-bottom: 40px; letter-spacing: 3px;">2026 SOLUTIONS</h2>
+        <h2 class="lang-fr" style="margin-bottom: 40px; letter-spacing: 3px;">SOLUTIONS 2026</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+            
+            <div class="article-container" style="margin: 0; width: 100%; text-align: center;">
+                <img src="dh-auditor-icon.png" alt="DH Auditor Icon" class="software-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2991/2991148.png';">
                 <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
-                <p class="lang-en">Professional database auditing and field mapping integration.</p>
-                <p class="lang-fr">Audit de base de données professionnel et intégration cartographique.</p>
+                <p class="lang-en">Database auditing and QA/QC mapping tool.</p>
+                <p class="lang-fr">Outil d'audit de base de données et mapping QA/QC.</p>
                 <a href="dh_auditor_setup.exe" class="btn-main" data-donation-gate="download">Download</a>
             </div>
+
+            <div class="article-container" style="margin: 0; width: 100%; text-align: center;">
+                <img src="mrn-icon.png" alt="MRN Icon" class="software-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2103/2103633.png';">
+                <h3 style="color: var(--ci-orange);">Diomine MRN 2026</h3>
+                <p class="lang-en">Mineral Resource Network for 3D modelling.</p>
+                <p class="lang-fr">Réseau de Ressources Minérales pour modélisation 3D.</p>
+                <a href="mrn_setup.exe" class="btn-main" data-donation-gate="download">Download</a>
+            </div>
+
+            <div class="article-container" style="margin: 0; width: 100%; text-align: center;">
+                <img src="data-icon.png" alt="Data Icon" class="software-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2821/2821637.png';">
+                <h3 style="color: var(--ci-orange);">Training Data</h3>
+                <p class="lang-en">Masterclass practice datasets.</p>
+                <p class="lang-fr">Jeux de données pour Masterclass.</p>
+                <a href="#" class="btn-main" data-donation-gate="download">Get Data</a>
+            </div>
+
         </div>
     </section>
 
     <footer>
-        <p>📧 diominedigitalsystems@gmail.com | Yamoussoukro, Ivory Coast</p>
+        <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
         <p>&copy; 2026 Diomine Digital Systems - <i>"With Diomine, Mining Become An Easy Game"</i></p>
     </footer>
 
@@ -174,7 +200,6 @@
     </div>
 
     <script>
-        // Toggle Language Function
         function toggleLanguage() {
             const body = document.body;
             const currentLang = body.getAttribute('data-lang');
@@ -183,15 +208,12 @@
             localStorage.setItem('preferredLang', newLang);
         }
 
-        // Initialize Settings
         (function() {
             const savedLang = localStorage.getItem('preferredLang') || 'en';
             document.body.setAttribute('data-lang', savedLang);
-
             const overlay = document.getElementById("donateModalOverlay");
             const skipBtn = document.getElementById("skipBtn");
             let nextAction = null;
-
             document.addEventListener("click", e => {
                 const btn = e.target.closest("a[data-donation-gate='download']");
                 if (btn) {
@@ -200,7 +222,6 @@
                     overlay.classList.add("active");
                 }
             });
-
             skipBtn.onclick = () => {
                 overlay.classList.remove("active");
                 if(nextAction) nextAction();

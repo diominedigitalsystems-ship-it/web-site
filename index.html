@@ -25,34 +25,6 @@
         [data-lang="fr"] .lang-en { display: none !important; }
         [data-lang="en"] .lang-fr { display: none !important; }
 
-        /* Artistic Gold Title Style */
-        .gold-brand-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            font-family: 'serif'; 
-            background: linear-gradient(to bottom, #FBF5B7 0%, #D4AF37 22%, #AA8A2E 50%, #D4AF37 78%, #FBF5B7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0px 4px 5px rgba(0,0,0,0.6));
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Slogan Style */
-        .gold-slogan {
-            font-size: 1.4rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-            color: var(--text-gold);
-            margin-top: 5px;
-            font-style: italic;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-            opacity: 0.9;
-        }
-
         .lang-switch-btn {
             background: #333;
             color: var(--gold-buffer);
@@ -67,6 +39,7 @@
         }
         .lang-switch-btn:hover { background: var(--gold-buffer); color: #000; }
 
+        /* Existing Styles */
         @keyframes donationBlink {
             0%, 100% { background: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
             33% { background: #ffffff; color: #000; }
@@ -75,7 +48,7 @@
         .donation-blink { animation: donationBlink 0.9s infinite; border: 2px solid var(--gold-buffer); }
         .top-donate-fixed { position: fixed; top: 14px; right: 14px; z-index: 1000; color: #000; text-decoration: none; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
 
-        header { height: 70vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+        header { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
         nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; align-items: center; }
         nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
         nav a:hover { color: var(--ci-orange); }
@@ -102,25 +75,17 @@
         .donate-modal-overlay.active { display: flex; }
         .donate-modal { background: #111; border: 2px solid var(--ci-orange); padding: 30px; border-radius: 15px; max-width: 450px; text-align: center; }
 
-        @media (max-width: 768px) { 
-            .gold-brand-title { font-size: 2.2rem; letter-spacing: 2px; }
-            .gold-slogan { font-size: 1rem; }
-            nav { flex-direction: column; gap: 10px; } 
-            nav a { font-size: 0.7rem; margin: 0 5px; } 
-            .article-container { margin: 20px; padding: 20px; } 
-        }
+        @media (max-width: 768px) { nav { flex-direction: column; gap: 10px; } nav a { font-size: 0.7rem; margin: 0 5px; } .article-container { margin: 20px; padding: 20px; } }
     </style>
 </head>
-<body data-lang="en"> 
-    <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="top-donate-fixed donation-blink" target="_blank">Donate 💛</a>
+<body data-lang="en"> <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="top-donate-fixed donation-blink" target="_blank">Donate 💛</a>
 
     <header>
         <div>
-            <img src="diomine logo.png" alt="Logo" style="width: 100px; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.3));">
-            <h1 class="gold-brand-title">DIOMINE DIGITAL SYSTEMS</h1>
-            <div class="gold-slogan">"With Diomine, Mining Become An Easy Game"</div>
-            <p class="lang-en" style="font-size: 1.1rem; letter-spacing: 1px; color: #ccc; margin-top: 10px;">Global Excellence in Mining Software Engineering</p>
-            <p class="lang-fr" style="font-size: 1.1rem; letter-spacing: 1px; color: #ccc; margin-top: 10px;">L'excellence mondiale en ingénierie logicielle minière</p>
+            <img src="diomine logo.png" alt="Logo" style="width: 120px; margin-bottom: 15px;">
+            <h1>DIOMINE DIGITAL SYSTEMS</h1>
+            <p class="lang-en" style="font-size: 1.1rem; letter-spacing: 1px;">Global Excellence in Mining Software Engineering</p>
+            <p class="lang-fr" style="font-size: 1.1rem; letter-spacing: 1px;">L'excellence mondiale en ingénierie logicielle minière</p>
         </div>
     </header>
 
@@ -175,26 +140,52 @@
                     </div>
                 </div>
             </div>
+
+            <div style="background: rgba(0,158,96,0.1); padding: 25px; border-radius: 12px; border: 1px dashed var(--ci-green);">
+                <h4 class="lang-en" style="margin-top: 0; color: var(--ci-green);">Did you know?</h4>
+                <h4 class="lang-fr" style="margin-top: 0; color: var(--ci-green);">Le saviez-vous ?</h4>
+                <p class="lang-en" style="margin-bottom: 0;">With the <strong>Dynamic Pop-up</strong>, hover over a point to display the outcrop photo. This speeds up block model interpretation.</p>
+                <p class="lang-fr" style="margin-bottom: 0;">Grâce au <strong>Pop-up dynamique</strong>, survolez simplement un point pour afficher la photo. Gain de temps garanti pour l'interprétation.</p>
+            </div>
         </div>
     </section>
 
-    <section id="software" style="padding: 40px 8%; text-align: center;">
-        <div class="card" style="max-width: 400px; margin: auto;">
-            <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
-            <p class="lang-en">Industry standard for database auditing.</p><p class="lang-fr">La référence pour l'audit de bases de données.</p>
-            <a href="dh_auditor_setup.exe" class="btn-main" data-donation-gate="download">Download</a>
+    <section id="planning" style="padding: 60px 10%; background: #000;">
+        <h2 class="lang-en" style="color: var(--gold-buffer);">Drill Hole Planning with DH Auditor</h2>
+        <h2 class="lang-fr" style="color: var(--gold-buffer);">Planification de Sondage avec DH Auditor</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h4 class="lang-en">1. Targets</h4><h4 class="lang-fr">1. Cibles</h4>
+                <p class="lang-en">Define your geological intersection points.</p><p class="lang-fr">Définissez vos points d'intersection géologiques.</p>
+            </div>
+            <div class="card">
+                <h4 class="lang-en">2. Trajectory</h4><h4 class="lang-fr">2. Trajectoire</h4>
+                <p class="lang-en">Auto-calculate optimal azimuth and dip.</p><p class="lang-fr">Calcul automatique de l'azimut et du dip optimal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="software" style="padding: 80px 8%;">
+        <div class="grid-3">
+            <div class="card">
+                <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
+                <p class="lang-en">Industry standard for database auditing.</p><p class="lang-fr">La référence pour l'audit de bases de données.</p>
+                <a href="dh_auditor_setup.exe" class="btn-main" data-donation-gate="download">Download</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <p>📧 diominedigitalsystems@gmail.com | Yamoussoukro, Ivory Coast</p>
-        <p>&copy; 2026 Diomine Digital Systems - <i>With Diomine, Mining Become An Easy Game.</i></p>
+        <p>&copy; 2026 Diomine Digital Systems - With Diomine Mining, become an easy game.</p>
     </footer>
 
     <div id="donateModalOverlay" class="donate-modal-overlay">
         <div class="donate-modal">
             <h3 class="lang-en" style="color: var(--gold-buffer);">Support Mining Innovation</h3>
             <h3 class="lang-fr" style="color: var(--gold-buffer);">Soutenez l'innovation Minière</h3>
+            <p class="lang-en">Your contribution helps us keep these tools accessible.</p>
+            <p class="lang-fr">Votre contribution nous aide à maintenir ces outils accessibles.</p>
             <div style="display: flex; gap: 10px; margin-top: 25px;">
                 <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-main" style="flex:1;">Donate</a>
                 <button id="skipBtn" style="flex:1; background: #333; color: #fff; border: none; border-radius: 50px; cursor: pointer;">Continue</button>
@@ -203,6 +194,7 @@
     </div>
 
     <script>
+        // Language Toggler
         function toggleLanguage() {
             const body = document.body;
             const currentLang = body.getAttribute('data-lang');
@@ -211,10 +203,12 @@
             localStorage.setItem('preferredLang', newLang);
         }
 
+        // Load preferred language
         (function() {
             const savedLang = localStorage.getItem('preferredLang');
             if (savedLang) document.body.setAttribute('data-lang', savedLang);
 
+            // Donation Gate Logic
             const overlay = document.getElementById("donateModalOverlay");
             const skipBtn = document.getElementById("skipBtn");
             let nextAction = null;

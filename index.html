@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, Pit mapping, Modelling and Exploration Services." />
+    <meta
+        name="description"
+        content="Diomine Digital Systems - Global Excellence in Mining Software Engineering, Training, Pit mapping, Modelling and Exploration Services, With Diomine Mining Become An Easy Game."
+    />
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4514820342506798" crossorigin="anonymous"></script>
+
     <link rel="icon" type="image/png" href="diomine logo.png" />
-    <title>Diomine Digital Systems | Digitalizing Field Geology</title>
+    <title>Diomine Digital Systems | Global Mining Solutions | "With Diomine Mining Become An Easy Game"</title>
 
     <style>
         :root {
@@ -15,178 +20,449 @@
             --gold-buffer: #FFD700;
             --dark-bg: #121212;
             --card-bg: #1e1e1e;
+            --ivory-white: #FFFFFF;
+            --fb-blue: #1877F2;
+            --danger-red: #ff2d2d;
             --text-gold: #D4AF37;
         }
 
         * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; overflow-x: hidden; }
-        
-        /* Animations & Fixed elements */
-        @keyframes donationBlink {
-            0%, 100% { background: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
-            33% { background: #ffffff; color: #000; }
-            66% { background: var(--ci-green); color: #fff; }
-        }
-        .donation-blink { animation: donationBlink 0.9s infinite; border: 2px solid var(--gold-buffer); }
-        .top-donate-fixed { position: fixed; top: 14px; right: 14px; z-index: 1000; color: #000; text-decoration: none; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
 
-        /* Navigation & Header */
-        header { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-        nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; }
-        nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
+        html, body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a, button {
+            transition: transform 0.18s ease, filter 0.18s ease, background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+        }
+
+        /* ======================================================
+            DONATION BLINK (ORANGE -> WHITE -> GREEN)
+        ====================================================== */
+        @keyframes donationBlink {
+            0%   { background: var(--ci-orange); color:#000; border-color: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
+            33%  { background: #ffffff; color:#000; border-color: #ffffff; box-shadow: 0 0 14px rgba(255,255,255,0.35); }
+            66%  { background: var(--ci-green); color:#ffffff; border-color: var(--ci-green); box-shadow: 0 0 14px rgba(0,158,96,0.45); }
+            100% { background: var(--ci-orange); color:#000; border-color: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
+        }
+
+        .donation-blink {
+            animation: donationBlink 0.9s infinite;
+            border-width: 2px !important;
+            border-style: solid !important;
+        }
+
+        .top-donate-fixed {
+            position: fixed;
+            top: 14px;
+            right: 14px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--ci-orange), #ffb347);
+            color: #000;
+            text-decoration: none;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 2px solid var(--gold-buffer);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            font-size: 0.8rem;
+        }
+
+        /* ==============================
+            HEADER
+        ============================== */
+        header {
+            height: 60vh;
+            min-height: 320px;
+            background:
+                linear-gradient(rgba(0,0,0,0.68), rgba(0,0,0,0.72)),
+                url('mine-background.png') no-repeat center center / cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .main-logo {
+            width: 130px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            color: #000;
+            font-weight: 900;
+            text-shadow: 0 0 2px var(--gold-buffer), 1.5px 1.5px 0 var(--gold-buffer);
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        /* ==============================
+            MINING CONVOY
+        ============================== */
+        .mining-convoi-container {
+            background: #000;
+            border-top: 3px solid var(--ci-orange);
+            border-bottom: 3px solid var(--ci-orange);
+            padding: 12px 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .convoi-wrapper {
+            display: inline-block;
+            white-space: nowrap;
+            animation: move-convoi 34s linear infinite;
+        }
+
+        @keyframes move-convoi {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .real-engine {
+            height: 65px;
+            margin: 0 20px;
+            vertical-align: middle;
+        }
+
+        .live-label {
+            display: inline-block;
+            background: rgba(255, 130, 0, 0.10);
+            padding: 12px 24px;
+            border: 2px dashed var(--gold-buffer);
+            border-radius: 8px;
+            color: var(--gold-buffer);
+            font-weight: 900;
+            animation: blink-text 0.9s infinite alternate;
+            text-transform: uppercase;
+        }
+
+        @keyframes blink-text { from { opacity: 1; } to { opacity: 0.6; } }
+
+        /* ==============================
+            NAVIGATION
+        ============================== */
+        nav {
+            background: #000;
+            padding: 1.2rem;
+            text-align: center;
+            border-bottom: 3px solid var(--ci-orange);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
         nav a:hover { color: var(--ci-orange); }
 
-        /* Convoy */
-        .mining-convoi-container { background: #000; border-top: 3px solid var(--ci-orange); border-bottom: 3px solid var(--ci-orange); padding: 12px 0; overflow: hidden; }
-        .convoi-wrapper { display: inline-block; white-space: nowrap; animation: move-convoi 34s linear infinite; }
-        @keyframes move-convoi { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-        .real-engine { height: 60px; margin: 0 20px; vertical-align: middle; }
+        /* ==============================
+            SECTIONS STYLE
+        ============================== */
+        .section-tag {
+            color: var(--ci-orange);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 10px;
+        }
 
-        /* Sections */
-        .section-tag { color: var(--ci-orange); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border: 2px solid var(--ci-orange); border-radius: 12px; overflow: hidden; background: #000; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border: 3px solid var(--ci-orange);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+            background: #000;
+        }
 
-        /* Article & Cards */
-        .article-container { max-width: 1100px; margin: 40px auto; padding: 40px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-orange); }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--ci-orange); }
-        
-        .btn-main { background: var(--ci-orange); color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; text-transform: uppercase; border: none; cursor: pointer; }
-        
-        footer { background: #000; padding: 40px; text-align: center; border-top: 2px solid #222; color: #888; margin-top: 50px; }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
 
-        /* Modal */
-        .donate-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; }
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .btn-download, .btn-primary {
+            background: var(--ci-orange);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--ci-orange);
+            color: var(--ci-orange);
+            padding: 11px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        footer {
+            background: #000;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 2px solid #222;
+            color: #888;
+        }
+
+        /* Modal Styles */
+        .donate-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
         .donate-modal-overlay.active { display: flex; }
-        .donate-modal { background: #111; border: 2px solid var(--ci-orange); padding: 30px; border-radius: 15px; max-width: 450px; text-align: center; }
+        .donate-modal { background: #111; border: 2px solid var(--ci-orange); border-radius: 15px; width: 500px; padding: 30px; }
 
-        @media (max-width: 768px) { nav a { margin: 0 5px; font-size: 0.65rem; } .article-container { margin: 20px; padding: 20px; } }
+        @media (max-width: 768px) {
+            nav a { margin: 0 8px; font-size: 0.7rem; }
+            .featured-cta { flex-direction: column; }
+        }
     </style>
 </head>
 <body>
 
-    <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="top-donate-fixed donation-blink" target="_blank">Donate 💛</a>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="top-donate-fixed donation-blink" target="_blank">
+        Donate 💛
+    </a>
 
     <header>
-        <div>
-            <img src="diomine logo.png" alt="Logo" style="width: 120px; margin-bottom: 15px;">
+        <div class="header-content">
+            <img src="diomine logo.png" alt="Diomine Logo" class="main-logo" />
             <h1>DIOMINE DIGITAL SYSTEMS</h1>
-            <p style="font-size: 1.1rem; letter-spacing: 1px;">Global Excellence in Mining Software Engineering</p>
+            <p style="color: white; font-size: 1.2rem;">Global Excellence in Mining Software Engineering</p>
         </div>
     </header>
 
     <div class="mining-convoi-container">
         <div class="convoi-wrapper">
-            <img src="excavatrice.png" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318331.png';">
-            <span style="font-weight: 900; color: var(--gold-buffer);">✅ MASTERCLASS COMPLETED — NEW RELEASES COMING SOON</span>
-            <img src="camion-mine.png" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318282.png';">
+            <img src="excavatrice.png" alt="Excavator" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318331.png';" />
+            <span class="live-label">✅ MASTERCLASS COMPLETED — STAY CONNECTED FOR NEW RELEASES</span>
+            <img src="camion-mine.png" alt="Mining Truck" class="real-engine" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2318/2318282.png';" />
         </div>
     </div>
 
     <nav>
         <a href="#">Home</a>
-        <a href="#article">Field Mapping</a>
-        <a href="#planning">Technical Guide</a>
+        <a href="#featured">Technical Insight</a>
+        <a href="#planning">Planning Guide</a>
         <a href="#software">Software</a>
     </nav>
 
-    <section id="article" style="padding: 20px 0;">
-        <div class="article-container">
-            <span class="section-tag">Digital Exploration</span>
-            <h2 style="color: var(--text-gold); font-size: 2.2rem; margin-bottom: 25px;">Optimisation du Field Mapping : La Révolution du Géoréférencement</h2>
-            
-            <p style="font-size: 1.1rem; color: #ddd;">
-                Dans le cycle de vie d'un projet minier, la <strong>cartographie de terrain</strong> est cruciale. Diomine DH Auditor v2026.1.2 brise les silos en permettant d’intégrer vos photos d'affleurements comme de véritables objets géospatiaux.
+    <section id="featured" class="video-section" style="text-align: left; background: #161616; border-radius: 25px; margin: 40px 8%; padding: 40px;">
+        <span class="section-tag" style="text-align: center; display: block; color: #888; text-transform: uppercase; letter-spacing: 2px;">Technical Insight</span>
+        <h2 style="color:var(--text-gold); font-size: 2.2rem; margin-top: 10px; text-align: center; text-transform: uppercase;">
+            Optimizing Drill Planning with Diomine DH Auditor 2026.1.2: <br>From Exploration to Grade Control
+        </h2>
+
+        <div class="featured-description" style="max-width: 1000px; margin: 0 auto; color: #eee;">
+            <p style="line-height: 1.6; font-size: 1.1rem;">
+                In the mining industry, the transition from exploration to production requires surgical precision. 
+                <strong>Diomine DH Auditor v2026.1.2</strong> stands out as a versatile solution, capable of handling 
+                both wide exploration geochem grids and tight <strong>Grade Control (GC)</strong> patterns for open-pit or underground operations.
             </p>
 
             <div style="display: flex; gap: 30px; flex-wrap: wrap; margin: 30px 0; align-items: center;">
-                <div style="flex: 1.5; min-width: 300px;">
-                    <h3 style="color: var(--ci-orange);">Un Workflow Simplifié pour le Géologue</h3>
-                    <ul style="line-height: 2;">
-                        <li><strong>Géoréférencement (X, Y, Z) :</strong> Transformez une photo statique en donnée spatiale.</li>
-                        <li><strong>Documentation :</strong> Associez des commentaires techniques (altérations, pyrite, quartz).</li>
-                        <li><strong>Google Maps :</strong> Superposez vos découvertes sur des images satellites HD.</li>
-                    </ul>
-                </div>
                 <div style="flex: 1; min-width: 300px;">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA?si=zZlgkHHR2jToZdKp" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <p style="font-size: 0.8rem; text-align: center; color: #888; margin-top: 10px;">Tutoriel : Importation et Géoréférencement</p>
+                    <h3 style="color: var(--ci-orange);">Unified Interface for Maximum Reactivity</h3>
+                    <p style="line-height: 1.5;">
+                        Time is the most valuable resource on a mine site. DH Auditor allows importing structural data 
+                        or block models via a <strong>single importation channel</strong> (CSV, DXF, GPX). Instant overlay 
+                        on satellite imagery ensures drill locations are accessible and clear of existing mine infrastructure.
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 300px; border: 2px solid var(--ci-orange); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/KqYCZZY-AkY?si=voFXJVyane8_8V6x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <div style="background: rgba(0,158,96,0.1); padding: 25px; border-radius: 12px; border: 1px dashed var(--ci-green);">
-                <h4 style="margin-top: 0; color: var(--ci-green);">Le saviez-vous ?</h4>
-                <p style="margin-bottom: 0;">Grâce à la fonction <strong>Pop-up dynamique</strong>, survolez simplement un point sur votre carte pour afficher instantanément la photo de la roche correspondante. Gain de temps garanti pour l'interprétation de vos modèles de blocs.</p>
+            <h3 style="color: var(--text-gold); border-left: 4px solid var(--ci-orange); padding-left: 15px; margin-top: 40px;">Grade Control: Planning for Precision</h3>
+            <p>Precise Grade Control planning is vital to minimize dilution and maximize metal recovery. The <strong>"Generate Drilling"</strong> tool implements complex grids with ease:</p>
+            
+            <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+                    <span style="color: #4CAF50; margin-right: 10px;">✔</span>
+                    <span><strong style="color: #4CAF50;">1. Intelligent Automation:</strong> Automatic ID sequencing (e.g., GC_PIT1_100, 101...) prevents fatal duplicates in production databases.</span>
+                </li>
+                <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+                    <span style="color: #4CAF50; margin-right: 10px;">✔</span>
+                    <span><strong style="color: #4CAF50;">2. Structural Alignment:</strong> Define your baseline and orient the grid according to the mineralized structure (e.g., Azimuth 030°) for optimal sampling.</span>
+                </li>
+                <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+                    <span style="color: #4CAF50; margin-right: 10px;">✔</span>
+                    <span><strong style="color: #4CAF50;">3. Real-time Flexibility:</strong> The <strong>"Refresh"</strong> function instantly re-sequences the attribute table if a point is moved due to field obstacles.</span>
+                </li>
+            </ul>
+
+            <div style="background: rgba(255,130,0,0.08); padding: 25px; border-radius: 15px; border: 1px dashed #555; margin-top: 40px;">
+                <h4 style="margin-top:0; color: var(--ci-orange); text-transform: uppercase;">Interoperability: From Office to Pit</h4>
+                <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 0;">
+                    Export your plans instantly to industry standards: <strong>DXF/String</strong> for 3D design, 
+                    <strong>Excel</strong> for drill sheets, and <strong>GPX/CSV</strong> for immediate field stake-out via GPS.
+                </p>
+            </div>
+        </div>
+
+        <div class="featured-cta" style="margin-top: 50px; text-align: center; display: flex; justify-content: center; gap: 20px;">
+            <a class="btn-primary" href="#software">Get DH Auditor 2026.1.2</a>
+            <a class="btn-outline" href="https://www.facebook.com/diominedigitalsystems/" target="_blank">Watch Full Demo</a>
+        </div>
+    </section>
+
+    <section id="planning" style="background: #0a0a0a; padding: 80px 10%;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <span class="section-tag">Step-by-Step Guide</span>
+            <h2 style="color: var(--gold-buffer); font-size: 2rem; border-left: 5px solid var(--ci-orange); padding-left: 20px;">Technical Workflow Workflow</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px;">
+                <div style="background:#222; padding:20px; border-radius:10px;">
+                    <h4 style="color:var(--ci-green);">1. Initialization</h4>
+                    <p style="font-size:0.9rem;">Import DTM and block models to visualize mineralized zones.</p>
+                </div>
+                <div style="background:#222; padding:20px; border-radius:10px;">
+                    <h4 style="color:var(--ci-green);">2. Target Definition</h4>
+                    <p style="font-size:0.9rem;">Position intersection points based on interpretated geological structures.</p>
+                </div>
+                <div style="background:#222; padding:20px; border-radius:10px;">
+                    <h4 style="color:var(--ci-green);">3. Trajectory</h4>
+                    <p style="font-size:0.9rem;">Automatic calculation of optimal azimuth and dip.</p>
+                </div>
+                <div style="background:#222; padding:20px; border-radius:10px;">
+                    <h4 style="color:var(--ci-green);">4. Validation</h4>
+                    <p style="font-size:0.9rem;">Real-time checks for underground void intersections.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="planning" style="padding: 60px 10%; background: #000;">
-        <span class="section-tag">Workflow Technique</span>
-        <h2 style="color: var(--gold-buffer);">Drill Hole Planning avec DH Auditor</h2>
-        <div class="grid-3">
-            <div class="card"><h4>1. Cibles</h4><p>Définissez vos points d'intersection géologiques.</p></div>
-            <div class="card"><h4>2. Trajectoire</h4><p>Calcul automatique de l'azimut et du dip optimal.</p></div>
-            <div class="card"><h4>3. Export</h4><p>Générez des fichiers DXF/CSV pour les sondeurs.</p></div>
+    <section id="archives" style="padding: 60px 8%;">
+        <h2 style="text-align:center; color:var(--ci-orange); text-transform: uppercase; letter-spacing: 5px; margin-bottom: 50px;">Training Archives</h2>
+        <div class="archive-grid">
+            <div class="card">
+                <h4 style="margin-top:0;">Vision & Corporate Excellence</h4>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/H4IP_lcJyNo" frameborder="0" allowfullscreen></iframe></div>
+            </div>
+            <div class="card">
+                <h4 style="margin-top:0;">Mining Workflow Insights</h4>
+                <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" frameborder="0" allowfullscreen></iframe></div>
+            </div>
         </div>
     </section>
 
-    <section id="software" style="padding: 80px 8%;">
-        <h2 style="text-align:center; text-transform: uppercase;">Solutions Professionnelles 2026</h2>
-        <div class="grid-3" style="margin-top: 40px;">
+    <section id="software" style="padding: 80px 8%; background: #111;">
+        <h2 style="text-align:center; margin-bottom:50px; text-transform: uppercase; letter-spacing: 3px;">2026 Professional Solutions</h2>
+        <div class="archive-grid">
             <div class="card">
                 <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
-                <p>La référence pour l'audit de bases de données et le mapping terrain.</p>
-                <a href="dh_auditor_setup.exe" class="btn-main" data-donation-gate="download">Download Setup</a>
+                <p>Database auditing, QA/QC validation, and assay reporting.</p>
+                <a href="dh auditor setup.exe" class="btn-download" data-donation-gate="download">Download Setup</a>
             </div>
             <div class="card">
-                <h3 style="color: var(--ci-orange);">Training Dataset</h3>
-                <p>Fichiers d'exercice (Collar, Survey, Assay) pour la Masterclass.</p>
-                <a href="https://drive.google.com/file/d/1ah0o9IfDW6xTDaxwQzGrQAXnSiEr51Yd/view?usp=sharing" class="btn-main" target="_blank" data-donation-gate="download">Get Data</a>
+                <h3 style="color: var(--ci-orange);">Diomine MRN 2026.1</h3>
+                <p>Collaborative Mineral Resource Network for 3D modelling.</p>
+                <a href="mrn network setup.exe" class="btn-download" data-donation-gate="download">Download Setup</a>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--ci-orange);">Training Data</h3>
+                <p>Masterclass practice dataset (Collar, Survey, Assay).</p>
+                <a href="https://drive.google.com/file/d/1ah0o9IfDW6xTDaxwQzGrQAXnSiEr51Yd/view?usp=sharing" class="btn-download" target="_blank" data-donation-gate="download">Get Data</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>📧 diominedigitalsystems@gmail.com | Yamoussoukro, Ivory Coast</p>
-        <p>&copy; 2026 Diomine Digital Systems</p>
+        <p>📧 diominedigitalsystems@gmail.com | HQ: Yamoussoukro, Ivory Coast</p>
+        <p>&copy; 2026 Diomine Digital Systems | <a href="privacy.html" style="color: #666;">Privacy Policy</a></p>
     </footer>
 
     <div id="donateModalOverlay" class="donate-modal-overlay">
         <div class="donate-modal">
-            <h3 style="color: var(--gold-buffer);">Soutenez l'innovation Minière</h3>
-            <p>Votre contribution nous aide à maintenir ces outils performants et accessibles.</p>
-            <div style="display: flex; gap: 10px; margin-top: 25px;">
-                <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-main" style="flex:1;">Faire un don</a>
-                <button id="skipBtn" style="flex:1; background: #333; color: #fff; border: none; border-radius: 50px; cursor: pointer;">Continuer</button>
+            <h3 style="color: var(--gold-buffer); margin-top:0;">Support Diomine R&D</h3>
+            <p>Your support helps us maintain high-quality mining tools and free training content.</p>
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-primary" style="flex:1; text-align:center;">Donate Now</a>
+                <button id="skipDonationBtn" style="flex:1; background:#333; color:white; border:none; border-radius:50px; cursor:pointer; font-weight:bold;">Skip & Download</button>
             </div>
         </div>
     </div>
 
     <script>
-        (function() {
+        (function () {
+            "use strict";
             const overlay = document.getElementById("donateModalOverlay");
-            const skipBtn = document.getElementById("skipBtn");
-            let nextAction = null;
+            const skipBtn = document.getElementById("skipDonationBtn");
+            let pendingAction = null;
 
-            document.addEventListener("click", e => {
-                const btn = e.target.closest("a[data-donation-gate='download']");
-                if (btn) {
+            function openModal(actionFn) {
+                pendingAction = actionFn;
+                overlay.classList.add("active");
+            }
+
+            function closeModal() {
+                overlay.classList.remove("active");
+                if (pendingAction) { pendingAction(); pendingAction = null; }
+            }
+
+            document.addEventListener("click", function (e) {
+                const link = e.target.closest("a[data-donation-gate='download']");
+                if (link) {
                     e.preventDefault();
-                    nextAction = () => window.open(btn.href, btn.target || '_self');
-                    overlay.classList.add("active");
+                    openModal(() => {
+                        window.open(link.href, link.target || '_self');
+                    });
                 }
             });
 
-            skipBtn.onclick = () => {
-                overlay.classList.remove("active");
-                if(nextAction) nextAction();
-            };
+            skipBtn.addEventListener("click", closeModal);
         })();
     </script>
 </body>

@@ -14,10 +14,18 @@
             --gold-buffer: #FFD700;
             --dark-bg: #121212;
             --card-bg: #1e1e1e;
-            --gold-medium: #D4AF37;
+            --text-gold: #D4AF37;
         }
 
-        /* --- ARTISTIC GOLD TYPOGRAPHY --- */
+        * { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Language Toggling Classes */
+        [data-lang="fr"] .lang-en { display: none !important; }
+        [data-lang="en"] .lang-fr { display: none !important; }
+
+        /* Artistic Gold Title Style */
         .gold-brand-title {
             font-size: 3.5rem;
             font-weight: 900;
@@ -33,62 +41,86 @@
             display: inline-block;
         }
 
-        /* The Slogan Style */
+        /* Slogan Style */
         .gold-slogan {
             font-size: 1.4rem;
             font-weight: 300;
-            letter-spacing: 2px;
-            color: #D4AF37;
+            letter-spacing: 1px;
+            color: var(--text-gold);
             margin-top: 5px;
-            text-transform: none;
             font-style: italic;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
             opacity: 0.9;
         }
 
-        /* --- REST OF STYLES (UNTOUCHED) --- */
-        * { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; overflow-x: hidden; }
-        
-        [data-lang="fr"] .lang-en { display: none !important; }
-        [data-lang="en"] .lang-fr { display: none !important; }
-
         .lang-switch-btn {
-            background: #333; color: var(--gold-buffer); border: 1px solid var(--gold-buffer);
-            padding: 5px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.75rem; margin-left: 20px;
+            background: #333;
+            color: var(--gold-buffer);
+            border: 1px solid var(--gold-buffer);
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.75rem;
+            margin-left: 20px;
+            transition: 0.3s;
         }
+        .lang-switch-btn:hover { background: var(--gold-buffer); color: #000; }
 
-        header { height: 75vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+        @keyframes donationBlink {
+            0%, 100% { background: var(--ci-orange); box-shadow: 0 0 14px rgba(255,130,0,0.45); }
+            33% { background: #ffffff; color: #000; }
+            66% { background: var(--ci-green); color: #fff; }
+        }
+        .donation-blink { animation: donationBlink 0.9s infinite; border: 2px solid var(--gold-buffer); }
+        .top-donate-fixed { position: fixed; top: 14px; right: 14px; z-index: 1000; color: #000; text-decoration: none; font-weight: 900; padding: 10px 14px; border-radius: 8px; font-size: 0.8rem; text-transform: uppercase; }
+
+        header { height: 70vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
         nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; align-items: center; }
         nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
-        
+        nav a:hover { color: var(--ci-orange); }
+
         .mining-convoi-container { background: #000; border-top: 3px solid var(--ci-orange); border-bottom: 3px solid var(--ci-orange); padding: 12px 0; overflow: hidden; }
         .convoi-wrapper { display: inline-block; white-space: nowrap; animation: move-convoi 34s linear infinite; }
         @keyframes move-convoi { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .real-engine { height: 60px; margin: 0 20px; vertical-align: middle; }
 
-        .article-container { max-width: 1100px; margin: 40px auto; padding: 40px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-orange); }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border: 2px solid var(--ci-orange); border-radius: 12px; overflow: hidden; }
+        .section-tag { color: var(--ci-orange); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border: 2px solid var(--ci-orange); border-radius: 12px; overflow: hidden; background: #000; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .article-container { max-width: 1100px; margin: 40px auto; padding: 40px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-orange); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--ci-orange); }
+        
         .btn-main { background: var(--ci-orange); color: #fff; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; text-transform: uppercase; border: none; cursor: pointer; }
-        footer { background: #000; padding: 40px; text-align: center; border-top: 2px solid #222; color: #888; }
+        
+        footer { background: #000; padding: 40px; text-align: center; border-top: 2px solid #222; color: #888; margin-top: 50px; }
+
         .donate-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center; z-index: 2000; }
         .donate-modal-overlay.active { display: flex; }
+        .donate-modal { background: #111; border: 2px solid var(--ci-orange); padding: 30px; border-radius: 15px; max-width: 450px; text-align: center; }
 
-        @media (max-width: 768px) { .gold-brand-title { font-size: 2.2rem; } .gold-slogan { font-size: 1rem; } nav { flex-direction: column; gap: 10px; } }
+        @media (max-width: 768px) { 
+            .gold-brand-title { font-size: 2.2rem; letter-spacing: 2px; }
+            .gold-slogan { font-size: 1rem; }
+            nav { flex-direction: column; gap: 10px; } 
+            nav a { font-size: 0.7rem; margin: 0 5px; } 
+            .article-container { margin: 20px; padding: 20px; } 
+        }
     </style>
 </head>
-<body data-lang="en">
+<body data-lang="en"> 
+    <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="top-donate-fixed donation-blink" target="_blank">Donate 💛</a>
 
     <header>
         <div>
-            <img src="diomine logo.png" alt="Logo" style="width: 100px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.3));">
-            <br>
+            <img src="diomine logo.png" alt="Logo" style="width: 100px; margin-bottom: 15px; filter: drop-shadow(0 0 10px rgba(212,175,55,0.3));">
             <h1 class="gold-brand-title">DIOMINE DIGITAL SYSTEMS</h1>
             <div class="gold-slogan">"With Diomine, Mining Become An Easy Game"</div>
-            <p class="lang-en" style="font-size: 1rem; letter-spacing: 2px; color: #ccc; margin-top: 15px;">Global Excellence in Mining Software Engineering</p>
-            <p class="lang-fr" style="font-size: 1rem; letter-spacing: 2px; color: #ccc; margin-top: 15px;">L'excellence mondiale en ingénierie logicielle minière</p>
+            <p class="lang-en" style="font-size: 1.1rem; letter-spacing: 1px; color: #ccc; margin-top: 10px;">Global Excellence in Mining Software Engineering</p>
+            <p class="lang-fr" style="font-size: 1.1rem; letter-spacing: 1px; color: #ccc; margin-top: 10px;">L'excellence mondiale en ingénierie logicielle minière</p>
         </div>
     </header>
 
@@ -113,20 +145,28 @@
 
     <section id="article" style="padding: 20px 0;">
         <div class="article-container">
-            <h2 class="lang-en" style="color: var(--gold-medium);">Optimizing Field Mapping: The Georeferencing Revolution</h2>
-            <h2 class="lang-fr" style="color: var(--gold-medium);">Optimisation du Field Mapping : La Révolution du Géoréférencement</h2>
+            <span class="section-tag">Digital Exploration</span>
             
+            <h2 class="lang-en" style="color: var(--text-gold); font-size: 2.2rem; margin-bottom: 25px;">Optimizing Field Mapping: The Georeferencing Revolution</h2>
+            <h2 class="lang-fr" style="color: var(--text-gold); font-size: 2.2rem; margin-bottom: 25px;">Optimisation du Field Mapping : La Révolution du Géoréférencement</h2>
+            
+            <p class="lang-en" style="font-size: 1.1rem; color: #ddd;">In a mining project’s lifecycle, <strong>field mapping</strong> is the foundation. Diomine DH Auditor v2026.1.2 breaks operational silos by allowing you to integrate outcrop photographs as true geospatial objects.</p>
+            <p class="lang-fr" style="font-size: 1.1rem; color: #ddd;">Dans le cycle de vie d'un projet minier, la <strong>cartographie de terrain</strong> est cruciale. Diomine DH Auditor v2026.1.2 brise les silos en permettant d’intégrer vos photos d'affleurements comme de véritables objets géospatiaux.</p>
+
             <div style="display: flex; gap: 30px; flex-wrap: wrap; margin: 30px 0; align-items: center;">
                 <div style="flex: 1.5; min-width: 300px;">
+                    <h3 class="lang-en" style="color: var(--ci-orange);">A Streamlined Workflow for Geologists</h3>
+                    <h3 class="lang-fr" style="color: var(--ci-orange);">Un Workflow Simplifié pour le Géologue</h3>
+                    
                     <ul class="lang-en" style="line-height: 2;">
-                        <li><strong>Georeferencing (X, Y, Z):</strong> Precision spatial data.</li>
-                        <li><strong>Rich Documentation:</strong> Technical logs and mineralization notes.</li>
-                        <li><strong>Google Maps Integration:</strong> HD Satellite overlay.</li>
+                        <li><strong>Georeferencing (X, Y, Z):</strong> Convert static photos into precise spatial data points.</li>
+                        <li><strong>Rich Documentation:</strong> Attach technical notes (alteration, mineralization).</li>
+                        <li><strong>Google Maps Integration:</strong> Overlay findings on HD satellite imagery.</li>
                     </ul>
                     <ul class="lang-fr" style="line-height: 2;">
-                        <li><strong>Géoréférencement (X, Y, Z) :</strong> Données spatiales de précision.</li>
-                        <li><strong>Documentation :</strong> Notes techniques et minéralisation.</li>
-                        <li><strong>Google Maps :</strong> Superposition satellite HD.</li>
+                        <li><strong>Géoréférencement (X, Y, Z) :</strong> Transformez une photo statique en donnée spatiale.</li>
+                        <li><strong>Documentation :</strong> Associez des commentaires techniques (altérations, pyrite).</li>
+                        <li><strong>Google Maps :</strong> Superposez vos découvertes sur des images satellites HD.</li>
                     </ul>
                 </div>
                 <div style="flex: 1; min-width: 300px;">
@@ -138,14 +178,23 @@
         </div>
     </section>
 
+    <section id="software" style="padding: 40px 8%; text-align: center;">
+        <div class="card" style="max-width: 400px; margin: auto;">
+            <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
+            <p class="lang-en">Industry standard for database auditing.</p><p class="lang-fr">La référence pour l'audit de bases de données.</p>
+            <a href="dh_auditor_setup.exe" class="btn-main" data-donation-gate="download">Download</a>
+        </div>
+    </section>
+
     <footer>
         <p>📧 diominedigitalsystems@gmail.com | Yamoussoukro, Ivory Coast</p>
-        <p>&copy; 2026 Diomine Digital Systems | <i>With Diomine, Mining Become An Easy Game</i></p>
+        <p>&copy; 2026 Diomine Digital Systems - <i>With Diomine, Mining Become An Easy Game.</i></p>
     </footer>
 
     <div id="donateModalOverlay" class="donate-modal-overlay">
-        <div class="donate-modal" style="background: #111; border: 2px solid var(--ci-orange); padding: 30px; border-radius: 15px; text-align: center;">
-            <h3 style="color: var(--gold-buffer);">Support Mining Innovation</h3>
+        <div class="donate-modal">
+            <h3 class="lang-en" style="color: var(--gold-buffer);">Support Mining Innovation</h3>
+            <h3 class="lang-fr" style="color: var(--gold-buffer);">Soutenez l'innovation Minière</h3>
             <div style="display: flex; gap: 10px; margin-top: 25px;">
                 <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-main" style="flex:1;">Donate</a>
                 <button id="skipBtn" style="flex:1; background: #333; color: #fff; border: none; border-radius: 50px; cursor: pointer;">Continue</button>

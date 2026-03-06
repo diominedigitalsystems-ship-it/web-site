@@ -14,7 +14,6 @@
             --ci-green: #009E60;
             --gold-buffer: #FFD700;
             --dark-bg: #121212;
-            --card-bg: #1e1e1e;
             --text-gold: #D4AF37;
             --gold-gradient: linear-gradient(to bottom, #cf9d35 0%, #ffeb99 22%, #d2a638 50%, #f7e082 78%, #b58210 100%);
         }
@@ -23,11 +22,9 @@
         html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: white; line-height: 1.6; overflow-x: hidden; }
 
-        /* Logique Langue */
         [data-lang="fr"] .lang-en { display: none !important; }
         [data-lang="en"] .lang-fr { display: none !important; }
 
-        /* ANIMATION TRICOLORE DON */
         @keyframes donationBlink {
             0% { background-color: var(--ci-orange); color: #fff; }
             33% { background-color: #FFFFFF; color: #000; }
@@ -41,7 +38,6 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-size: 0.9rem;
         }
 
-        /* TITRE DORÉ ARTISTIQUE */
         .artistic-gold-title {
             background: var(--gold-gradient);
             -webkit-background-clip: text;
@@ -49,41 +45,34 @@
             font-size: clamp(2rem, 8vw, 4rem);
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: -1px;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
             line-height: 1.1; margin: 0;
         }
 
-        header { height: 65vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        header { height: 70vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('mine-background.png') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; }
         
         nav { background: #000; padding: 1.2rem; text-align: center; border-bottom: 3px solid var(--ci-orange); position: sticky; top: 0; z-index: 100; display: flex; justify-content: center; align-items: center; }
         nav a { margin: 0 15px; text-decoration: none; color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; }
         .lang-switch-btn { background: #333; color: var(--gold-buffer); border: 1px solid var(--gold-buffer); padding: 6px 15px; border-radius: 20px; cursor: pointer; font-weight: bold; }
 
-        /* CONVOI MINIER */
         .mining-convoi-container { background: #000; border-top: 3px solid var(--ci-orange); border-bottom: 3px solid var(--ci-orange); padding: 12px 0; overflow: hidden; }
         .convoi-wrapper { display: inline-block; white-space: nowrap; animation: move-convoi 34s linear infinite; }
         @keyframes move-convoi { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .real-engine { height: 55px; margin: 0 20px; vertical-align: middle; }
 
-        /* ARTICLES & CARDS */
         .article-container { max-width: 1000px; margin: 40px auto; padding: 30px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-orange); }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid var(--ci-orange); border-radius: 15px; overflow: hidden; margin-top: 20px; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .software-card { background: #1a1a1a; padding: 35px; border-radius: 20px; border: 1px solid #333; text-align: center; transition: 0.3s; }
         .software-card:hover { transform: translateY(-10px); border-color: var(--ci-orange); }
-        .software-icon { width: 90px; height: 90px; margin-bottom: 20px; }
-        .btn-main { background: var(--ci-orange); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; text-transform: uppercase; transition: 0.3s; }
+        .btn-main { background: var(--ci-orange); color: #fff; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; text-transform: uppercase; transition: 0.3s; border:none; cursor:pointer;}
 
-        /* FEEDBACK & STARS */
         .feedback-section { max-width: 1000px; margin: 60px auto; padding: 40px; background: #1a1a1a; border-radius: 20px; border-left: 6px solid var(--ci-green); text-align: center; }
         .star-rating { display: flex; flex-direction: row-reverse; justify-content: center; gap: 10px; margin: 20px 0; }
         .star-rating input { display: none; }
         .star-rating label { font-size: 2.8rem; color: #444; cursor: pointer; transition: 0.3s; }
         .star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label { color: var(--gold-buffer); }
-
-        input[type="text"], textarea { width: 100%; padding: 15px; margin: 10px 0; border-radius: 10px; border: 1px solid #333; background: #222; color: #fff; }
 
         footer { background: #000; padding: 40px; text-align: center; color: #888; border-top: 1px solid #222; }
     </style>
@@ -94,15 +83,16 @@
 
     <header>
         <div>
-            <img src="diomine logo.png" alt="Logo" style="width: 130px; margin-bottom: 10px; filter: drop-shadow(0 0 10px var(--gold-buffer));">
+            <img src="diomine logo.png" alt="Logo" style="width: 130px; margin-bottom: 10px;">
             <h1 class="artistic-gold-title">DIOMINE DIGITAL SYSTEMS</h1>
             <div style="color: var(--text-gold); font-size: 1.4rem; font-style: italic; margin-top: 10px;">"With Diomine, Mining Become An Easy Game"</div>
             
-            <p class="lang-en" style="color: #fff; margin-top: 15px; opacity: 0.8; font-weight: bold;">Global Excellence in Mining Software Engineering</p>
-            <p class="lang-fr" style="color: #fff; margin-top: 15px; opacity: 0.8; font-weight: bold;">L'excellence mondiale en ingénierie logicielle minière</p>
+            <h2 class="lang-en" style="color: #ccc; margin-top: 20px; font-weight: 600;">Global Excellence in Mining Software Engineering</h2>
+            <h2 class="lang-fr" style="color: #ccc; margin-top: 20px; font-weight: 600;">L'excellence mondiale en ingénierie logicielle minière</h2>
             
-            <div style="margin-top: 20px;">
-                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdiominedigitalsystems.com&count_bg=%23FF8200&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=VISITORS&edge_flat=false" alt="Views"/>
+            <div style="margin-top: 25px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=xojkqalw" title="free counter" alt="free counter" style="border:0;">
+                <span style="font-weight: bold; font-size: 1.2rem; color: #fff;">Views</span>
             </div>
         </div>
     </header>
@@ -128,10 +118,8 @@
         <div class="article-container">
             <h2 class="lang-en" style="color: var(--text-gold); font-size: 2.2rem;">Optimizing Field Mapping: Diomine DH Auditor 2026.1.2</h2>
             <h2 class="lang-fr" style="color: var(--text-gold); font-size: 2.2rem;">Optimisation du Field Mapping : Diomine DH Auditor 2026.1.2</h2>
-            
-            <p class="lang-en">Transformation of outcrop photography into actionable geospatial data. Integrate images as georeferenced objects directly into your 3D models.</p>
-            <p class="lang-fr">Transformation de la photographie d'affleurement en données géospatiales exploitables. Intégrez vos images comme objets géoréférencés.</p>
-            
+            <p class="lang-en">Transformation of outcrop photography into actionable geospatial data.</p>
+            <p class="lang-fr">Transformation de la photographie d'affleurement en données exploitables.</p>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA?si=zZlgkHHR2jToZdKp" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -141,38 +129,25 @@
     <section id="software" style="padding: 60px 8%;">
         <h2 style="text-align: center; color: var(--gold-buffer); letter-spacing: 4px; margin-bottom: 50px;">SOLUTIONS 2026</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-            
             <div class="software-card">
-                <img src="dh-auditor-icon.png" class="software-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2991/2991148.png';">
-                <h3 style="color: var(--ci-orange);">DH Auditor 2026.1.2</h3>
-                <p class="lang-en">Professional database auditing & mapping.</p>
-                <p class="lang-fr">Audit de base de données & mapping pro.</p>
+                <h3>DH Auditor 2026</h3>
                 <a href="dh_auditor_setup.exe" class="btn-main">Download</a>
             </div>
-
             <div class="software-card">
-                <img src="mrn-icon.png" class="software-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2103/2103633.png';">
-                <h3 style="color: var(--ci-orange);">Diomine MRN 2026</h3>
-                <p class="lang-en">3D Mineral Resource Network.</p>
-                <p class="lang-fr">Réseau de Ressources Minérales 3D.</p>
+                <h3>Diomine MRN 2026</h3>
                 <a href="mrn_setup.exe" class="btn-main">Download</a>
             </div>
-
             <div class="software-card">
-                <img src="data-icon.png" class="software-icon" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2821/2821637.png';">
-                <h3 style="color: var(--ci-orange);">Training Data</h3>
-                <p class="lang-en">Masterclass practice datasets.</p>
-                <p class="lang-fr">Données d'entraînement Masterclass.</p>
+                <h3>Training Data</h3>
                 <a href="training_data.zip" class="btn-main">Get Data</a>
             </div>
-
         </div>
     </section>
 
     <section id="feedback">
         <div class="feedback-section">
-            <h2 class="lang-en">Post a Review</h2>
-            <h2 class="lang-fr">Poster un avis</h2>
+            <h2 class="lang-en">Rate & Review</h2>
+            <h2 class="lang-fr">Notez & Critiquez</h2>
             <form action="https://formspree.io/f/xojkqalw" method="POST">
                 <div class="star-rating">
                     <input type="radio" id="star5" name="rating" value="5" required /><label for="star5">★</label>
@@ -181,16 +156,16 @@
                     <input type="radio" id="star2" name="rating" value="2" /><label for="star2">★</label>
                     <input type="radio" id="star1" name="rating" value="1" /><label for="star1">★</label>
                 </div>
-                <input type="text" name="name" placeholder="Name / Nom" required>
-                <textarea name="message" rows="4" placeholder="Suggestions, critics, or comments..." required></textarea>
-                <button type="submit" class="btn-main" style="margin-top: 20px;">Submit Feedback</button>
+                <input type="text" name="name" placeholder="Name / Nom" required style="width:100%; padding:10px; margin-bottom:10px; background:#222; color:#fff; border:1px solid #333; border-radius:8px;">
+                <textarea name="message" rows="4" placeholder="Comment..." required style="width:100%; padding:10px; background:#222; color:#fff; border:1px solid #333; border-radius:8px;"></textarea>
+                <button type="submit" class="btn-main" style="margin-top:20px;">Submit Feedback</button>
             </form>
         </div>
     </section>
 
     <footer>
         <p>📧 diominedigitalsystems@gmail.com | Ivory Coast</p>
-        <p>&copy; 2026 Diomine Digital Systems - <i>"With Diomine, Mining Become An Easy Game"</i></p>
+        <p>&copy; 2026 Diomine Digital Systems</p>
     </footer>
 
     <script>

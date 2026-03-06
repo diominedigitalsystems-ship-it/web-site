@@ -3,177 +3,161 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Diomine Digital Systems - Excellence en Ingénierie Logicielle Minière." />
     <link rel="icon" type="image/png" href="diomine logo.png" />
-    <title>Diomine Digital Systems | Article Technique 2026</title>
+    <title>Diomine Digital Systems | Official Site</title>
 
     <style>
         :root {
             --ci-orange: #FF8200;
             --ci-green: #009E60;
-            --gold-buffer: #FFD700;
+            --gold: #FFD700;
             --dark-bg: #121212;
-            --text-gold: #D4AF37;
-            --gold-gradient: linear-gradient(to bottom, #cf9d35 0%, #ffeb99 22%, #d2a638 50%, #f7e082 78%, #b58210 100%);
         }
 
-        * { box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: var(--dark-bg); color: white; margin: 0; line-height: 1.6; }
-
-        /* Langue */
-        [data-lang="fr"] .lang-en { display: none !important; }
-        [data-lang="en"] .lang-fr { display: none !important; }
-
-        /* Animation Don Tricolore */
-        @keyframes donationBlink {
-            0% { background-color: var(--ci-orange); color: #fff; }
-            33% { background-color: #FFFFFF; color: #000; }
-            66% { background-color: var(--ci-green); color: #fff; }
-            100% { background-color: var(--ci-orange); color: #fff; }
-        }
-        .donation-btn {
-            position: fixed; top: 20px; right: 20px; z-index: 2000;
-            text-decoration: none; font-weight: bold; padding: 10px 20px;
-            border-radius: 50px; animation: donationBlink 3s infinite;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        header { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('mine-background.png') center/cover; padding: 20px; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; line-height: 1.6; }
         
-        .artistic-title {
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: clamp(1.8rem, 6vw, 3.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
+        /* Côte d'Ivoire Tricolor Donate Button */
+        @keyframes tricolore {
+            0% { background-color: var(--ci-orange); color: white; }
+            33% { background-color: white; color: black; }
+            66% { background-color: var(--ci-green); color: white; }
+            100% { background-color: var(--ci-orange); color: white; }
+        }
+        .btn-donate {
+            position: fixed; top: 20px; right: 20px; z-index: 1000;
+            padding: 10px 20px; border-radius: 50px; text-decoration: none;
+            font-weight: bold; animation: tricolore 3s infinite; box-shadow: 0 4px 10px rgba(0,0,0,0.5); font-size: 0.9rem;
         }
 
-        nav { background: #000; padding: 1rem; position: sticky; top: 0; z-index: 100; text-align: center; border-bottom: 2px solid var(--ci-orange); }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 0.9rem; }
-
-        /* Conteneur Article */
-        .main-content { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        .article-box { background: #1a1a1a; padding: 40px; border-radius: 15px; border-left: 6px solid var(--ci-orange); margin-bottom: 40px; }
+        header { height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('mine-background.png') center/cover; padding: 20px; }
+        .gold-title { font-size: clamp(2rem, 8vw, 4rem); font-weight: 900; color: var(--gold); text-transform: uppercase; margin: 0; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8)); }
         
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; margin: 25px 0; border: 2px solid var(--ci-orange); border-radius: 10px; overflow: hidden; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        nav { background: #000; padding: 15px; position: sticky; top: 0; text-align: center; border-bottom: 3px solid var(--ci-orange); z-index: 100; display: flex; justify-content: center; align-items: center; gap: 15px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
 
-        .highlight-gold { color: var(--gold-buffer); font-weight: bold; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
         
-        /* Grid Logiciels */
-        .software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-        .card { background: #222; padding: 20px; border-radius: 10px; text-align: center; border: 1px solid #333; }
-        .btn-dl { background: var(--ci-orange); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-weight: bold; }
+        /* Article Block */
+        .article-card { background: #1e1e1e; padding: 35px; border-radius: 20px; border-left: 6px solid var(--ci-orange); margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; margin: 25px 0; border: 3px solid var(--ci-orange); border-radius: 10px; overflow: hidden; }
+        .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* Feedback */
-        .star-rating { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 2rem; margin: 20px 0; }
-        .star-rating input { display: none; }
-        .star-rating label { color: #444; cursor: pointer; transition: 0.3s; }
-        .star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label { color: var(--gold-buffer); }
+        /* Downloads Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .card { background: #1a1a1a; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: var(--ci-orange); }
+        .btn-download { background: var(--ci-orange); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 15px; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .btn-download:hover { background: white; color: var(--ci-orange); }
 
-        footer { text-align: center; padding: 40px; background: #000; border-top: 1px solid #222; color: #777; }
+        /* Star Rating System */
+        .rating { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 2.8rem; margin: 15px 0; }
+        .rating input { display: none; }
+        .rating label { color: #444; cursor: pointer; transition: 0.3s; }
+        .rating input:checked ~ label, .rating label:hover, .rating label:hover ~ label { color: var(--gold); }
+
+        /* Language Switching Logic */
+        [data-lang="en"] .lang-fr, [data-lang="fr"] .lang-en { display: none !important; }
+        
+        footer { text-align: center; padding: 50px; background: #000; color: #888; border-top: 1px solid #222; }
     </style>
 </head>
-<body data-lang="fr">
-
-    <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="donation-btn" target="_blank">Donate 💛</a>
+<body data-lang="en"> <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-donate" target="_blank">Donate 💛</a>
 
     <header>
         <div>
-            <img src="diomine logo.png" alt="Logo" style="width: 100px; margin-bottom: 15px;">
-            <h1 class="artistic-title">DIOMINE DIGITAL SYSTEMS</h1>
-            <p style="font-style: italic; color: var(--text-gold);">"With Diomine, Mining Become An Easy Game"</p>
+            <img src="diomine logo.png" alt="Logo" style="width: 130px; margin-bottom: 10px;">
+            <h1 class="gold-title">DIOMINE DIGITAL SYSTEMS</h1>
+            <p style="color: var(--gold); font-style: italic; font-size: 1.2rem;">"With Diomine, Mining Become An Easy Game"</p>
             
-            <div style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                <img src="https://counter9.optistats.ovh/private/freecounterstat.php?c=xojkqalw" alt="Counter">
-                <span style="font-weight: bold;">Views</span>
+            <p class="lang-en" style="font-size: 1.1rem; font-weight: bold;">Global Excellence in Mining Software Engineering</p>
+            <p class="lang-fr" style="font-size: 1.1rem; font-weight: bold;">L'excellence mondiale en ingénierie logicielle minière</p>
+            
+            <div style="margin-top: 20px;">
+                <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fdiominedigitalsystems.github.io&count_bg=%23FF8200&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=VIEWS&edge_flat=false" alt="Views"/>
             </div>
         </div>
     </header>
 
     <nav>
-        <a href="#article" class="lang-fr">Article</a><a href="#article" class="lang-en">Post</a>
-        <a href="#software" class="lang-fr">Logiciels</a><a href="#software" class="lang-en">Software</a>
-        <a href="#feedback" class="lang-fr">Avis</a><a href="#feedback" class="lang-en">Feedback</a>
-        <button onclick="toggleLang()" style="cursor:pointer; background:none; border:1px solid var(--gold-buffer); color:white; border-radius:15px; padding:2px 10px;">FR/EN</button>
+        <a href="#article" class="lang-en">Post</a><a href="#article" class="lang-fr">Article</a>
+        <a href="#downloads" class="lang-en">Downloads</a><a href="#downloads" class="lang-fr">Téléchargements</a>
+        <a href="#feedback" class="lang-en">Feedback</a><a href="#feedback" class="lang-fr">Avis</a>
+        <button onclick="toggleLang()" style="background: var(--gold); border: none; padding: 6px 12px; cursor: pointer; font-weight: bold; border-radius: 20px; color: black; margin-left: 10px;">EN / FR</button>
     </nav>
 
-    <main class="main-content">
-        <article id="article" class="article-box">
-            <h2 class="lang-fr" style="color: var(--gold-buffer);">Comment géoréférencer et importer une photo : Tutoriel DH Auditor</h2>
-            <h2 class="lang-en" style="color: var(--gold-buffer);">How to Georeference and Import Photos: DH Auditor Tutorial</h2>
-
-            <p class="lang-fr">Dans cette masterclass présentée par <span class="highlight-gold">Diander Newton</span>, découvrez comment la version <b>2026.1.2</b> transforme vos observations de terrain en données exploitables.</p>
-            <p class="lang-en">In this masterclass by <span class="highlight-gold">Diander Newton</span>, discover how version <b>2026.1.2</b> transforms field observations into actionable data.</p>
-
-            <div class="video-container">
+    <div class="container">
+        <section id="article" class="article-card">
+            <h2 class="lang-en" style="color: var(--gold); text-align: center;">Field Mapping Optimization: Diomine DH Auditor 2026.1.2</h2>
+            <h2 class="lang-fr" style="color: var(--gold); text-align: center;">Optimisation du Field Mapping : Diomine DH Auditor 2026.1.2</h2>
+            
+            <div class="video-box">
                 <iframe src="https://www.youtube.com/embed/7JqM3gzyHeA?si=uBi9gZnYOY_mu_KG" frameborder="0" allowfullscreen></iframe>
             </div>
 
-            <h3 class="lang-fr">Points clés de la vidéo :</h3>
-            <h3 class="lang-en">Key Takeaways:</h3>
-            <ul style="list-style: square; padding-left: 20px;">
-                <li class="lang-fr">Importation directe de photos d'affleurements.</li>
-                <li class="lang-en">Direct import of outcrop photos.</li>
-                <li class="lang-fr">Saisie des coordonnées <span class="highlight-gold">X, Y, Z</span> pour un positionnement 3D précis.</li>
-                <li class="lang-en">Input of <span class="highlight-gold">X, Y, Z</span> coordinates for precise 3D positioning.</li>
-                <li class="lang-fr">Ajout de descriptions géologiques (ex: filon de pyrite) en commentaires.</li>
-                <li class="lang-en">Adding geological descriptions (e.g., pyrite vein) in comments.</li>
-                <li class="lang-fr">Visualisation avec fond de carte <b>Google Maps</b> intégré.</li>
-                <li class="lang-en">Visualization with integrated <b>Google Maps</b> background.</li>
-            </ul>
-        </article>
+            <p class="lang-en" style="text-align: justify; font-size: 1.05rem;">
+                In the competitive fields of geological exploration and mining, field data precision is the cornerstone of success, and the latest <b>Diomine DH Auditor (v2026.1.2)</b> introduces a powerful feature designed to bridge the gap between field photography and 3D modeling by transforming outcrop photos into actionable geospatial objects. By allowing geologists to precisely locate outcrops at their exact geographic position, attach direct geological descriptions to high-resolution images, and streamline audits through simplified data verification, this update ensures that field photographs are no longer static, disconnected files. The process, demonstrated by expert <b>Diander Newton</b>, is engineered for speed and intuition: users simply navigate to the "Import Georeferenced Image" tool, enter the precise <b>X, Y, and Z</b> coordinates, and enrich the data with technical metadata such as vein orientation or alteration zones. Beyond simple data management and grouping, the software enhances spatial interaction through an <b>Interactive Pop-up</b> mode for detailed texture inspection and <b>Google Maps Integration</b> for real-world topographic cross-referencing, ultimately revolutionizing the modern geologist's workflow and ensuring that with Diomine, <b>"Mining becomes an easy game."</b>
+            </p>
 
-        <section id="software">
-            <h2 style="text-align:center; color: var(--ci-orange);">SOLUTIONS 2026</h2>
-            <div class="software-grid">
+            <p class="lang-fr" style="text-align: justify; font-size: 1.05rem;">
+                Dans le domaine compétitif de l'exploration géologique et minière, la précision des données de terrain est le pilier du succès, et la dernière version de <b>Diomine DH Auditor (v2026.1.2)</b> introduit une fonctionnalité puissante conçue pour combler le fossé entre la photographie de terrain et la modélisation 3D en transformant les photos d'affleurements en objets géospatiaux exploitables. En permettant aux géologues de localiser précisément les affleurements à leur position géographique exacte, d'attacher des descriptions géologiques directes aux images haute résolution et de simplifier les audits grâce à une vérification facilitée des données, cette mise à jour garantit que les photographies de terrain ne sont plus des fichiers statiques et déconnectés. Le processus, démontré par l'expert <b>Diander Newton</b>, est conçu pour être rapide et intuitif : les utilisateurs accèdent simplement à l'outil « Importer une image géoréférencée », saisissent les coordonnées précises <b>X, Y et Z</b>, et enrichissent les données avec des métadonnées techniques telles que l'orientation des filons ou les zones d'altération. Au-delà de la simple gestion et du groupement des données, le logiciel améliore l'interaction spatiale grâce à un mode <b>Pop-up interactif</b> pour l'inspection détaillée des textures et une <b>intégration Google Maps</b> pour le recoupement topographique en temps réel, révolutionnant ainsi le flux de travail du géologue moderne et garantissant qu'avec Diomine, <b>« le minier devient un jeu d'enfant »</b>.
+            </p>
+        </section>
+
+        <section id="downloads">
+            <h2 style="text-align: center; color: var(--ci-orange); letter-spacing: 2px;">SOLUTIONS 2026</h2>
+            <div class="grid">
                 <div class="card">
-                    <h3>DH Auditor 2026</h3>
-                    <a href="dh_auditor_setup.exe" class="btn-dl">Download</a>
+                    <h3>Diomine DH Auditor 2026.1.2</h3>
+                    <p class="lang-en">Database Auditing & Mapping</p>
+                    <p class="lang-fr">Audit & Mapping de Base de Données</p>
+                    <a href="dh_auditor_setup.exe" class="btn-download">Download</a>
                 </div>
+
                 <div class="card">
-                    <h3>Diomine MRN</h3>
-                    <a href="mrn_setup.exe" class="btn-dl">Download</a>
+                    <h3>Diomine MRN 2026.1</h3>
+                    <p class="lang-en">Mineral Resource Network</p>
+                    <p class="lang-fr">Réseau de Ressources Minérales</p>
+                    <a href="mrn_setup.exe" class="btn-download">Download</a>
                 </div>
+
                 <div class="card">
-                    <h3 class="lang-fr">Données d'Entraînement</h3>
-                    <h3 class="lang-en">Training Data</h3>
-                    <a href="training_data.zip" class="btn-dl">Get Data</a>
+                    <h3>Training Data</h3>
+                    <p class="lang-en">Masterclass Practice Datasets</p>
+                    <p class="lang-fr">Données d'exercice Masterclass</p>
+                    <a href="training_data.zip" class="btn-download" style="background: var(--ci-green);">Get Data</a>
                 </div>
             </div>
         </section>
 
-        <section id="feedback" style="margin-top: 60px;">
-            <div class="article-box" style="border-left-color: var(--ci-green); text-align: center;">
-                <h2 class="lang-fr">Votre avis nous intéresse</h2>
-                <h2 class="lang-en">We Value Your Feedback</h2>
+        <section id="feedback" style="margin-top: 50px;">
+            <div class="article-card" style="border-left-color: var(--ci-green); text-align: center;">
+                <h2 class="lang-en">Technical Feedback</h2><h2 class="lang-fr">Votre Avis Technique</h2>
                 <form action="https://formspree.io/f/xojkqalw" method="POST">
-                    <div class="star-rating">
-                        <input type="radio" id="s5" name="rating" value="5"><label for="s5">★</label>
-                        <input type="radio" id="s4" name="rating" value="4"><label for="s4">★</label>
-                        <input type="radio" id="s3" name="rating" value="3"><label for="s3">★</label>
-                        <input type="radio" id="s2" name="rating" value="2"><label for="s2">★</label>
-                        <input type="radio" id="s1" name="rating" value="1"><label for="s1">★</label>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">★</label>
+                        <input type="radio" id="star4" name="rating" value="4"><label for="star4">★</label>
+                        <input type="radio" id="star3" name="rating" value="3"><label for="star3">★</label>
+                        <input type="radio" id="star2" name="rating" value="2"><label for="star2">★</label>
+                        <input type="radio" id="star1" name="rating" value="1"><label for="star1">★</label>
                     </div>
-                    <input type="text" name="name" placeholder="Nom / Name" required style="width:80%; padding:10px; margin-bottom:10px; background:#111; border:1px solid #333; color:white; border-radius:5px;">
-                    <textarea name="msg" placeholder="Commentaire / Comment" required style="width:80%; padding:10px; background:#111; border:1px solid #333; color:white; border-radius:5px; height:80px;"></textarea>
+                    <input type="text" name="name" placeholder="Name / Nom" required style="width: 85%; padding: 12px; margin-bottom: 12px; background: #111; border: 1px solid #333; color: white; border-radius: 8px;">
+                    <textarea name="msg" placeholder="Your comments..." required style="width: 85%; padding: 12px; background: #111; border: 1px solid #333; color: white; height: 100px; border-radius: 8px;"></textarea>
                     <br>
-                    <button type="submit" class="btn-dl" style="border:none; cursor:pointer; margin-top:15px;">Envoyer / Submit</button>
+                    <button type="submit" class="btn-download">Submit Review</button>
                 </form>
             </div>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <p>📧 diominedigitalsystems@gmail.com | Ivory Coast 🇨🇮</p>
-        <p>&copy; 2026 Diomine Digital Systems - All Rights Reserved</p>
+        <p>📧 diominedigitalsystems@gmail.com | Côte d'Ivoire 🇨🇮</p>
+        <p>&copy; 2026 Diomine Digital Systems - <i>"Mining Become An Easy Game"</i></p>
     </footer>
 
     <script>
         function toggleLang() {
             const b = document.body;
-            b.setAttribute('data-lang', b.getAttribute('data-lang') === 'fr' ? 'en' : 'fr');
+            b.setAttribute('data-lang', b.getAttribute('data-lang') === 'en' ? 'fr' : 'en');
         }
     </script>
 </body>

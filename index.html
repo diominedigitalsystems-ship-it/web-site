@@ -16,7 +16,6 @@
 
         body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark-bg); color: white; margin: 0; line-height: 1.6; }
         
-        /* Côte d'Ivoire Tricolor Donate Button */
         @keyframes tricolore {
             0% { background-color: var(--ci-orange); color: white; }
             33% { background-color: white; color: black; }
@@ -37,31 +36,33 @@
 
         .container { max-width: 1100px; margin: auto; padding: 20px; }
         
-        /* Article Block */
         .article-card { background: #1e1e1e; padding: 35px; border-radius: 20px; border-left: 6px solid var(--ci-orange); margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
         .video-box { position: relative; padding-bottom: 56.25%; height: 0; margin: 25px 0; border: 3px solid var(--ci-orange); border-radius: 10px; overflow: hidden; }
         .video-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-        /* Downloads Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
         .card { background: #1a1a1a; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid #333; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); border-color: var(--ci-orange); }
+        
+        /* Style des icônes SVG */
+        .card svg { width: 50px; height: 50px; fill: var(--gold); margin-bottom: 15px; }
+
         .btn-download { background: var(--ci-orange); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 15px; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
         .btn-download:hover { background: white; color: var(--ci-orange); }
 
-        /* Star Rating System */
         .rating { display: flex; flex-direction: row-reverse; justify-content: center; font-size: 2.8rem; margin: 15px 0; }
         .rating input { display: none; }
         .rating label { color: #444; cursor: pointer; transition: 0.3s; }
         .rating input:checked ~ label, .rating label:hover, .rating label:hover ~ label { color: var(--gold); }
 
-        /* Language Switching Logic */
         [data-lang="en"] .lang-fr, [data-lang="fr"] .lang-en { display: none !important; }
         
         footer { text-align: center; padding: 50px; background: #000; color: #888; border-top: 1px solid #222; }
     </style>
 </head>
-<body data-lang="en"> <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-donate" target="_blank">Donate 💛</a>
+<body data-lang="en">
+
+    <a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-donate" target="_blank">Donate 💛</a>
 
     <header>
         <div>
@@ -107,6 +108,7 @@
             <h2 style="text-align: center; color: var(--ci-orange); letter-spacing: 2px;">SOLUTIONS 2026</h2>
             <div class="grid">
                 <div class="card">
+                    <svg viewBox="0 0 24 24"><path d="M12,2C6.48,2 2,3.34 2,5V19C2,20.66 6.48,22 12,22C17.52,22 22,20.66 22,19V5C22,3.34 17.52,2 12,2M12,4C16.58,4 20,5.05 20,5C20,4.95 16.58,6 12,6C7.42,6 4,4.95 4,5C4,5.05 7.42,4 12,4M4,19V17C4,17.05 7.42,18 12,18C16.58,18 20,17.05 20,17V19C20,18.95 16.58,20 12,20C7.42,20 4,18.95 4,19M4,14V12C4,12.05 7.42,13 12,13C16.58,13 20,12.05 20,12V14C20,13.95 16.58,15 12,15C7.42,15 4,13.95 4,14M4,9V7C4,7.05 7.42,8 12,8C16.58,8 20,7.05 20,7V9C20,8.95 16.58,10 12,10C7.42,10 4,8.95 4,9Z"/></svg>
                     <h3>Diomine DH Auditor 2026.1.2</h3>
                     <p class="lang-en">Database Auditing & Mapping</p>
                     <p class="lang-fr">Audit & Mapping de Base de Données</p>
@@ -114,6 +116,7 @@
                 </div>
 
                 <div class="card">
+                    <svg viewBox="0 0 24 24"><path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5Z"/></svg>
                     <h3>Diomine MRN 2026.1</h3>
                     <p class="lang-en">Mineral Resource Network</p>
                     <p class="lang-fr">Réseau de Ressources Minérales</p>
@@ -121,6 +124,7 @@
                 </div>
 
                 <div class="card">
+                    <svg viewBox="0 0 24 24"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M13.5,16V19H10.5V16H8L12,12L16,16H13.5M13,9V3.5L18.5,9H13Z"/></svg>
                     <h3>Training Data</h3>
                     <p class="lang-en">Masterclass Practice Datasets</p>
                     <p class="lang-fr">Données d'exercice Masterclass</p>

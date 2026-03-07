@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,10 +10,12 @@
 
 <link rel="icon" type="image/png" href="diomine logo.png">
 
-<meta name="description" content="Diomine Digital Systems develops advanced mining software for geological auditing, drillhole planning, structural analysis and spatial mapping.">
-<meta name="keywords" content="Mining Software, Geology Software, Drillhole Planning, DH Auditor, Structural Analysis, Mining Engineering">
+<meta name="description" content="Diomine Digital Systems develops advanced mining software for geological auditing, drilling planning, mapping and structural analysis.">
+<meta name="keywords" content="Mining Software, Geology Software, Drillhole Planning, DH Auditor, Mining Engineering">
 <meta name="author" content="Diomine Digital Systems">
 <meta name="robots" content="index, follow">
+
+<link rel="apple-touch-icon" href="diomine logo.png">
 
 <style>
 
@@ -31,14 +34,14 @@ margin:0;
 line-height:1.6;
 }
 
-/* ===== GOLD TITLE ARTISTIC ===== */
+/* ===== ARTISTIC GOLD TITLE ===== */
 
 .gold-title{
 
 font-size:clamp(2rem,8vw,4rem);
 font-weight:900;
-text-transform:uppercase;
 letter-spacing:3px;
+text-transform:uppercase;
 
 background:linear-gradient(
 90deg,
@@ -52,13 +55,13 @@ background:linear-gradient(
 -webkit-text-fill-color:transparent;
 
 text-shadow:
-0 0 10px rgba(255,215,0,0.6),
+0 0 10px rgba(255,215,0,0.7),
 0 0 20px rgba(255,215,0,0.4),
-0 2px 4px rgba(0,0,0,0.8);
+0 2px 5px rgba(0,0,0,0.9);
 
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 
 header{
 
@@ -77,28 +80,33 @@ position:relative;
 
 }
 
-/* watermark logo */
+/* WATERMARK */
 
 .watermark{
 
 position:absolute;
 top:50%;
 left:50%;
+
 transform:translate(-50%,-50%);
+
 background:url('diomine logo.png') center/contain no-repeat;
+
 width:500px;
 height:500px;
+
 opacity:0.05;
 pointer-events:none;
 
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 
 nav{
 
 background:#000;
 padding:15px;
+
 position:sticky;
 top:0;
 
@@ -117,7 +125,6 @@ nav a{
 color:white;
 text-decoration:none;
 font-weight:bold;
-font-size:0.9rem;
 
 }
 
@@ -127,7 +134,7 @@ color:var(--ci-orange);
 
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 
 .container{
 
@@ -137,7 +144,7 @@ padding:20px;
 
 }
 
-/* ===== ARTICLE ===== */
+/* ARTICLE */
 
 .article-card{
 
@@ -151,13 +158,14 @@ box-shadow:0 10px 30px rgba(0,0,0,0.5);
 
 }
 
-/* ===== VIDEO ===== */
+/* VIDEO */
 
 .video-box{
 
 position:relative;
 padding-bottom:56.25%;
 height:0;
+
 margin:25px 0;
 
 border:3px solid var(--ci-orange);
@@ -171,12 +179,13 @@ overflow:hidden;
 position:absolute;
 top:0;
 left:0;
+
 width:100%;
 height:100%;
 
 }
 
-/* ===== SOFTWARE GRID ===== */
+/* GRID */
 
 .grid{
 
@@ -193,7 +202,9 @@ background:#1a1a1a;
 padding:30px;
 border-radius:20px;
 text-align:center;
+
 border:1px solid #333;
+
 transition:0.3s;
 
 }
@@ -209,7 +220,6 @@ border-color:var(--ci-orange);
 
 width:80px;
 height:80px;
-object-fit:contain;
 margin-bottom:15px;
 
 }
@@ -218,46 +228,50 @@ margin-bottom:15px;
 
 background:var(--ci-orange);
 color:white;
+
 padding:12px 25px;
 text-decoration:none;
 border-radius:5px;
+
 display:inline-block;
 margin-top:15px;
+
 font-weight:bold;
 text-transform:uppercase;
 
 }
 
-/* ===== DONATE BUTTON ===== */
+/* DONATE */
 
 .btn-donate{
 
 position:fixed;
 top:20px;
 right:20px;
-z-index:1000;
 
 padding:10px 20px;
+
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
 
 background:linear-gradient(90deg,#FF8200,#ffffff,#009E60);
-
 color:black;
 
 box-shadow:0 4px 10px rgba(0,0,0,0.5);
 
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 
 footer{
 
 text-align:center;
 padding:50px;
 background:#000;
+
 color:#888;
+
 border-top:1px solid #222;
 
 }
@@ -290,6 +304,7 @@ color:var(--gold);
 [data-lang="fr"] .lang-en{display:none}
 
 </style>
+
 </head>
 
 <body data-lang="en">
@@ -329,8 +344,7 @@ color:var(--gold);
 <a href="contact.html">Contact</a>
 <a href="privacy.html">Privacy</a>
 
-<button onclick="toggleLang()"
-style="background:var(--gold);border:none;padding:6px 12px;border-radius:20px;font-weight:bold">
+<button onclick="toggleLang()" style="background:var(--gold);border:none;padding:6px 12px;border-radius:20px;font-weight:bold">
 EN / FR
 </button>
 
@@ -352,52 +366,6 @@ Our flagship solutions DH Auditor and MRN Network help geologists improve data q
 optimize field operations and accelerate geological interpretation.
 
 </p>
-
-</section>
-
-<section id="downloads">
-
-<h2 style="text-align:center;color:var(--ci-orange)">SOLUTIONS 2026</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<img src="dh-auditor-icon.png" class="software-logo">
-
-<h3>Diomine DH Auditor 2026.1.2</h3>
-
-<p>Database auditing, mapping and structural analysis tools.</p>
-
-<a href="dh_auditor_setup.exe" class="btn-download">Download</a>
-
-</div>
-
-<div class="card">
-
-<img src="mrn-icon.png" class="software-logo">
-
-<h3>Diomine MRN 2026.1</h3>
-
-<p>Mineral Resource Network platform.</p>
-
-<a href="mrn_setup.exe" class="btn-download">Download</a>
-
-</div>
-
-<div class="card">
-
-<img src="https://cdn-icons-png.flaticon.com/512/2821/2821637.png" class="software-logo">
-
-<h3>Training Data</h3>
-
-<p>Masterclass practice datasets.</p>
-
-<a href="training_data.zip" class="btn-download" style="background:var(--ci-green)">Get Data</a>
-
-</div>
-
-</div>
 
 </section>
 
@@ -434,8 +402,6 @@ b.getAttribute('data-lang')==='en'?'fr':'en'
 
 }
 
-/* Visitor Counter */
-
 async function getHits(){
 
 const hitDisplay=document.getElementById('hit-count');
@@ -443,6 +409,7 @@ const hitDisplay=document.getElementById('hit-count');
 try{
 
 const r=await fetch('https://api.countapi.xyz/hit/diomine-systems-2026/visits');
+
 const data=await r.json();
 
 hitDisplay.innerText="VISITORS: "+data.value;

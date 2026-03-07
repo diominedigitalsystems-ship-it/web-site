@@ -146,7 +146,18 @@ nav a:hover {
     font-weight: bold;
     text-transform: uppercase;
 }
+/* MASTERCLASS TITLE BLINKING */
+@keyframes blink-title {
+    0%, 100% { color: var(--ci-orange); }
+    50% { color: white; }
+}
 
+.scrolling-title span {
+    animation: blink-title 1.5s infinite;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+    
 /* DONATE BUTTONS ANIMATION */
 .btn-donate, .kofi-button-container {
     position: fixed;
@@ -253,19 +264,14 @@ EN / FR
 <div class="container">
 
 <!-- MASTERCLASS ANNOUNCEMENT -->
-<!-- MASTERCLASS ANNOUNCEMENT -->
 <section class="masterclass">
 
-<div class="masterclass-banner">
-
+<div class="masterclass-banner" style="display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;">
 <img src="stereogram.png" class="geo-icon">
-
 <div class="scrolling-title">
 <span>📢 UPCOMING FACEBOOK LIVE MASTERCLASS — QGIS STRUCTURAL GEOLOGY & STEREOGRAPHIC ANALYSIS</span>
 </div>
-
 <img src="qgis.png" class="geo-icon">
-
 </div>
 
 <p>
@@ -426,12 +432,9 @@ getHits();
 </html>
 
 </section>
-<!-- WEBSITE RATING -->
-
+<!-- RATE OUR WEBSITE -->
 <section class="article-card" style="text-align:center">
-
 <h2 style="color:var(--gold)">Rate Our Website</h2>
-
 <div class="star-rating" id="stars">
 <span data-value="1">★</span>
 <span data-value="2">★</span>
@@ -439,34 +442,52 @@ getHits();
 <span data-value="4">★</span>
 <span data-value="5">★</span>
 </div>
-
 <p id="rating-result"></p>
-
 </section>
-<script>
 
+</div>
+
+<footer>
+<p>📧 diominedigitalsystems@gmail.com | Côte d'Ivoire 🇨🇮</p>
+<p>
+<a href="privacy.html">Privacy Policy</a> |
+<a href="contact.html">Contact</a> |
+<a href="expertise.html">Expertise</a>
+</p>
+<p>© 2026 Diomine Digital Systems</p>
+</footer>
+
+<script>
+function toggleLang() {
+    const b = document.body;
+    b.setAttribute('data-lang', b.getAttribute('data-lang')==='en'?'fr':'en');
+}
+
+async function getHits() {
+    const hitDisplay = document.getElementById('hit-count');
+    try {
+        const r = await fetch('https://api.countapi.xyz/hit/diomine-systems-2026/visits');
+        const data = await r.json();
+        hitDisplay.innerText = "VISITORS: " + data.value;
+    } catch {
+        hitDisplay.innerText = "VISITORS: 2026";
+    }
+}
+getHits();
+
+/* STAR RATING */
 const stars=document.querySelectorAll("#stars span");
 const result=document.getElementById("rating-result");
 
 stars.forEach(star=>{
-
-star.addEventListener("click",function(){
-
-stars.forEach(s=>s.classList.remove("active"));
-
-this.classList.add("active");
-
-let rating=this.getAttribute("data-value");
-
-result.innerHTML="Thank you! You rated this website "+rating+" / 5 ⭐";
-
+    star.addEventListener("click",function(){
+        stars.forEach(s=>s.classList.remove("active"));
+        this.classList.add("active");
+        let rating=this.getAttribute("data-value");
+        result.innerHTML="Thank you! You rated this website "+rating+" / 5 ⭐";
+    });
 });
-
-});
-
 </script>
 
-
-
-
-
+</body>
+</html>

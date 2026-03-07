@@ -288,6 +288,60 @@ Participants will learn how to analyze and interpret geological structures from 
 </p>
 
 </section>
+
+/* MASTERCLASS BANNER */
+
+.masterclass-banner{
+
+display:flex;
+align-items:center;
+gap:15px;
+overflow:hidden;
+background:#000;
+padding:15px;
+border-radius:10px;
+margin-bottom:20px;
+
+}
+
+/* SCROLLING TEXT */
+
+.scrolling-title{
+
+flex:1;
+overflow:hidden;
+white-space:nowrap;
+
+}
+
+.scrolling-title span{
+
+display:inline-block;
+padding-left:100%;
+font-size:22px;
+font-weight:bold;
+color:var(--gold);
+animation:scrollMaster 14s linear infinite;
+
+}
+
+@keyframes scrollMaster{
+
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+
+}
+
+/* GEO ICONS */
+
+.geo-icon{
+
+width:55px;
+height:auto;
+border-radius:6px;
+
+}
+    
 <!-- ABOUT SECTION -->
 <section id="about" class="article-card">
 <h2 style="color:var(--gold);text-align:center; display:flex; align-items:center; justify-content:center;">
@@ -463,6 +517,7 @@ result.innerHTML="Thank you! You rated this website "+rating+" / 5 ⭐";
 });
 
 </script>
+
 
 
 

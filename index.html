@@ -252,21 +252,30 @@ EN / FR
 
 <div class="container">
 
-<!-- MASTERCLASS -->
-
+<!-- MASTERCLASS ANNOUNCEMENT -->
 <section class="masterclass">
 
-<h2>Upcoming Facebook Live Masterclass</h2>
+<div class="masterclass-images">
+
+<img src="camion-mine.png" class="machine-img">
+
+<h2 class="blink-masterclass">
+🚨 Upcoming Facebook Live Masterclass 🚨
+</h2>
+
+<img src="excavatrice.png" class="machine-img">
+
+</div>
 
 <p>
 Diomine Digital Systems will soon host a professional Facebook Live Masterclass dedicated to QGIS structural geology workflows.
 </p>
 
 <p>
-This training will focus on plotting, stereographic analysis and geological interpretation of structural data.
+This technical training will focus on plotting, stereographic analysis and geological interpretation of structural data using QGIS and stereonet tools.
 </p>
 
-<ul>
+<ul style="text-align:left;max-width:700px;margin:auto;">
 <li>Structural data plotting in QGIS</li>
 <li>Stereographic projection fundamentals</li>
 <li>Interpretation of faults, folds and fracture systems</li>
@@ -275,9 +284,10 @@ This training will focus on plotting, stereographic analysis and geological inte
 </ul>
 
 <p>
-Stay connected to our website for the official Facebook Live date announcement.
+📢 Stay connected to our website for the official Facebook Live announcement.
 </p>
 
+</section>
 <!-- ABOUT SECTION -->
 <section id="about" class="article-card">
 <h2 style="color:var(--gold);text-align:center; display:flex; align-items:center; justify-content:center;">
@@ -431,4 +441,26 @@ getHits();
 <p id="rating-result"></p>
 
 </section>
+<script>
+
+const stars=document.querySelectorAll("#stars span");
+const result=document.getElementById("rating-result");
+
+stars.forEach(star=>{
+
+star.addEventListener("click",function(){
+
+stars.forEach(s=>s.classList.remove("active"));
+
+this.classList.add("active");
+
+let rating=this.getAttribute("data-value");
+
+result.innerHTML="Thank you! You rated this website "+rating+" / 5 ⭐";
+
+});
+
+});
+
+</script>
 

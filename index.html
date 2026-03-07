@@ -181,6 +181,16 @@ footer {
 [data-lang="en"] .lang-fr { display: none }
 [data-lang="fr"] .lang-en { display: none }
 
+/* About Icon Animation */
+.about-icon {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+h2:hover .about-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 8px #FFD700) drop-shadow(0 0 12px #e6b800);
+}
+
 </style>
 </head>
 
@@ -217,6 +227,51 @@ EN / FR
 </nav>
 
 <div class="container">
+
+<!-- ABOUT SECTION -->
+<section id="about" class="article-card">
+<h2 style="color:var(--gold);text-align:center; display:flex; align-items:center; justify-content:center;">
+    <!-- Icône vectorielle avec animation -->
+    <svg class="about-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="url(#gold-gradient)" style="margin-right:10px; vertical-align:middle;">
+        <defs>
+            <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFD700"/>
+                <stop offset="100%" stop-color="#e6b800"/>
+            </linearGradient>
+        </defs>
+        <path d="M3 21h18v-2H3v2zm4-4h10v-2H7v2zm2-4h6V7H9v6z"/>
+    </svg>
+    <span class="lang-en">About Diomine Digital Systems</span>
+    <span class="lang-fr">À propos de Diomine Digital Systems</span>
+</h2>
+
+<p style="text-align:justify">
+    <span class="lang-en">
+        Diomine Digital Systems is a young african leading innovator in mining software engineering, specializing in solutions for geological auditing, drillhole planning, mapping, and structural analysis. Our mission is to empower mining professionals with cutting-edge tools that transform complex field data into actionable insights, streamline workflows, and enhance decision-making efficiency.
+    </span>
+    <span class="lang-fr">
+        Diomine Digital Systems est un jeune acteur africain majeur dans l'ingénierie logicielle minière, spécialisé dans les solutions d'audit géologique, de planification des forages, de cartographie et d'analyse structurale. Notre mission est de fournir aux professionnels de la mine des outils innovants qui transforment des données complexes sur le terrain en informations exploitables, simplifient les flux de travail et améliorent la prise de décision.
+    </span>
+</p>
+
+<p style="text-align:justify">
+    <span class="lang-en">
+        Founded with a vision to bridge the gap between field data collection and advanced geospatial modeling, Diomine Digital Systems combines expertise in software development, geosciences, and data analytics to deliver reliable, intuitive, and high-performance solutions. Our flagship products, including <strong>Diomine DH Auditor</strong> and <strong>Diomine MRN</strong>, are trusted by geologists and mining engineers worldwide to optimize exploration, grade control, and operational planning.
+    </span>
+    <span class="lang-fr">
+        Fondée avec pour objectif de combler le fossé entre la collecte de données sur le terrain et la modélisation géospatiale avancée, Diomine Digital Systems combine l'expertise en développement logiciel, en géosciences et en analyse de données pour offrir des solutions fiables, intuitives et performantes. Nos produits phares, notamment <strong>Diomine DH Auditor</strong> et <strong>Diomine MRN</strong>, sont utilisés par des géologues et ingénieurs miniers à travers le monde pour optimiser l'exploration, le contrôle de minerai et la planification opérationnelle.
+    </span>
+</p>
+
+<p style="text-align:justify">
+    <span class="lang-en">
+        At Diomine, we believe that precision, innovation, and user-centered design are the keys to transforming mining challenges into simple, manageable processes. With our software, "Mining becomes an easy game."
+    </span>
+    <span class="lang-fr">
+        Chez Diomine, nous croyons que la précision, l'innovation et la conception centrée sur l'utilisateur sont les clés pour transformer les défis miniers en processus simples et maîtrisables. Avec nos logiciels, "l'exploitation minière devient un jeu facile."
+    </span>
+</p>
+</section>
 
 <!-- ARTICLE 1 -->
 <section id="article" class="article-card">
@@ -261,17 +316,17 @@ You can find the Diomine DH Auditor and Diomine MRN solutions available for down
 <h3>Diomine MRN 2026.1</h3>
 <p>Mineral Resource modelling</p>
 <a href="mrn_setup.exe" class="btn-download">Download</a>
-    </div>
+</div>
 <div class="card">
-    <h3>Training Data</h3>
-    <p>Masterclass Datasets</p>
-    <a href="training_data.zip" class="btn-download" style="background: var(--ci-green); display:flex; align-items:center; justify-content:center;">
-        <!-- SVG Vector Icon -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24" style="margin-right:8px;">
-            <path d="M4 4h16v2H4V4zm0 6h16v2H4v-2zm0 6h10v2H4v-2z"/>
-        </svg>
-        Get Data
-    </a>
+<h3>Training Data</h3>
+<p>Masterclass Datasets</p>
+<a href="training_data.zip" class="btn-download" style="background: var(--ci-green); display:flex; align-items:center; justify-content:center;">
+<!-- SVG Vector Icon -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24" style="margin-right:8px;">
+<path d="M4 4h16v2H4V4zm0 6h16v2H4v-2zm0 6h10v2H4v-2z"/>
+</svg>
+Get Data
+</a>
 </div>
 </div>
 </section>
@@ -309,6 +364,3 @@ getHits();
 
 </body>
 </html>
-
-
-

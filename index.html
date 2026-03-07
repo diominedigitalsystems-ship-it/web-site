@@ -147,10 +147,10 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-.btn-donate {
+/* DONATE BUTTONS ANIMATION */
+.btn-donate, .kofi-button-container {
     position: fixed;
     top: 20px;
-    right: 20px;
     padding: 10px 20px;
     border-radius: 50px;
     text-decoration: none;
@@ -158,7 +158,11 @@ nav a:hover {
     color: black;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     animation: blink-donate 3s infinite;
+    z-index: 1000;
 }
+
+.btn-donate { right: 20px; }
+.kofi-button-container { right: 160px; } /* décale le bouton Ko-fi à gauche du PayPal */
 
 @keyframes blink-donate {
     0% { background: var(--ci-orange); }
@@ -204,14 +208,16 @@ h2:hover .about-icon {
 <body data-lang="en">
 
 <!-- PAYPAL DONATE BUTTON -->
-<a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-donate" style="right:120px;">Donate 💛</a>
+<a href="https://www.paypal.com/donate/?hosted_button_id=EDGN2KD79DYU4" class="btn-donate">Donate 💛</a>
 
 <!-- KO-FI DONATE BUTTON -->
+<div class="kofi-button-container">
 <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
 <script type='text/javascript'>
     kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'H2H41UM4PB');
     kofiwidget2.draw();
 </script>
+</div>
 
 <header>
 <div>
@@ -287,7 +293,62 @@ EN / FR
 </p>
 </section>
 
-<!-- ARTICLES et DOWNLOADS restent inchangés -->
+<!-- ARTICLE 1 -->
+<section id="article" class="article-card">
+<h2 style="color:var(--gold);text-align:center">
+Field Mapping, Datbase Audit, structural mapping and stereographic analysis Optimization : Diomine DH Auditor 2026.1.2
+</h2>
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/7JqM3gzyHeA" frameborder="0" allowfullscreen></iframe>
+</div>
+<p style="text-align:justify">
+In the competitive fields of geological exploration and mining, field data precision is the cornerstone of success, and the latest Diomine DH Auditor (v2026.1.2) introduces a powerful feature designed to bridge the gap between field photography and 3D modeling by transforming outcrop photos into actionable geospatial objects. By allowing geologists to precisely locate outcrops at their exact geographic position, attach direct geological descriptions to high-resolution images, and streamline audits through simplified data verification, this update ensures that field photographs are no longer static, disconnected files. The process, demonstrated by expert Diander Newton, is engineered for speed and intuition: users simply navigate to the "Import Georeferenced Image" tool, enter the precise X, Y, and Z coordinates, and enrich the data with technical metadata such as vein orientation or alteration zones. Beyond simple data management and grouping, the software enhances spatial interaction through an Interactive Pop-up mode for detailed texture inspection and Google Maps Integration for real-world topographic cross-referencing, ultimately revolutionizing the modern geologist's workflow and ensuring that with Diomine, "Mining becomes an easy game."
+</p>
+</section>
+
+<!-- ARTICLE 2 -->
+<section class="article-card">
+<h2 style="color:var(--gold);text-align:center">
+Optimization of Exploration and Grade control drillhole planning : Diomine DH Auditor 2026.1.2
+</h2>
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/KqYCZZY-AkY" frameborder="0" allowfullscreen></iframe>
+</div>
+<p style="text-align:justify">
+Optimize Your Drill Planning with Diomine DH Auditor 2026.1.2: In this technical demonstration, expert Newton DIOMANDE showcases the power and flexibility of Diomine DH Auditor (v2026.1.2) for the precise planning of drilling programs and soil geochemistry. The software stands out with its unique import channel capable of handling various formats (CSV, DXF, GPX) and its seamless integration with Google Satellite basemaps for real-time geographic positioning. Thanks to the intuitive "Generate Drilling" tool, users can instantly configure point grids with automatic ID incrementing, define the orientation of survey lines (layons), and adjust drill spacing with millimeter precision. Management is further streamlined by a dynamic attribute table that allows for direct data export to Excel, GPX, or DXF, ensuring a fast and efficient workflow for both exploration and mine geologists. With Diomine, the transition from theoretical design to field implementation becomes, as the company motto says, "an easy game."
+
+You can find the Diomine DH Auditor and Diomine MRN solutions available for download on our official website.
+</p>
+</section>
+
+<!-- DOWNLOADS -->
+<section id="downloads">
+<h2 style="text-align:center;color:var(--ci-orange)">SOLUTIONS 2026</h2>
+<div class="grid">
+<div class="card">
+<img src="dh-auditor-icon.png" class="software-logo">
+<h3>Diomine DH Auditor 2026.1.2</h3>
+<p>Database Auditing & Mapping tools.</p>
+<a href="dh_auditor_setup.exe" class="btn-download">Download</a>
+</div>
+<div class="card">
+<img src="mrn-icon.png" class="software-logo">
+<h3>Diomine MRN 2026.1</h3>
+<p>Mineral Resource modelling</p>
+<a href="mrn_setup.exe" class="btn-download">Download</a>
+</div>
+<div class="card">
+<h3>Training Data</h3>
+<p>Masterclass Datasets</p>
+<a href="training_data.zip" class="btn-download" style="background: var(--ci-green); display:flex; align-items:center; justify-content:center;">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24" style="margin-right:8px;">
+<path d="M4 4h16v2H4V4zm0 6h16v2H4v-2zm0 6h10v2H4v-2z"/>
+</svg>
+Get Data
+</a>
+</div>
+</div>
+</section>
 
 </div>
 

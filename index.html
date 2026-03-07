@@ -261,25 +261,23 @@ EN / FR
 <div class="container">
     </nav>
 
-<div class="container">
-}
-
-/* GEO ICONS - réduites à 3x3 cm */
-.geo-icon {
-    width: 3cm;
-    height: 3cm;
-    object-fit: contain;
-    margin: 0 10px;
-}
 <!-- MASTERCLASS ANNOUNCEMENT -->
 <section class="masterclass">
 
 <div class="masterclass-banner" style="display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;">
-<img src="stereogram.png" class="geo-icon">
+<img src="stereogram.png" class="geo-icon" {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
 <div class="scrolling-title">
 <span>📢 UPCOMING FACEBOOK LIVE MASTERCLASS — QGIS STRUCTURAL GEOLOGY & STEREOGRAPHIC ANALYSIS</span>
 </div>
-<img src="qgis.png" class="geo-icon">
+<img src="qgis.png" class="geo-icon"{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
 </div>
 
 <p>
@@ -499,4 +497,5 @@ stars.forEach(star=>{
 
 </body>
 </html>
+
 

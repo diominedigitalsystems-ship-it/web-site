@@ -478,10 +478,77 @@ stars.forEach(star=>{
         result.innerHTML="Thank you! You rated this website "+rating+" / 5 ⭐";
     });
 });
-</script>
+<script>
+// --- Fonctions existantes (conservées) ---
+function toggleLang() {
+    const b = document.body;
+    b.setAttribute('data-lang', b.getAttribute('data-lang')==='en'?'fr':'en');
+}
 
+async function getHits() {
+    const hitDisplay = document.getElementById('hit-count');
+    try {
+        const r = await fetch('https://api.countapi.xyz/hit/diomine-systems-2026/visits');
+        const data = await r.json();
+        hitDisplay.innerText = "VISITORS: " + data.value;
+    } catch {
+        hitDisplay.innerText = "VISITORS: 2026";
+    }
+}
+getHits();
+
+// --- NOUVEAUX EFFETS ARTISTIQUES ---
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Animation Lettre par Lettre du Titre Gold
+    const title = document.querySelector('.gold-title');
+    const text = title.textContent;
+    title.innerHTML = ''; // On vide le titre
+    
+    // On recrée le titre lettre par lettre
+    [...text].forEach(char => {
+        const span = document.createElement('span');
+        span.textContent = char === " " ? "\u00A0" : char; // Gère les espaces
+        span.className = 'letter';
+        
+        // Effet au survol de la souris
+        span.addEventListener('mouseover', () => span.classList.add('hovered'));
+        span.addEventListener('mouseout', () => {
+            setTimeout(() => span.classList.remove('hovered'), 300);
+        });
+        
+        title.appendChild(span);
+    });
+
+    // 2. Effet de lueur pulsante sur la Masterclass
+    const masterclassBox = document.querySelector('.scrolling-title');
+    if(masterclassBox) {
+        masterclassBox.classList.add('masterclass-glow');
+        setInterval(() => {
+            const glow = Math.floor(Math.random() * 20);
+            masterclassBox.style.textShadow = `0 0 ${glow}px rgba(255, 130, 0, 0.8)`;
+        }, 800);
+    }
+
+    // 3. Gestion des étoiles (votre code existant optimisé)
+    const stars = document.querySelectorAll("#stars span");
+    const result = document.getElementById("rating-result");
+
+    stars.forEach(star => {
+        star.addEventListener("click", function() {
+            const val = this.getAttribute("data-value");
+            stars.forEach(s => {
+                s.style.color = s.getAttribute("data-value") <= val ? "var(--gold)" : "#444";
+            });
+            result.innerHTML = `Merci ! Note de ${val} / 5 enregistrée. ⭐`;
+        });
+    });
+});
+</script>
 </body>
 </html>
+
 
 
 

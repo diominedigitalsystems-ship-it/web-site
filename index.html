@@ -33,6 +33,25 @@
             line-height: 1.6;
         }
 
+        /* ANNONCE SCINTILLANTE */
+        .glimmer-announcement {
+            background: linear-gradient(90deg, #000, #1a1a1a, #000);
+            color: var(--gold);
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            border-bottom: 1px solid var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: glimmer 2s infinite;
+        }
+
+        @keyframes glimmer {
+            0% { text-shadow: 0 0 5px var(--gold); opacity: 0.8; }
+            50% { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--ci-orange); opacity: 1; }
+            100% { text-shadow: 0 0 5px var(--gold); opacity: 0.8; }
+        }
+
         /* EFFETS JS */
         .letter {
             display: inline-block;
@@ -144,7 +163,6 @@
             text-align: center;
             border: 1px solid #333;
             transition: 0.3s;
-            position: relative;
         }
 
         .card:hover {
@@ -152,10 +170,9 @@
             border-color: var(--ci-orange);
         }
 
-        /* Mise en avant V2026.2 */
         .card.featured {
             border: 2px solid var(--gold);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
         }
 
         .software-logo {
@@ -236,7 +253,6 @@
 
         .star-rating span { font-size: 30px; cursor: pointer; color: #444; transition: 0.2s; }
 
-        /* MODAL */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -308,6 +324,11 @@
 </head>
 
 <body data-lang="en">
+
+    <div class="glimmer-announcement">
+        <span class="lang-en">✨ FLASH: New Diomine DH Auditor 2026.2 is now available! ✨</span>
+        <span class="lang-fr">✨ FLASH : Le nouveau Diomine DH Auditor 2026.2 est disponible ! ✨</span>
+    </div>
 
     <div id="downloadModalOverlay" class="modal-overlay">
         <div class="modal-content">
@@ -465,10 +486,9 @@
             <div class="grid">
                 
                 <div class="card featured">
-                    <img src="dh-auditor-icon.png" class="software-logo">
-                    <div style="background:var(--gold); color:black; font-weight:bold; padding:2px 10px; border-radius:10px; display:inline-block; margin-bottom:10px; font-size:0.8rem">NEW RELEASE</div>
+                    <img src="diomine-dh-auditor-2026-2.png" class="software-logo">
                     <h3>Diomine DH Auditor 2026.2</h3>
-                    <p>Newest Update: Structural analysis optimization, improved stability, and advanced database integration.</p>
+                    <p>New Update: Optimized structural analysis, enhanced 3D rendering stability and updated database engine.</p>
                     <a href="https://github.com/diominedigitalsystems-ship-it/Diomine_DH_Auditor_Software/releases/download/V2026.2/Diomine_DH_Auditor_2026_2_Setup.exe" class="btn-download" style="background:var(--gold); color:black;">Download V2026.2</a>
                 </div>
 
@@ -476,7 +496,7 @@
                     <img src="dh-auditor-icon.png" class="software-logo">
                     <h3>Diomine DH Auditor 2026.1.2</h3>
                     <p>Database Auditing, Advanced statistics for resources geologists, stereography & Mapping tools.</p>
-                    <a href="https://github.com/diominedigitalsystems-ship-it/Diomine_DH_Auditor_Software/releases/download/V2026.1.2/Diomine_DH_Auditor_2026_1_2_Setup.exe" class="btn-download">Download</a>
+                    <a href="https://github.com/diominedigitalsystems-ship-it/Diomine_DH_Auditor_Software/releases/download/V2026.1.2/Diomine_DH_Auditor_2026_1_2_Setup.exe" class="btn-download">Download V2026.1.2</a>
                 </div>
                 
                 <div class="card">
@@ -528,13 +548,11 @@
     </footer>
 
     <script>
-        // 1. GESTION LANGUE
         function toggleLang() {
             const b = document.body;
             b.setAttribute('data-lang', b.getAttribute('data-lang') === 'en' ? 'fr' : 'en');
         }
 
-        // 2. COMPTEUR DE VISITES
         async function getHits() {
             const hitDisplay = document.getElementById('hit-count');
             try {
@@ -546,11 +564,9 @@
             }
         }
 
-        // 3. EFFETS ARTISTIQUES & INITIALISATION
         document.addEventListener('DOMContentLoaded', () => {
             getHits();
 
-            // Effet Lettre par Lettre sur le Titre Gold
             const title = document.querySelector('.gold-title');
             const text = title.textContent;
             title.innerHTML = '';
@@ -565,7 +581,6 @@
                 title.appendChild(span);
             });
 
-            // Lueur pulsante sur la Masterclass
             const masterclassBox = document.querySelector('.scrolling-title');
             if (masterclassBox) {
                 masterclassBox.classList.add('masterclass-glow');
@@ -575,7 +590,6 @@
                 }, 1000);
             }
 
-            // Système d'étoiles
             const stars = document.querySelectorAll("#stars span");
             const result = document.getElementById("rating-result");
 
@@ -589,14 +603,12 @@
                 });
             });
 
-            // --- 4. LOGIQUE DE LA FENÊTRE MODALE DE DON ---
             const downloadModal = document.getElementById('downloadModalOverlay');
             const btnDonate = document.getElementById('modalDonateBtn');
             const btnSkip = document.getElementById('modalSkipBtn');
             let currentDownloadUrl = "";
             let currentDownloadTarget = "";
 
-            // Intercepter tous les clics sur les boutons de téléchargement
             document.querySelectorAll('.btn-download').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault(); 
@@ -630,5 +642,4 @@
         });
     </script>
 </body>
-
 </html>
